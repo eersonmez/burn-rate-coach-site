@@ -1,0 +1,51 @@
+name: Compatibility or bug report
+description: Report a reproducible Burn Rate Coach problem without sharing account data.
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Never include cookies, credentials, prompts, conversations, full page exports, or screenshots containing private account data.
+  - type: input
+    id: version
+    attributes:
+      label: Burn Rate Coach version
+      placeholder: 1.0.0
+    validations:
+      required: true
+  - type: input
+    id: chrome
+    attributes:
+      label: Chrome version and operating system
+    validations:
+      required: true
+  - type: dropdown
+    id: navigation
+    attributes:
+      label: How did you enter Analytics?
+      options:
+        - Direct Analytics URL
+        - Navigation from another Codex page
+        - Both
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: What happened?
+      description: Include the popup compatibility message, theme, viewport width, and zoom if relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Privacy check
+      options:
+        - label: I removed credentials, cookies, conversations, account data, and private source code.
+          required: true
