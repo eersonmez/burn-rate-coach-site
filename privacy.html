@@ -17,22 +17,25 @@
     <p class="lede">Burn Rate Coach is an independent Chrome extension that adds pacing guidance to the Codex Analytics usage page. It is not affiliated with or endorsed by OpenAI.</p>
 
     <h2>Information handled</h2>
-    <p>Burn Rate Coach processes quota information already visible on the Codex Analytics usage page: remaining percentages, meter names, reset times, and values derived from those fields. It also stores the settings you choose, including your target remaining percentage, tolerance, and history preference.</p>
-    <p>When local history is enabled, the extension stores timestamped quota percentages and reset timestamps in Chrome’s local extension storage. Each time the Analytics page processes history, records older than 10 days are ignored and pruned and each meter is capped at 2,600 samples. If Analytics is not opened again, older stored records can remain on the device until you clear history or uninstall the extension.</p>
+    <p>Burn Rate Coach processes quota information already visible on the Codex Analytics usage page: remaining percentages, meter names, reset times, and values derived from those fields. It also stores the settings you choose, including whether the coaching interface is shown, your target remaining percentage, tolerance, and history preference.</p>
+    <p>When local history is enabled, the extension stores timestamped quota percentages and reset timestamps in Chrome’s local extension storage. Each time the Analytics page processes history, records older than 10 days are ignored and pruned and each meter is capped at 2,600 samples. If the Analytics page is not opened again, older stored records can remain on the device until you clear history or uninstall the extension.</p>
     <p>Burn Rate Coach does not read or store prompts, conversations, source code, passwords, authentication cookies, payment information, or API keys.</p>
 
     <h2>How information is used</h2>
-    <p>The information is used only to calculate and display current pacing position, recommended action, local trajectories, projected remaining quota at reset, and the extension’s latest compatibility state.</p>
+    <p>The information is used only to calculate and display current pacing position, recommended action, local trajectories, projected quota remaining at reset, and the latest active/unrecognized compatibility state.</p>
 
     <h2>Storage and transmission</h2>
-    <p>Settings, compatibility state, and quota history remain in <code>chrome.storage.local</code> on your device. Burn Rate Coach has no backend, does not transmit quota information to the developer or third parties, and uses no analytics, advertising SDKs, or remote code.</p>
-    <p>When you follow a privacy or support link, Chrome opens a public website. Burn Rate Coach adds no tracking parameters and receives no data about the visit.</p>
+    <p>Settings, compatibility state, and quota history remain in <code>chrome.storage.local</code> on your device. Burn Rate Coach does not operate a backend, transmit quota information to the developer or third parties, use analytics or advertising SDKs, or sell user data.</p>
+    <p>If you choose an external support or privacy link, Chrome opens that public website. The website processes the visit under its own privacy policy. Burn Rate Coach does not append tracking parameters.</p>
 
     <h2>Sharing</h2>
-    <p>Burn Rate Coach does not share, sell, or transfer extension data. It does not use data for advertising, profiling, creditworthiness, or any purpose unrelated to quota pacing.</p>
+    <p>Burn Rate Coach does not share or transfer extension data to third parties. It does not use data for advertising, profiling, creditworthiness, or purposes unrelated to quota pacing.</p>
 
     <h2>Your controls</h2>
-    <p>Turning off <strong>Local pace history</strong> stops collecting and using saved samples. Existing samples remain until the next Analytics cleanup, an explicit clear, or uninstall, and can inform projections if history is re-enabled first. The two-click <strong>Clear history</strong> control deletes current and legacy snapshots. If history remains enabled, later observations can begin a new local history.</p>
+    <p>Turning off <strong>Show coach</strong> removes Burn Rate Coach guidance from the page but does not stop page observation or compatibility checks. If Local pace history is enabled, local sampling continues while the Analytics page is open so guidance can resume with current evidence when shown again. Turning off <strong>Local pace history</strong> stops collecting and using saved samples whether the coach is shown or hidden. Existing samples remain on the device until the next Analytics-page cleanup, an explicit clear, or uninstall, and can inform projections again if you re-enable history first. The two-click <strong>Clear history</strong> control remains available while the coach is hidden, deletes current and legacy quota snapshots, and prevents an in-flight older write from restoring them. If Local pace history remains enabled, collection can begin again with later page observations. Uninstalling Burn Rate Coach removes its local extension data through Chrome.</p>
+
+    <h2>Security and policy compliance</h2>
+    <p>All executable code is packaged with the extension. Burn Rate Coach uses information only for its disclosed single purpose and follows the Chrome Web Store User Data Policy, including its Limited Use requirements.</p>
 
     <h2>Changes</h2>
     <p>Material changes to data handling will be reflected in this policy, the Chrome Web Store privacy disclosures, and—when required—an in-product disclosure before the changed handling begins.</p>
