@@ -1,41 +1,54 @@
 <!doctype html>
-<html lang="en">
+<!-- English is the canonical source content. -->
+<html lang="en" dir="ltr" data-translation-status="canonical">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Burn Rate Coach privacy policy.">
+  <meta name="theme-color" content="#0b1020">
   <title>Privacy — Burn Rate Coach</title>
+  <link rel="canonical" href="https://eersonmez.github.io/burn-rate-coach-site/privacy.html">
+  <link rel="alternate" hreflang="en" href="https://eersonmez.github.io/burn-rate-coach-site/privacy.html">
+  <link rel="alternate" hreflang="tr" href="https://eersonmez.github.io/burn-rate-coach-site/tr/privacy.html">
+  <link rel="alternate" hreflang="hi" href="https://eersonmez.github.io/burn-rate-coach-site/hi/privacy.html">
+  <link rel="alternate" hreflang="es" href="https://eersonmez.github.io/burn-rate-coach-site/es/privacy.html">
+  <link rel="alternate" hreflang="ar" href="https://eersonmez.github.io/burn-rate-coach-site/ar/privacy.html">
+  <link rel="alternate" hreflang="x-default" href="https://eersonmez.github.io/burn-rate-coach-site/privacy.html">
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header"><a class="brand" href="./"><img src="assets/logo.svg" width="40" height="40" alt=""><span>Burn Rate Coach</span></a><nav aria-label="Main navigation"><a href="./">Home</a><a aria-current="page" href="privacy.html">Privacy</a><a href="support.html">Support</a></nav></header>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Burn Rate Coach home"><img src="assets/logo.svg" width="40" height="40" alt=""><span>Burn Rate Coach</span></a>
+    <nav aria-label="Main navigation"><a href="index.html">Home</a><a aria-current="page" href="privacy.html">Privacy</a><a href="support.html">Support</a></nav>
+  </header>
+  <nav class="language-nav wrap" aria-label="Language"><a lang="en" hreflang="en" aria-current="page" href="privacy.html">English</a><a lang="tr" hreflang="tr" href="tr/privacy.html">Türkçe</a><a lang="hi" hreflang="hi" href="hi/privacy.html">हिन्दी</a><a lang="es" hreflang="es" href="es/privacy.html">Español</a><a lang="ar" hreflang="ar" href="ar/privacy.html">العربية</a></nav>
   <main id="main" class="document wrap">
-    <span class="eyebrow">Effective July 15, 2026</span>
+    <span class="eyebrow">Effective July 16, 2026</span>
     <h1>Privacy policy</h1>
     <p class="lede">Burn Rate Coach is an independent Chrome extension that adds pacing guidance to the Codex Analytics usage page. It is not affiliated with or endorsed by OpenAI.</p>
 
     <h2>Information handled</h2>
-    <p>Burn Rate Coach processes quota information already visible on the Codex Analytics usage page: remaining percentages, meter names, reset times, and values derived from those fields. It also stores the settings you choose, including whether the coaching interface is shown, your target remaining percentage, tolerance, and history preference.</p>
-    <p>When local history is enabled, the extension stores timestamped quota percentages and reset timestamps in Chrome’s local extension storage. Each time the Analytics page processes history, records older than 10 days are ignored and pruned and each meter is capped at 2,600 samples. If the Analytics page is not opened again, older stored records can remain on the device until you clear history or uninstall the extension.</p>
-    <p>Burn Rate Coach does not read or store prompts, conversations, source code, passwords, authentication cookies, payment information, or API keys.</p>
+    <p>While Codex Analytics is open, a packaged page bridge passively observes the page’s own successful quota result when the page decodes it. It directly accesses only stable rate-limit meter and window identifiers, used percentage, quota-window duration, and reset timing needed for coaching. The isolated extension associates results with native cards only through matching numeric progress and reset metadata; it never uses translated labels or card order. The extension generates the observation timestamp locally rather than reading it from the response. It does not initiate the request, clone or independently decode the response, or inspect headers, cookies, authorization tokens, or other credentials.</p>
+    <p>The page’s result can also contain email, account and user identifiers, plan information, credits, and spend-control fields. Burn Rate Coach does not access or enumerate those unrelated fields and never bridges, logs, stores, or transmits them. It also does not read or store prompts, conversations, source code, passwords, payment credentials, or API keys.</p>
+    <p>Burn Rate Coach stores the settings you choose. When local history is enabled, it stores timestamped quota percentages and reset timestamps in Chrome’s local extension storage. Records older than 14 days are ignored and pruned when Analytics next processes history, and each meter is capped at 10,082 samples. Older records can remain on an inactive device until cleanup, clear, or uninstall.</p>
 
     <h2>How information is used</h2>
-    <p>The information is used only to calculate and display current pacing position, recommended action, local trajectories, projected quota remaining at reset, and the latest active/unrecognized compatibility state.</p>
+    <p>The allowlisted quota information is used only to calculate and display current pacing position, recommended action, local trajectories, projected quota remaining at reset, and the latest active or unrecognized compatibility state.</p>
 
     <h2>Storage and transmission</h2>
-    <p>Settings, compatibility state, and quota history remain in <code>chrome.storage.local</code> on your device. Burn Rate Coach does not operate a backend, transmit quota information to the developer or third parties, use analytics or advertising SDKs, or sell user data.</p>
+    <p>Settings, compatibility state, and quota history remain in <code>chrome.storage.local</code> on your device. Burn Rate Coach has no backend and does not transmit extension data to the developer or third parties, use analytics or advertising SDKs, or sell user data.</p>
     <p>If you choose an external support or privacy link, Chrome opens that public website. The website processes the visit under its own privacy policy. Burn Rate Coach does not append tracking parameters.</p>
 
     <h2>Sharing</h2>
     <p>Burn Rate Coach does not share or transfer extension data to third parties. It does not use data for advertising, profiling, creditworthiness, or purposes unrelated to quota pacing.</p>
 
     <h2>Your controls</h2>
-    <p>Turning off <strong>Show coach</strong> removes Burn Rate Coach guidance from the page but does not stop page observation or compatibility checks. If Local pace history is enabled, local sampling continues while the Analytics page is open so guidance can resume with current evidence when shown again. Turning off <strong>Local pace history</strong> stops collecting and using saved samples whether the coach is shown or hidden. Existing samples remain on the device until the next Analytics-page cleanup, an explicit clear, or uninstall, and can inform projections again if you re-enable history first. The two-click <strong>Clear history</strong> control remains available while the coach is hidden, deletes current and legacy quota snapshots, and prevents an in-flight older write from restoring them. If Local pace history remains enabled, collection can begin again with later page observations. Uninstalling Burn Rate Coach removes its local extension data through Chrome.</p>
+    <p>Response-based coaching is enabled only after you acknowledge its one-time localized data-source disclosure on that Chrome installation. Turning off <strong>Show coach</strong> removes Burn Rate Coach guidance from the page but does not stop page observation or compatibility checks. If Local pace history is enabled, local sampling continues while the Analytics page is open so guidance can resume with current evidence when shown again. Turning off <strong>Local pace history</strong> stops collecting and using saved samples whether the coach is shown or hidden. Existing samples remain on the device until the next Analytics-page cleanup, an explicit clear, or uninstall, and can inform projections again if you re-enable history first. The two-click <strong>Clear history</strong> control remains available while the coach is hidden, deletes current and legacy quota snapshots, and prevents an in-flight older write from restoring them. If Local pace history remains enabled, collection can begin again with later page observations. Uninstalling Burn Rate Coach removes its local extension data through Chrome.</p>
 
     <h2>Security and policy compliance</h2>
-    <p>All executable code is packaged with the extension. Burn Rate Coach uses information only for its disclosed single purpose and follows the Chrome Web Store User Data Policy, including its Limited Use requirements.</p>
+    <p>All executable code is packaged with the extension. The page bridge sends only an allowlisted quota projection to the isolated extension context; it does not forward the raw response. Burn Rate Coach uses information only for its disclosed single purpose and follows the Chrome Web Store User Data Policy, including Limited Use requirements.</p>
 
     <h2>Changes</h2>
     <p>Material changes to data handling will be reflected in this policy, the Chrome Web Store privacy disclosures, and—when required—an in-product disclosure before the changed handling begins.</p>
@@ -43,6 +56,6 @@
     <h2>Contact</h2>
     <p>Privacy questions: <a href="mailto:burn.rate.coach@gmail.com">burn.rate.coach@gmail.com</a><br>Support reports: <a href="https://github.com/eersonmez/burn-rate-coach-site/issues">public issue tracker</a></p>
   </main>
-  <footer class="site-footer wrap"><p>Burn Rate Coach is independent and not endorsed by OpenAI.</p><nav aria-label="Footer navigation"><a href="./">Home</a><a href="support.html">Support</a><a href="https://github.com/eersonmez/burn-rate-coach-site/issues">Issues</a></nav></footer>
+  <footer class="site-footer wrap"><p>Burn Rate Coach is independent and not endorsed by OpenAI.</p><nav aria-label="Footer navigation"><a href="index.html">Home</a><a href="support.html">Support</a><a href="https://github.com/eersonmez/burn-rate-coach-site/issues">Issues</a></nav></footer>
 </body>
 </html>

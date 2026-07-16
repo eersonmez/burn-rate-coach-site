@@ -1,0 +1,10 @@
+{
+  "name": "burn-rate-coach-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "check:release": "node scripts/check.mjs --release"
+  }
+}
