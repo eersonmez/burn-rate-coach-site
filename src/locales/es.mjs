@@ -123,7 +123,7 @@ export default {
       {
         heading: "Tus controles",
         paragraphs: [
-          "La orientación basada en la respuesta solo se activa después de que aceptes, en esa instalación de Chrome, su aviso localizado y único sobre la fuente de datos. Desactivar <strong>Mostrar coach</strong> quita la orientación, pero no detiene la observación de la página ni las comprobaciones de compatibilidad. Desactivar <strong>Historial local de ritmo</strong> detiene la recopilación y el uso de muestras guardadas. <strong>Borrar historial</strong> elimina las instantáneas de cuota actuales y antiguas. Al desinstalar Burn Rate Coach, Chrome elimina sus datos locales."
+          "La ficha de Chrome Web Store explica este uso local de los datos de cuota antes de la instalación y el popup lo repite con lenguaje sencillo. Desactivar <strong>Mostrar coach</strong> quita la orientación, pero no detiene la observación de la página ni las comprobaciones de compatibilidad. Desactivar <strong>Historial local de ritmo</strong> detiene la recopilación y el uso de muestras guardadas. <strong>Borrar historial</strong> elimina las instantáneas de cuota actuales y antiguas. Al desinstalar Burn Rate Coach, Chrome elimina sus datos locales."
         ]
       },
       {

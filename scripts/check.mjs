@@ -1,7 +1,7 @@
 import { readFile, stat } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { LOCALE_SPECS, PAGES } from "../src/config.mjs";
+import { LOCALE_SPECS, PAGES, RELEASE_POLICY } from "../src/config.mjs";
 import { catalogs } from "../src/locales/index.mjs";
 import { renderPage } from "../src/templates.mjs";
 
@@ -21,6 +21,14 @@ function leafPaths(value, prefix = "") {
 }
 
 const canonicalKeys = leafPaths({ common: catalogs.en.common, home: catalogs.en.home, privacy: catalogs.en.privacy, support: catalogs.en.support }).sort();
+
+if (RELEASE_POLICY.mode !== "automated-validation"
+  || RELEASE_POLICY.humanReviewRequired !== false
+  || !RELEASE_POLICY.waivedBy
+  || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(RELEASE_POLICY.waivedAt)
+  || !/^[0-9a-f]{40}$/i.test(RELEASE_POLICY.waivedRevision)) {
+  errors.push("release policy must retain a complete owner waiver for automated validation");
+}
 
 for (const locale of LOCALE_SPECS) {
   const catalog = catalogs[locale.code];
@@ -52,7 +60,10 @@ for (const locale of LOCALE_SPECS) {
     errors.push(`${locale.code}: translation state must be draft or reviewed`);
   }
 
-  if (releaseMode && locale.code !== "en" && catalog.review.state !== "reviewed") {
+  if (releaseMode
+    && RELEASE_POLICY.humanReviewRequired
+    && locale.code !== "en"
+    && catalog.review.state !== "reviewed") {
     errors.push(`${locale.code}: fluent review is required for release`);
   }
 

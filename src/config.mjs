@@ -5,6 +5,14 @@ export const ISSUES_URL = "https://github.com/eersonmez/burn-rate-coach-site/iss
 export const NEW_ISSUE_URL = `${ISSUES_URL}/new/choose`;
 export const PRIVACY_EMAIL = "burn.rate.coach@gmail.com";
 
+export const RELEASE_POLICY = Object.freeze({
+  mode: "automated-validation",
+  humanReviewRequired: false,
+  waivedBy: "project owner (eersonmez)",
+  waivedAt: "2026-07-18T08:58:02Z",
+  waivedRevision: "04b6692709a5a704e8af1287f5025f98bac15375"
+});
+
 export const LOCALE_SPECS = Object.freeze([
   { code: "en", htmlLang: "en", dir: "ltr", label: "English", outputDir: "" },
   { code: "tr", htmlLang: "tr", dir: "ltr", label: "Türkçe", outputDir: "tr" },

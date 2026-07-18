@@ -123,7 +123,7 @@ export default {
       {
         heading: "Denetimleriniz",
         paragraphs: [
-          "Yanıta dayalı koçluk, yalnızca bu Chrome kurulumundaki tek seferlik yerelleştirilmiş veri kaynağı açıklamasını onaylamanızdan sonra etkinleşir. <strong>Koçu göster</strong> seçeneğini kapatmak yönlendirmeyi kaldırır ancak sayfa gözlemini ya da uyumluluk denetimlerini durdurmaz. <strong>Yerel tempo geçmişi</strong> kapatıldığında kayıtlı örneklerin toplanması ve kullanımı durur. <strong>Geçmişi temizle</strong> mevcut ve eski kota anlık görüntülerini siler. Uzantıyı kaldırmak yerel uzantı verilerini Chrome üzerinden siler."
+          "Chrome Web Mağazası sayfası, yerel kota verisi kullanımını kurulumdan önce açıklar; açılır pencere bunu sade bir dille tekrarlar. <strong>Koçu göster</strong> seçeneğini kapatmak yönlendirmeyi kaldırır ancak sayfa gözlemini ya da uyumluluk denetimlerini durdurmaz. <strong>Yerel tempo geçmişi</strong> kapatıldığında kayıtlı örneklerin toplanması ve kullanımı durur. <strong>Geçmişi temizle</strong> mevcut ve eski kota anlık görüntülerini siler. Uzantıyı kaldırmak yerel uzantı verilerini Chrome üzerinden siler."
         ]
       },
       {
