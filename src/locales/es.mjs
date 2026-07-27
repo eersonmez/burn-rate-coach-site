@@ -9,6 +9,8 @@ export default {
     skipToContent: "Ir al contenido",
     home: "Inicio",
     features: "Funciones",
+    usageGuide: "Límites de uso",
+    pacingGuide: "Ritmo de cuota",
     privacy: "Privacidad",
     support: "Ayuda",
     issues: "Incidencias",
@@ -80,6 +82,86 @@ export default {
       body: "Burn Rate Coach es gratuito en Chrome Web Store.",
       cta: "Añadir a Chrome"
     }
+  },
+  usageGuide: {
+    metaDescription: "Guía sencilla sobre saldos de uso de Codex, reinicios, límites compartidos y por qué los porcentajes no equivalen directamente a tareas.",
+    title: "Cómo funcionan los límites de uso de Codex — Burn Rate Coach",
+    eyebrow: "Guía de uso de Codex",
+    heading: "Cómo funcionan los límites de uso de Codex",
+    lede: "Tu página de uso de Codex es la fuente de referencia. Los saldos y reinicios dependen de tu plan, las ofertas vigentes y las superficies que utilices.",
+    sections: [
+      {
+        heading: "Lee juntos el saldo y el reinicio",
+        paragraphs: [
+          "Cada saldo mostrado es la asignación restante para la ventana de reinicio que aparece a su lado. Codex puede mostrar una o más ventanas, un saldo de créditos u otros límites propios del plan.",
+          "No supongas que todas las cuentas tienen las mismas tarjetas. OpenAI puede cambiar ventanas y promociones; usa las etiquetas y fechas de tu propia página."
+        ]
+      },
+      {
+        heading: "Algunas superficies pueden compartir un fondo",
+        paragraphs: [
+          "OpenAI indica que Codex, ChatGPT Work, ChatGPT for Excel y Workspace Agents pueden compartir un fondo de uso agéntico, según el plan y los productos disponibles.",
+          "La actividad en una superficie incluida puede cambiar el saldo que luego ves en otra. La página de uso y los avisos de límite son el registro práctico de lo que queda."
+        ]
+      },
+      {
+        heading: "Un porcentaje no es un contador de tareas",
+        paragraphs: [
+          "El consumo de una tarea varía según su tamaño, complejidad, modelo y lugar de ejecución. Diez ediciones pequeñas y una ejecución larga de un agente no tienen por qué consumir proporciones comparables.",
+          "Por eso el porcentaje restante no dice de forma fiable cuántos mensajes, tokens o minutos quedan. Es un medidor de asignación, no un conversor de unidades."
+        ]
+      },
+      {
+        heading: "Usa la hora de reinicio mostrada",
+        paragraphs: [
+          "Planifica con la hora exacta de reinicio que muestra la página, no con un horario memorizado. Algunas ofertas temporales también pueden usar reinicios acumulados o ajustados.",
+          "Para la vista actual, abre <code>https://chatgpt.com/codex/cloud/settings/analytics</code>. Si cambian la ruta o las tarjetas, sigue la navegación vigente de Codex y las indicaciones visibles de la cuenta."
+        ]
+      }
+    ],
+    sourceLabel: "Lee la guía vigente de OpenAI sobre el uso de Codex",
+    productBody: "Burn Rate Coach añade ritmo local y estimaciones al reinicio a los saldos que muestra realmente tu página de Codex. Son estimaciones descriptivas, no garantías del proveedor.",
+    cta: "Obtener Burn Rate Coach"
+  },
+  pacingGuide: {
+    metaDescription: "Por qué una cuota de Codex puede agotarse antes del reinicio y una forma sencilla de dosificar trabajo variable sin una hoja de cálculo.",
+    title: "Por qué la cuota de Codex se agota antes — Burn Rate Coach",
+    eyebrow: "Guía práctica de ritmo",
+    heading: "Por qué la cuota de Codex se agota antes",
+    lede: "Agotarla antes suele ser un problema de tiempo, no de entender el porcentaje actual. La carga cambia y un saldo aislado no dice cuánto tiempo queda.",
+    sections: [
+      {
+        heading: "Las ráfagas iniciales ocultan el ritmo real",
+        paragraphs: [
+          "Una ráfaga productiva puede consumir una gran parte al inicio de la ventana. El porcentaje restante aún puede parecer cómodo aunque el ritmo medio permitido para el resto ya sea mucho menor.",
+          "Compara saldo restante con tiempo restante. Si el 60 % de la asignación debe cubrir el 85 % de la ventana, hay menos margen del que sugiere el porcentaje principal."
+        ]
+      },
+      {
+        heading: "Las tareas pesadas cambian la pendiente",
+        paragraphs: [
+          "El uso de Codex varía según el tamaño, la complejidad, el modelo y la superficie. Una ejecución larga de un agente puede cambiar mucho más la trayectoria que varios mensajes ligeros.",
+          "Trata la proyección como una estimación móvil. Vuelve a comprobarla después de trabajo inusualmente pesado en vez de asumir que el ritmo de ayer seguirá igual."
+        ]
+      },
+      {
+        heading: "Las ventanas largas también importan",
+        paragraphs: [
+          "Cuando la página muestra más de un límite, un saldo cercano cómodo puede coexistir con presión en una ventana más larga o en un fondo compartido.",
+          "La decisión más estable protege el saldo restringido. El margen de una tarjeta no sirve si otro límite aplicable llega antes a cero."
+        ]
+      },
+      {
+        heading: "Un hábito pequeño de dosificación",
+        paragraphs: [
+          "Usa el reinicio visible, reserva margen para trabajo imprevisto y compara el saldo con una trayectoria local reciente. Reduce el ritmo solo cuando la evidencia lo indique.",
+          "La evidencia incierta debe producir una guía más suave, no falsa precisión. Una previsión puede indicar cuándo revisar de nuevo sin fingir que el futuro está fijado."
+        ]
+      }
+    ],
+    sourceLabel: "Lee la guía vigente de OpenAI sobre el uso de Codex",
+    productBody: "Burn Rate Coach hace esta comparación de forma local en Chrome, sobre la página de uso de Codex. Muestra una estimación al reinicio y marca como aproximadas las proyecciones con poca confianza.",
+    cta: "Añadir el guía local"
   },
   privacy: {
     metaDescription: "Resumen de la política de privacidad de Burn Rate Coach.",

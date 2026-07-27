@@ -9,6 +9,8 @@ export default {
     skipToContent: "İçeriğe geç",
     home: "Ana sayfa",
     features: "Özellikler",
+    usageGuide: "Kullanım sınırları",
+    pacingGuide: "Kota temposu",
     privacy: "Gizlilik",
     support: "Destek",
     issues: "Sorunlar",
@@ -80,6 +82,86 @@ export default {
       body: "Burn Rate Coach, Chrome Web Mağazası’nda ücretsizdir.",
       cta: "Chrome’a ekle"
     }
+  },
+  usageGuide: {
+    metaDescription: "Codex kullanım bakiyeleri, sıfırlanma zamanları, ortak sınırlar ve yüzdelerin neden görevlere doğrudan karşılık gelmediği hakkında sade bir rehber.",
+    title: "Codex kullanım sınırları nasıl çalışır — Burn Rate Coach",
+    eyebrow: "Codex kullanım rehberi",
+    heading: "Codex kullanım sınırları nasıl çalışır",
+    lede: "Gerçeğin kaynağı Codex kullanım sayfanızdır. Gösterilen bakiyeler ve sıfırlanma zamanları planınıza, geçerli tekliflere ve kullandığınız yüzeylere bağlıdır.",
+    sections: [
+      {
+        heading: "Bakiyeyi ve sıfırlanmayı birlikte okuyun",
+        paragraphs: [
+          "Gösterilen her bakiye, yanında belirtilen sıfırlanma dönemi için kalan kullanım hakkıdır. Codex bir veya daha fazla kullanım dönemi, kredi bakiyesi ya da plana özgü başka sınırlar gösterebilir.",
+          "Her hesabın aynı kartlara sahip olduğunu varsaymayın. OpenAI dönemleri ve kampanyaları değiştirebilir; kendi kullanım sayfanızdaki etiketleri ve zaman damgalarını esas alın."
+        ]
+      },
+      {
+        heading: "Bazı yüzeyler aynı havuzu paylaşabilir",
+        paragraphs: [
+          "OpenAI, plana ve kullanılabilir ürünlere bağlı olarak Codex, ChatGPT Work, ChatGPT for Excel ve Workspace Agents ürünlerinin ortak bir ajan kullanım havuzunu paylaşabileceğini belirtir.",
+          "Bu nedenle bir üründeki etkinlik, daha sonra başka bir üründe gördüğünüz bakiyeyi değiştirebilir. Kalan hakkın pratik kaydı kullanım sayfası ve sınır bildirimidir."
+        ]
+      },
+      {
+        heading: "Yüzde, görev sayacı değildir",
+        paragraphs: [
+          "Bir görevin tüketimi boyutuna, karmaşıklığına, modele ve çalıştığı yüzeye göre değişir. On küçük düzenleme ile tek bir uzun ajan çalışması benzer paylar tüketmek zorunda değildir.",
+          "Bu yüzden kalan yüzde, kaç istem, token veya dakika kaldığını güvenilir biçimde söylemez. Bu bir kullanım hakkı göstergesidir; birim dönüştürücü değildir."
+        ]
+      },
+      {
+        heading: "Gösterilen sıfırlanma zamanını kullanın",
+        paragraphs: [
+          "Ezberlenmiş bir takvim yerine sayfada gösterilen tam sıfırlanma zamanına göre plan yapın. Bazı geçici teklifler biriktirilmiş veya ayarlanmış sıfırlanmalar da kullanabilir.",
+          "Geçerli görünüm için <code>https://chatgpt.com/codex/cloud/settings/analytics</code> adresini açın. Yol veya kartlar değişirse güncel Codex gezinmesini ve görünür hesap yönlendirmesini izleyin."
+        ]
+      }
+    ],
+    sourceLabel: "OpenAI’ın güncel Codex kullanım rehberini okuyun",
+    productBody: "Burn Rate Coach, Codex kullanım sayfanızın gerçekten gösterdiği bakiyelere yerel tempo ve sıfırlanma anı tahminleri ekler. Tahminler açıklayıcı kestirimlerdir; sağlayıcı garantisi değildir.",
+    cta: "Burn Rate Coach’u edinin"
+  },
+  pacingGuide: {
+    metaDescription: "Codex kotasının neden sıfırlanmadan önce bitebildiği ve değişken ajan işlerini tablo kullanmadan dengelemenin sade bir yolu.",
+    title: "Codex kotası neden erken biter — Burn Rate Coach",
+    eyebrow: "Pratik tempo rehberi",
+    heading: "Codex kotası neden erken biter",
+    lede: "Erken bitiş çoğunlukla zamanlama sorunudur; mevcut yüzdeyi anlamamak değildir. İş yükü değişir ve bir bakiye, kalan süreyi tek başına anlatmaz.",
+    sections: [
+      {
+        heading: "Erken yoğun kullanım gerçek tempoyu gizler",
+        paragraphs: [
+          "Verimli bir yoğun dönem, sıfırlanma döneminin başında büyük bir pay tüketebilir. Kalan yüzde rahat görünebilir ama dönemin geri kalanı için gereken ortalama tempo artık çok daha düşük olabilir.",
+          "Kalan bakiyeyi kalan süreyle karşılaştırın. Hakkın %60’ı dönemin %85’ini karşılamak zorundaysa, takvim başlıktaki yüzdeden daha az esnektir."
+        ]
+      },
+      {
+        heading: "Ağır görevler eğimi değiştirir",
+        paragraphs: [
+          "Codex kullanımı görevin boyutuna, karmaşıklığına, modele ve yüzeye göre değişir. Uzun bir ajan çalışması, gidişatı birkaç hafif istemden çok daha fazla değiştirebilir.",
+          "İzdüşümü hareketli bir tahmin olarak görün. Olağandışı ağır işlerden sonra dünün temposunun değişmeden süreceğini varsaymak yerine tekrar kontrol edin."
+        ]
+      },
+      {
+        heading: "Daha uzun dönemler hâlâ önemlidir",
+        paragraphs: [
+          "Sayfa birden fazla sınır gösterdiğinde, yakın dönem bakiyesi rahatken daha uzun bir sıfırlanma döneminde veya ortak havuzda baskı olabilir.",
+          "Daha dengeli karar, kısıtlı bakiyeyi korur. Uygulanan başka bir sınır önce sıfıra ulaşıyorsa tek bir karttaki boşluk işe yaramaz."
+        ]
+      },
+      {
+        heading: "Küçük bir tempo alışkanlığı",
+        paragraphs: [
+          "Görünür sıfırlanma zamanını kullanın, beklenmedik işler için rezerv tutun ve mevcut bakiyeyi yakın tarihli yerel gidişatla karşılaştırın. Yalnızca kanıt gerektiğini gösterdiğinde yavaşlayın.",
+          "Belirsiz kanıt, sahte kesinlik yerine daha yumuşak yönlendirme üretmelidir. Tahmin, geleceği sabitmiş gibi göstermeden ne zaman tekrar bakacağınıza yardımcı olabilir."
+        ]
+      }
+    ],
+    sourceLabel: "OpenAI’ın güncel Codex kullanım rehberini okuyun",
+    productBody: "Burn Rate Coach bu karşılaştırmayı Codex kullanım sayfasında, Chrome içinde yerel olarak yapar. Sıfırlanma anı tahminini gösterir ve düşük güvenli izdüşümleri yaklaşık olarak işaretler.",
+    cta: "Yerel koçu ekleyin"
   },
   privacy: {
     metaDescription: "Burn Rate Coach gizlilik politikası özeti.",

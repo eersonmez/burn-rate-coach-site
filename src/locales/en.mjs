@@ -9,6 +9,8 @@ export default {
     skipToContent: "Skip to content",
     home: "Home",
     features: "Features",
+    usageGuide: "Usage limits",
+    pacingGuide: "Quota pacing",
     privacy: "Privacy",
     support: "Support",
     issues: "Issues",
@@ -80,6 +82,86 @@ export default {
       body: "Burn Rate Coach is free on the Chrome Web Store.",
       cta: "Add to Chrome"
     }
+  },
+  usageGuide: {
+    metaDescription: "A plain-language guide to Codex usage balances, reset times, shared limits, and why percentages do not map cleanly to tasks.",
+    title: "How Codex usage limits work — Burn Rate Coach",
+    eyebrow: "Codex usage guide",
+    heading: "How Codex usage limits work",
+    lede: "Your Codex usage page is the source of truth. The balances and reset times it shows depend on your plan, current offers, and the surfaces you use.",
+    sections: [
+      {
+        heading: "Read the balance and reset together",
+        paragraphs: [
+          "Each displayed balance is the allowance remaining for the reset window shown beside it. Codex may show one or more usage windows, a credit balance, or other plan-specific limits.",
+          "Do not assume every account has the same cards. OpenAI can change available windows and promotions, so use the labels and timestamps on your own usage page."
+        ]
+      },
+      {
+        heading: "Some surfaces can share a pool",
+        paragraphs: [
+          "OpenAI says Codex, ChatGPT Work, ChatGPT for Excel, and Workspace Agents may share an agentic usage pool, depending on the plan and which products are available.",
+          "Activity on one included surface can therefore change the balance you later see on another. The usage page and any limit banner are the practical record of what remains."
+        ]
+      },
+      {
+        heading: "A percentage is not a task counter",
+        paragraphs: [
+          "The amount used by a task varies with its size, complexity, model, and where it runs. Ten small edits and one long agent run need not consume comparable shares.",
+          "That is why a remaining percentage cannot reliably answer how many prompts, tokens, or minutes are left. It is an allowance meter, not a unit converter."
+        ]
+      },
+      {
+        heading: "Use the displayed reset time",
+        paragraphs: [
+          "Plan around the exact reset timestamp shown on the page instead of a memorized schedule. Some temporary offers may also use banked or adjusted resets.",
+          "For the current view, open <code>https://chatgpt.com/codex/cloud/settings/analytics</code>. If the route or available cards change, follow the current Codex navigation and visible account guidance."
+        ]
+      }
+    ],
+    sourceLabel: "Read OpenAI’s current Codex usage guidance",
+    productBody: "Burn Rate Coach adds local pacing and at-reset estimates to the balances your Codex usage page actually displays. Forecasts are descriptive estimates, not provider guarantees.",
+    cta: "Get Burn Rate Coach"
+  },
+  pacingGuide: {
+    metaDescription: "Why a Codex quota can run out before reset, and a simple way to pace variable agent work without a spreadsheet.",
+    title: "Why Codex quota runs out early — Burn Rate Coach",
+    eyebrow: "Practical pacing guide",
+    heading: "Why Codex quota runs out early",
+    lede: "Running out early is usually a timing problem, not a failure to understand the current percentage. Workload varies, and a balance says nothing by itself about the time left.",
+    sections: [
+      {
+        heading: "Early bursts hide the real pace",
+        paragraphs: [
+          "A productive burst can consume a large share near the start of a reset window. The remaining percentage may still look comfortable even though the average pace required for the rest of the window is now much lower.",
+          "Compare balance remaining with time remaining. If 60% of the allowance must cover 85% of the window, the schedule has less room than the headline percentage suggests."
+        ]
+      },
+      {
+        heading: "Heavy tasks change the slope",
+        paragraphs: [
+          "Codex usage varies with task size, complexity, model, and surface. A long agent run can change the trajectory much more than several lightweight prompts.",
+          "Treat a projection as a moving estimate. Recheck after unusually heavy work instead of assuming yesterday’s pace will continue unchanged."
+        ]
+      },
+      {
+        heading: "Longer windows still matter",
+        paragraphs: [
+          "When the page shows more than one limit, a comfortable near-term balance can coexist with pressure in a longer reset window or shared pool.",
+          "The steadier decision protects the constrained balance. Extra room in one card is not useful if another applicable limit reaches zero first."
+        ]
+      },
+      {
+        heading: "A small pacing habit",
+        paragraphs: [
+          "Use the visible reset time, keep a reserve for unexpected work, and compare the current balance with a recent local trajectory. Slow down only when the evidence points that way.",
+          "Uncertain evidence should produce softer guidance, not false precision. A forecast can help decide when to check again without pretending the future is fixed."
+        ]
+      }
+    ],
+    sourceLabel: "Read OpenAI’s current Codex usage guidance",
+    productBody: "Burn Rate Coach performs this comparison on the Codex usage page, locally in Chrome. It shows an estimated at-reset outcome and marks low-confidence projections as approximate.",
+    cta: "Add the local coach"
   },
   privacy: {
     metaDescription: "Burn Rate Coach privacy policy.",

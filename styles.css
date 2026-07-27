@@ -25,7 +25,7 @@ a { color: inherit; }
 .site-header { display: flex; align-items: center; justify-content: space-between; width: min(1180px, calc(100% - 40px)); margin: 0 auto; padding: 22px 0; }
 .brand { display: inline-flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 820; text-decoration: none; }
 .brand img { width: 36px; height: 36px; }
-.site-header nav, .site-footer nav { display: flex; align-items: center; gap: 22px; }
+.site-header nav, .site-footer nav { display: flex; align-items: center; flex-wrap: wrap; gap: 22px; }
 .site-header nav a, .site-footer nav a { color: var(--muted); font-size: 13px; font-weight: 700; text-decoration: none; }
 .site-header nav a:hover, .site-header nav a[aria-current="page"], .site-footer nav a:hover { color: var(--text); }
 .language-nav { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 6px 14px; margin-top: -10px; padding-bottom: 10px; }
