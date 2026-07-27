@@ -1,4 +1,5 @@
 import {
+  CODEX_HELP_URL,
   ISSUES_URL,
   LOCALE_SPECS,
   NEW_ISSUE_URL,
@@ -85,7 +86,7 @@ function siteHeader(locale, pageId, common) {
 }
 
 function siteFooter(locale, pageId, common) {
-  const links = ["home", "privacy", "support"]
+  const links = ["home", "usageGuide", "pacingGuide", "privacy", "support"]
     .filter((target) => target !== pageId)
     .map((target) => `<a href="${localPageHref(target)}">${common[target]}</a>`)
     .join("");
@@ -220,9 +221,31 @@ function renderSupport(locale, catalog) {
 `;
 }
 
+function renderGuide(locale, pageId, catalog) {
+  const copy = catalog[pageId];
+  const sections = copy.sections.map((section) => `
+    <h2>${section.heading}</h2>
+${paragraphs(section.paragraphs)}`).join("\n");
+  return `${documentStart(locale, pageId, catalog, copy)}
+  <main id="main" class="document wrap">
+    <span class="eyebrow">${copy.eyebrow}</span>
+    <h1>${copy.heading}</h1>
+    <p class="lede">${copy.lede}</p>
+${sections}
+
+    <p><a href="${CODEX_HELP_URL}">${copy.sourceLabel}</a></p>
+    <aside class="notice"><p>${copy.productBody}</p><a class="button button-primary active" href="${STORE_URL}">${copy.cta}</a></aside>
+  </main>
+  ${siteFooter(locale, pageId, catalog.common)}
+</body>
+</html>
+`;
+}
+
 export function renderPage(locale, pageId, catalogs) {
   const catalog = catalogs[locale.code];
   if (pageId === "home") return renderHome(locale, catalog);
+  if (pageId === "usageGuide" || pageId === "pacingGuide") return renderGuide(locale, pageId, catalog);
   if (pageId === "privacy") return renderPrivacy(locale, catalog);
   if (pageId === "support") return renderSupport(locale, catalog);
   throw new Error(`Unknown page: ${pageId}`);

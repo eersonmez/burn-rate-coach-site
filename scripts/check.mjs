@@ -8,6 +8,7 @@ import { renderPage } from "../src/templates.mjs";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const errors = [];
 const releaseMode = process.argv.includes("--release");
+const localizedSections = ["common", "home", "usageGuide", "pacingGuide", "privacy", "support"];
 
 function leafPaths(value, prefix = "") {
   if (Array.isArray(value)) {
@@ -20,7 +21,11 @@ function leafPaths(value, prefix = "") {
   return [prefix];
 }
 
-const canonicalKeys = leafPaths({ common: catalogs.en.common, home: catalogs.en.home, privacy: catalogs.en.privacy, support: catalogs.en.support }).sort();
+function localizedContent(catalog) {
+  return Object.fromEntries(localizedSections.map((section) => [section, catalog[section]]));
+}
+
+const canonicalKeys = leafPaths(localizedContent(catalogs.en)).sort();
 
 if (RELEASE_POLICY.mode !== "automated-validation"
   || RELEASE_POLICY.humanReviewRequired !== false
@@ -37,7 +42,7 @@ for (const locale of LOCALE_SPECS) {
     continue;
   }
 
-  const localeKeys = leafPaths({ common: catalog.common, home: catalog.home, privacy: catalog.privacy, support: catalog.support }).sort();
+  const localeKeys = leafPaths(localizedContent(catalog)).sort();
   if (JSON.stringify(localeKeys) !== JSON.stringify(canonicalKeys)) {
     const missing = canonicalKeys.filter((key) => !localeKeys.includes(key));
     const extra = localeKeys.filter((key) => !canonicalKeys.includes(key));

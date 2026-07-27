@@ -1,10 +1,12 @@
 # Burn Rate Coach public site
 
-This repository hosts the public homepage, privacy policy, support guide, example screenshots, and issue tracker for Burn Rate Coach.
+This repository hosts the public homepage, practical usage guides, privacy policy, support guide, example screenshots, and issue tracker for Burn Rate Coach.
 
 It does not contain the Chrome extension source code and does not represent the extension as open source.
 
 - Homepage: https://eersonmez.github.io/burn-rate-coach-site/
+- Usage limits guide: https://eersonmez.github.io/burn-rate-coach-site/how-codex-usage-limits-work.html
+- Quota pacing guide: https://eersonmez.github.io/burn-rate-coach-site/why-codex-quota-runs-out-early.html
 - Privacy: https://eersonmez.github.io/burn-rate-coach-site/privacy.html
 - Support: https://eersonmez.github.io/burn-rate-coach-site/support.html
 - Issues: https://github.com/eersonmez/burn-rate-coach-site/issues

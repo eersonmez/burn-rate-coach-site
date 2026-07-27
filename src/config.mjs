@@ -1,6 +1,7 @@
 export const SITE_ORIGIN = "https://eersonmez.github.io/burn-rate-coach-site";
 
 export const STORE_URL = "https://chromewebstore.google.com/detail/burn-rate-coach/kofionobchfmemihdnjhljplhlppdjmh";
+export const CODEX_HELP_URL = "https://help.openai.com/en/articles/11369540/";
 export const ISSUES_URL = "https://github.com/eersonmez/burn-rate-coach-site/issues";
 export const NEW_ISSUE_URL = `${ISSUES_URL}/new/choose`;
 export const PRIVACY_EMAIL = "burn.rate.coach@gmail.com";
@@ -23,6 +24,8 @@ export const LOCALE_SPECS = Object.freeze([
 
 export const PAGES = Object.freeze([
   { id: "home", fileName: "index.html" },
+  { id: "usageGuide", fileName: "how-codex-usage-limits-work.html" },
+  { id: "pacingGuide", fileName: "why-codex-quota-runs-out-early.html" },
   { id: "privacy", fileName: "privacy.html" },
   { id: "support", fileName: "support.html" }
 ]);
