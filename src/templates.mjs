@@ -141,7 +141,7 @@ function renderHome(locale, catalog) {
           <figure class="gallery-wide"><img src="${asset("dark-overview.png")}" width="1280" height="800" loading="lazy" alt="${escapeHtml(copy.screenshots.items[0].alt)}"><figcaption>${copy.screenshots.items[0].caption}</figcaption></figure>
           <figure class="gallery-wide"><img src="${asset("light-overview.png")}" width="1280" height="800" loading="lazy" alt="${escapeHtml(copy.screenshots.items[1].alt)}"><figcaption>${copy.screenshots.items[1].caption}</figcaption></figure>
           <figure><img src="${asset("early-zero.png")}" width="1280" height="800" loading="lazy" alt="${escapeHtml(copy.screenshots.items[2].alt)}"><figcaption>${copy.screenshots.items[2].caption}</figcaption></figure>
-          <figure><img src="${asset("narrow-cross-window.png")}" width="1280" height="800" loading="lazy" alt="${escapeHtml(copy.screenshots.items[3].alt)}"><figcaption>${copy.screenshots.items[3].caption}</figcaption></figure>
+          <figure><img src="${asset("popup-controls.png")}" width="1280" height="800" loading="lazy" alt="${escapeHtml(copy.screenshots.items[3].alt)}"><figcaption>${copy.screenshots.items[3].caption}</figcaption></figure>
         </div>
       </div>
     </section>

@@ -25,7 +25,7 @@
   </header>
   <nav class="language-nav wrap" aria-label="Dil"><a lang="en" hreflang="en" href="../privacy.html">English</a><a lang="tr" hreflang="tr" aria-current="page" href="../tr/privacy.html">Türkçe</a><a lang="hi" hreflang="hi" href="../hi/privacy.html">हिन्दी</a><a lang="es" hreflang="es" href="../es/privacy.html">Español</a><a lang="ar" hreflang="ar" href="../ar/privacy.html">العربية</a></nav>
   <main id="main" class="document wrap">
-    <span class="eyebrow">Yürürlük tarihi: 16 Temmuz 2026</span>
+    <span class="eyebrow">Yürürlük tarihi: 28 Temmuz 2026</span>
     <h1>Gizlilik politikası özeti</h1>
     <p class="lede">Burn Rate Coach, Codex Analytics kullanım sayfasına tempo yönlendirmesi ekleyen bağımsız bir Chrome uzantısıdır. OpenAI ile bağlantılı değildir ve OpenAI tarafından desteklenmez.</p>
     <aside class="notice translation-summary"><strong>Taslak çeviri</strong><p>Bu özetin akıcı bir insan incelemesine ihtiyacı vardır. Bağlayıcı metin İngilizce politikadır: <a href="../privacy.html">İngilizce gizlilik politikası</a></p></aside>
@@ -33,10 +33,10 @@
     <h2>İşlenen bilgiler</h2>
     <p>Codex Analytics açıkken paketlenmiş bir sayfa köprüsü, sayfa çözümlediğinde sayfanın kendi başarılı kota sonucunu pasif olarak gözlemler. Yalnızca koçluk için gereken kararlı hız sınırı ölçer ve dönem kimliklerine, kullanılan yüzdeye, kota dönemi süresine ve sıfırlanma zamanına doğrudan erişir. İzole uzantı, sonuçları yerel kartlarla yalnızca eşleşen sayısal ilerleme ve sıfırlanma meta verileri üzerinden ilişkilendirir; çevrilmiş etiketleri veya kart sırasını asla kullanmaz. Uzantı gözlem zaman damgasını yanıttan okumak yerine yerel olarak üretir. İsteği başlatmaz, yanıtı klonlamaz veya kendi başına çözümlemez; üstbilgileri, çerezleri, yetkilendirme belirteçlerini ya da diğer kimlik bilgilerini incelemez.</p>
     <p>Sayfanın sonucu e-posta, hesap ve kullanıcı kimlikleri ile plan, kredi ve harcama denetimi alanlarını da içerebilir. Burn Rate Coach bu ilgisiz alanlara erişmez veya bunları sıralamaz; alanları hiçbir zaman köprüden geçirmez, günlüğe kaydetmez, saklamaz ya da göndermez. İstemleri, konuşmaları, kaynak kodunu, parolaları, ödeme kimlik bilgilerini veya API anahtarlarını da okumaz ya da saklamaz.</p>
-    <p>Burn Rate Coach seçtiğiniz ayarları saklar. Yerel geçmiş etkinse zaman damgalı kota yüzdeleri ve sıfırlanma zamanları Chrome’un yerel uzantı deposunda tutulur. 14 günden eski kayıtlar Analytics geçmişi bir sonraki işlediğinde budanır ve her ölçer 10.082 örnekle sınırlandırılır.</p>
+    <p>Burn Rate Coach koçun gösterilip gösterilmediğini, hedef yüzdeyi, uyumluluk durumunu ve otomatik zaman damgalı kota yüzdeleri ile sıfırlanma zamanlarını Chrome’un yerel uzantı deposunda tutar. Tarayıcı sekmesi gizliyken zamanlanmış örnek kaydetmez. 14 günden eski kayıtlar Analytics geçmişi bir sonraki işlediğinde budanır ve her ölçer 10.082 örnekle sınırlandırılır.</p>
 
     <h2>Bilgilerin kullanımı</h2>
-    <p>İzin verilen kota bilgileri yalnızca mevcut tempo konumunu, önerilen eylemi, yerel gidişatı, sıfırlanma anında kalacağı tahmin edilen kotayı ve en son etkin ya da tanınmayan uyumluluk durumunu hesaplamak ve göstermek için kullanılır.</p>
+    <p>İzin verilen kota bilgileri yalnızca mevcut konumu, hedef referansını, yerel gidişatı, sıfırlanmadaki tahmini bakiyeyi veya erken tükenme zamanını, renk sınıflandırmasını ve en son etkin ya da tanınmayan uyumluluk durumunu göstermek için kullanılır. Her ölçer bağımsız değerlendirilir.</p>
 
     <h2>Depolama ve aktarım</h2>
     <p>Ayarlar, uyumluluk durumu ve kota geçmişi cihazınızdaki <code>chrome.storage.local</code> içinde kalır. Burn Rate Coach’un arka ucu yoktur; uzantı verilerini geliştiriciye veya üçüncü taraflara göndermez, analiz ya da reklam SDK’ları kullanmaz ve kullanıcı verisi satmaz.</p>
@@ -46,7 +46,7 @@
     <p>Burn Rate Coach uzantı verilerini üçüncü taraflarla paylaşmaz veya aktarmaz. Verileri reklam, profil oluşturma, kredi değerliliği veya kota temposuyla ilgisiz amaçlar için kullanmaz.</p>
 
     <h2>Denetimleriniz</h2>
-    <p>Chrome Web Mağazası sayfası, yerel kota verisi kullanımını kurulumdan önce açıklar; açılır pencere bunu sade bir dille tekrarlar. <strong>Koçu göster</strong> seçeneğini kapatmak yönlendirmeyi kaldırır ancak sayfa gözlemini ya da uyumluluk denetimlerini durdurmaz. <strong>Yerel tempo geçmişi</strong> kapatıldığında kayıtlı örneklerin toplanması ve kullanımı durur. <strong>Geçmişi temizle</strong> mevcut ve eski kota anlık görüntülerini siler. Uzantıyı kaldırmak yerel uzantı verilerini Chrome üzerinden siler.</p>
+    <p>Chrome Web Mağazası sayfası yerel kota verisi kullanımını kurulumdan önce açıklar; açılır pencere bunu sade bir dille tekrarlar. <strong>Koçu göster</strong> seçeneğini kapatmak arayüzü kaldırır ancak Analytics görünürken sayfa gözlemini, uyumluluk denetimlerini veya otomatik yerel geçmişi durdurmaz. İki tıklamalı <strong>Geçmişi temizle</strong> denetimi mevcut ve eski anlık görüntüleri siler; sonraki taze gözlemler yeni geçmiş oluşturabilir. Uzantıyı kaldırmak yerel uzantı verilerini Chrome üzerinden siler.</p>
 
     <h2>Güvenlik ve politika uyumu</h2>
     <p>Çalıştırılabilir kodun tamamı uzantıyla paketlenir. Sayfa köprüsü izole uzantı bağlamına yalnızca izin verilen kota izdüşümünü gönderir; ham yanıtı iletmez. Burn Rate Coach bilgileri yalnızca açıklanan tek amacı için kullanır ve Chrome Web Mağazası Kullanıcı Verileri Politikası’nın Sınırlı Kullanım koşullarına uyar.</p>

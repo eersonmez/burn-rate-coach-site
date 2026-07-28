@@ -22,13 +22,13 @@ export default {
     independentLong: "Burn Rate Coach bağımsız bir uzantıdır; OpenAI ile bağlantılı değildir ve OpenAI tarafından desteklenmez."
   },
   home: {
-    metaDescription: "Burn Rate Coach, Codex kota sınırlarını telemetri olmadan, yerel olarak net kullanım temposu önerilerine ve sıfırlanma tahminlerine dönüştürür.",
-    title: "Burn Rate Coach — Codex kotanı dengeli kullan",
+    metaDescription: "Her Codex kotasının sıfırlamaya kadar nereye gittiğini yerel tahminlerle görün; hiçbir şey cihazınızdan çıkmaz.",
+    title: "Burn Rate Coach — her Codex kotasının nereye gittiğini görün",
     hero: {
       eyebrow: "Ücretsiz Chrome uzantısı · Yerel kullanım için tasarlandı",
-      headlinePrimary: "Ne zaman yavaşlayacağını bil.",
-      headlineSecondary: "Ne zaman daha fazlasını kullanabileceğini de.",
-      lede: "Burn Rate Coach, Codex kota yüzdelerini net bir tempo kararına, ideal-an göstergesine ve bir sonraki sıfırlanma tahminine dönüştürür.",
+      headlinePrimary: "Her kotanın nereye gittiğini görün.",
+      headlineSecondary: "Sıfırlanmadan önce.",
+      lede: "Burn Rate Coach, desteklenen her Codex kullanım kartına tek bir tahmini sonuç ve küçük bir yerel gidişat ekler.",
       storeCta: "Chrome Web Mağazası’ndan edinin",
       examplesCta: "Örnek verileri gör",
       privacyHighlightsLabel: "Gizlilik özellikleri",
@@ -39,12 +39,12 @@ export default {
     },
     features: {
       eyebrow: "Bir bakışta yararlı",
-      heading: "Bir yüzde, karara dönüşür.",
-      intro: "Başka bir panel açmadan bugünkü konumunun ve son kullanım hızının kalan süreye nasıl uyduğunu gör.",
+      heading: "Her kartta tek sonuç.",
+      intro: "Başka bir panel açmadan sıfırlamadaki tahmini bakiyeyi veya erken tükenme zamanını görün.",
       items: [
-        { heading: "Net yönlendirme", body: "Yavaşla, Tempoya uygun, Kullanım payı var veya Bekle—mevcut konuma ve gidişata göre. Daha uzun dönemli sınırlar aynı havuzdaki kısa dönemleri korur." },
-        { heading: "Dürüst tahminler", body: "Tahminler, Analytics açıkken gözlenen dilden bağımsız kota etkinliğini ve isteğe bağlı yerel gözlemleri kullanır; düşük güveni yaklaşık işaretiyle belirtir ve negatif kota göstermek yerine sıfırda biter." },
-        { heading: "Senin hedefin", body: "Dönem sonu rezervini ve toleransını seç veya yerel geçmişi duraklat. Açılır pencere ayarları hemen kaydedilir ve açık ya da koyu modda çalışır." }
+        { heading: "Önce sonuç", body: "Her ölçer, sıfırlamadaki tahmini bakiyesini veya ne zaman sıfıra ulaşabileceğini bağımsız gösterir. Kartlar birbirini geçersiz kılmaz." },
+        { heading: "Hedef ayrı kalır", body: "Tahmini gözlenen kullanım belirler. Hedefiniz yalnızca yolu sabit koridora göre renklendiren sessiz bir referanstır." },
+        { heading: "Tek ayar", body: "Dönem sonu hedefini seçin. Sınırlı 14 günlük geçmiş otomatiktir, cihazınızda kalır ve açılır pencereden silinebilir." }
       ]
     },
     screenshots: {
@@ -52,17 +52,17 @@ export default {
       heading: "Gerçek arayüz. Sentetik örnek veri.",
       intro: "Bu görseller, üretim uzantısı kodunu özel ve yapısal olarak gerçeğe uygun bir test düzeneğinde çalıştırır. Burada hiçbir hesap verisi bulunmaz.",
       items: [
-        { alt: "Dört sentetik Codex kota kartı ve tempo yönlendirmesi içeren koyu tema görünümü", caption: "Koyu görünüm · dönemler arası koruma" },
-        { alt: "Dört sentetik Codex kota kartı ve tempo yönlendirmesi içeren açık tema görünümü", caption: "Açık görünüm · okunabilir durum kontrastı" },
+        { alt: "Sıfırlamadaki tahmini bakiyeyi gösteren koyu temalı sentetik Codex kota kartı", caption: "Bir bakışta sonuç" },
+        { alt: "Gözlemleri, hedefi ve tahmini gösteren açık temalı sentetik Codex kota kartı", caption: "Açıkta da koyuda da okunaklı" },
         { alt: "Sıfırlanmadan önce sıfıra inen tahmini gösteren sentetik durum", caption: "Erken sıfır tahmini" },
-        { alt: "Haftalık kotanın kısa dönem önerisini sınırladığı dar düzen", caption: "Dar düzen · haftalık denetleyici" }
+        { alt: "Tek hedef ayarı ve otomatik yerel geçmiş içeren Burn Rate Coach açılır penceresi", caption: "Tek ayar · otomatik yerel geçmiş" }
       ]
     },
     private: {
       eyebrow: "Gizlilik odaklı tasarım",
       heading: "Kota verilerin Chrome’da kalır.",
       body: [
-        "Codex Analytics açıkken Burn Rate Coach, sayfa okuduğunda sayfanın başarıyla çözümlediği kota sonucunu pasif olarak gözlemler. Yalnızca koçluk için gereken kararlı ölçer ve dönem kimliklerine, kullanılan yüzdeye, dönem süresine ve sıfırlanma zamanına erişir. Gözlem zamanını yerel olarak üretir ve sonuçları yerel kartlarla yalnızca eşleşen sayısal ilerleme ve sıfırlanma meta verileri üzerinden ilişkilendirir; çevrilmiş etiketleri veya kart sırasını asla kullanmaz. Ayarlar ve isteğe bağlı anlık görüntüler <code>chrome.storage.local</code> içinde kalır.",
+        "Codex Analytics açıkken Burn Rate Coach, sayfa okuduğunda sayfanın başarıyla çözümlediği kota sonucunu pasif olarak gözlemler. Yalnızca tahmin için gereken kararlı ölçer ve dönem kimliklerine, kullanılan yüzdeye, dönem süresine ve sıfırlanma zamanına erişir. Gözlem zamanını yerel olarak üretir ve sonuçları yerel kartlarla yalnızca eşleşen sayısal ilerleme ve sıfırlanma meta verileri üzerinden ilişkilendirir; çevrilmiş etiketleri veya kart sırasını asla kullanmaz. Ayarlar ve otomatik sınırlı anlık görüntüler <code>chrome.storage.local</code> içinde kalır.",
         "Ek bir ağ isteği başlatmaz; yanıtı klonlamaz veya kendi başına çözümlemez, çerezleri ya da yetkilendirme üstbilgilerini incelemez, kota verisi göndermez ve hesap, e-posta, plan, kredi ya da harcama denetimi alanlarına erişmez. Arka uç, telemetri, reklam, uzaktan kod veya Burn Rate Coach hesap sistemi yoktur."
       ],
       policyLink: "Gizlilik politikasını oku"
@@ -71,9 +71,9 @@ export default {
       eyebrow: "Sınırları bil",
       heading: "Bir koçtur, garanti değil.",
       items: [
-        "Geçmiş yalnızca Analytics sayfası açıkken gözlenir.",
+        "Otomatik geçmiş yalnızca Analytics sayfası açık ve görünürken gözlenir; gizli sekmelerde zamanlanmış örnek kaydedilmez.",
         "Yüzde puanları görev, token, mesaj veya dakika değildir.",
-        "Tahminler daha yoğun ya da hafif kullanım dönemlerinden sonra değişebilir.",
+        "Tahminler model tabanlıdır, garanti değildir ve gerçek kullanım geçmişleri üzerinde ampirik olarak kalibre edilmemiştir.",
         "Kota toplama Codex arayüz dilinden bağımsızdır; koç arayüzü İngilizce, Türkçe, Hintçe, İspanyolca ve Arapçayı destekler."
       ]
     },
@@ -124,11 +124,11 @@ export default {
     cta: "Burn Rate Coach’u edinin"
   },
   pacingGuide: {
-    metaDescription: "Codex kotasının neden sıfırlanmadan önce bitebildiği ve değişken ajan işlerini tablo kullanmadan dengelemenin sade bir yolu.",
-    title: "Codex kotası neden erken biter — Burn Rate Coach",
+    metaDescription: "Codex kota tahminini okumak, hedefi ayrı tutmak ve yerel model kanıtını anlamak için rehber.",
+    title: "Codex kota tahmini nasıl okunur — Burn Rate Coach",
     eyebrow: "Pratik tempo rehberi",
-    heading: "Codex kotası neden erken biter",
-    lede: "Erken bitiş çoğunlukla zamanlama sorunudur; mevcut yüzdeyi anlamamak değildir. İş yükü değişir ve bir bakiye, kalan süreyi tek başına anlatmaz.",
+    heading: "Kota tahmini nasıl okunur",
+    lede: "Mevcut bakiye kotanın şimdi nerede olduğunu söyler. Betimleyici tahmin, sıfırlamada nerede olabileceğini veya ne zaman sıfıra ulaşabileceğini kestirir.",
     sections: [
       {
         heading: "Erken yoğun kullanım gerçek tempoyu gizler",
@@ -145,28 +145,28 @@ export default {
         ]
       },
       {
-        heading: "Daha uzun dönemler hâlâ önemlidir",
+        heading: "Her dönemi bağımsız okuyun",
         paragraphs: [
-          "Sayfa birden fazla sınır gösterdiğinde, yakın dönem bakiyesi rahatken daha uzun bir sıfırlanma döneminde veya ortak havuzda baskı olabilir.",
-          "Daha dengeli karar, kısıtlı bakiyeyi korur. Uygulanan başka bir sınır önce sıfıra ulaşıyorsa tek bir karttaki boşluk işe yaramaz."
+          "Sayfa birden fazla sınır gösterdiğinde her kartın kendi bakiyesi, sıfırlanması, kanıtı ve tahmini sonucu vardır.",
+          "İşiniz için geçerli sonuçları karşılaştırın, ancak bir kartı diğerini denetleyen olarak görmeyin. Farklı dönemler farklı ve uyumlu gerçekler söyleyebilir."
         ]
       },
       {
-        heading: "Küçük bir tempo alışkanlığı",
+        heading: "Hedefi tahminden ayrı tutun",
         paragraphs: [
-          "Görünür sıfırlanma zamanını kullanın, beklenmedik işler için rezerv tutun ve mevcut bakiyeyi yakın tarihli yerel gidişatla karşılaştırın. Yalnızca kanıt gerektiğini gösterdiğinde yavaşlayın.",
-          "Belirsiz kanıt, sahte kesinlik yerine daha yumuşak yönlendirme üretmelidir. Tahmin, geleceği sabitmiş gibi göstermeden ne zaman tekrar bakacağınıza yardımcı olabilir."
+          "Sıfırlamada kalmasını istediğiniz bakiyeyi referans olarak seçin. Bu hedefi değiştirmek tahmini ona doğru çekmemelidir; kestirimi yalnızca gözlenen kullanım belirler.",
+          "Belirsiz kanıt sahte kesinlik yerine daha yumuşak veya nötr bir renk üretmelidir. Dağılım model tabanlıdır ve gerçek kullanım geçmişlerinde ampirik olarak kalibre edilmemiştir."
         ]
       }
     ],
     sourceLabel: "OpenAI’ın güncel Codex kullanım rehberini okuyun",
-    productBody: "Burn Rate Coach bu karşılaştırmayı Codex kullanım sayfasında, Chrome içinde yerel olarak yapar. Sıfırlanma anı tahminini gösterir ve düşük güvenli izdüşümleri yaklaşık olarak işaretler.",
+    productBody: "Burn Rate Coach bu karşılaştırmayı Codex kullanım sayfasında, Chrome içinde yerel olarak yapar. Her kartta tek bir betimleyici sonuç gösterir ve hedefi tahminden ayrı tutar.",
     cta: "Yerel koçu ekleyin"
   },
   privacy: {
     metaDescription: "Burn Rate Coach gizlilik politikası özeti.",
     title: "Gizlilik — Burn Rate Coach",
-    effectiveDate: "Yürürlük tarihi: 16 Temmuz 2026",
+    effectiveDate: "Yürürlük tarihi: 28 Temmuz 2026",
     heading: "Gizlilik politikası özeti",
     lede: "Burn Rate Coach, Codex Analytics kullanım sayfasına tempo yönlendirmesi ekleyen bağımsız bir Chrome uzantısıdır. OpenAI ile bağlantılı değildir ve OpenAI tarafından desteklenmez.",
     canonicalNotice: {
@@ -180,13 +180,13 @@ export default {
         paragraphs: [
           "Codex Analytics açıkken paketlenmiş bir sayfa köprüsü, sayfa çözümlediğinde sayfanın kendi başarılı kota sonucunu pasif olarak gözlemler. Yalnızca koçluk için gereken kararlı hız sınırı ölçer ve dönem kimliklerine, kullanılan yüzdeye, kota dönemi süresine ve sıfırlanma zamanına doğrudan erişir. İzole uzantı, sonuçları yerel kartlarla yalnızca eşleşen sayısal ilerleme ve sıfırlanma meta verileri üzerinden ilişkilendirir; çevrilmiş etiketleri veya kart sırasını asla kullanmaz. Uzantı gözlem zaman damgasını yanıttan okumak yerine yerel olarak üretir. İsteği başlatmaz, yanıtı klonlamaz veya kendi başına çözümlemez; üstbilgileri, çerezleri, yetkilendirme belirteçlerini ya da diğer kimlik bilgilerini incelemez.",
           "Sayfanın sonucu e-posta, hesap ve kullanıcı kimlikleri ile plan, kredi ve harcama denetimi alanlarını da içerebilir. Burn Rate Coach bu ilgisiz alanlara erişmez veya bunları sıralamaz; alanları hiçbir zaman köprüden geçirmez, günlüğe kaydetmez, saklamaz ya da göndermez. İstemleri, konuşmaları, kaynak kodunu, parolaları, ödeme kimlik bilgilerini veya API anahtarlarını da okumaz ya da saklamaz.",
-          "Burn Rate Coach seçtiğiniz ayarları saklar. Yerel geçmiş etkinse zaman damgalı kota yüzdeleri ve sıfırlanma zamanları Chrome’un yerel uzantı deposunda tutulur. 14 günden eski kayıtlar Analytics geçmişi bir sonraki işlediğinde budanır ve her ölçer 10.082 örnekle sınırlandırılır."
+          "Burn Rate Coach koçun gösterilip gösterilmediğini, hedef yüzdeyi, uyumluluk durumunu ve otomatik zaman damgalı kota yüzdeleri ile sıfırlanma zamanlarını Chrome’un yerel uzantı deposunda tutar. Tarayıcı sekmesi gizliyken zamanlanmış örnek kaydetmez. 14 günden eski kayıtlar Analytics geçmişi bir sonraki işlediğinde budanır ve her ölçer 10.082 örnekle sınırlandırılır."
         ]
       },
       {
         heading: "Bilgilerin kullanımı",
         paragraphs: [
-          "İzin verilen kota bilgileri yalnızca mevcut tempo konumunu, önerilen eylemi, yerel gidişatı, sıfırlanma anında kalacağı tahmin edilen kotayı ve en son etkin ya da tanınmayan uyumluluk durumunu hesaplamak ve göstermek için kullanılır."
+          "İzin verilen kota bilgileri yalnızca mevcut konumu, hedef referansını, yerel gidişatı, sıfırlanmadaki tahmini bakiyeyi veya erken tükenme zamanını, renk sınıflandırmasını ve en son etkin ya da tanınmayan uyumluluk durumunu göstermek için kullanılır. Her ölçer bağımsız değerlendirilir."
         ]
       },
       {
@@ -205,7 +205,7 @@ export default {
       {
         heading: "Denetimleriniz",
         paragraphs: [
-          "Chrome Web Mağazası sayfası, yerel kota verisi kullanımını kurulumdan önce açıklar; açılır pencere bunu sade bir dille tekrarlar. <strong>Koçu göster</strong> seçeneğini kapatmak yönlendirmeyi kaldırır ancak sayfa gözlemini ya da uyumluluk denetimlerini durdurmaz. <strong>Yerel tempo geçmişi</strong> kapatıldığında kayıtlı örneklerin toplanması ve kullanımı durur. <strong>Geçmişi temizle</strong> mevcut ve eski kota anlık görüntülerini siler. Uzantıyı kaldırmak yerel uzantı verilerini Chrome üzerinden siler."
+          "Chrome Web Mağazası sayfası yerel kota verisi kullanımını kurulumdan önce açıklar; açılır pencere bunu sade bir dille tekrarlar. <strong>Koçu göster</strong> seçeneğini kapatmak arayüzü kaldırır ancak Analytics görünürken sayfa gözlemini, uyumluluk denetimlerini veya otomatik yerel geçmişi durdurmaz. İki tıklamalı <strong>Geçmişi temizle</strong> denetimi mevcut ve eski anlık görüntüleri siler; sonraki taze gözlemler yeni geçmiş oluşturabilir. Uzantıyı kaldırmak yerel uzantı verilerini Chrome üzerinden siler."
         ]
       },
       {
@@ -263,9 +263,10 @@ export default {
     limitations: {
       heading: "Bilinen sınırlamalar",
       items: [
-        "Geçmiş yalnızca Analytics açıkken toplanır.",
-        "Sayfa kapalıyken gerçekleşen etkinlik gözlemler arasında boşluk olarak görünür.",
+        "Otomatik geçmiş yalnızca Analytics açık ve görünürken toplanır; gizli sekme zamanlanmış örnek kaydetmez.",
+        "Sayfa kapalıyken gerçekleşen etkinlik yalnızca gözlemler arasında boşluk olarak görünür.",
         "14 günden eski kayıtlar Analytics geçmişi bir sonraki işlediğinde budanır; her ölçer 10.082 örnekle sınırlandırılır ve etkin olmayan kurulumlarda eski yerel veriler temizlemeye veya kaldırmaya kadar kalabilir.",
+        "Tahmin dağılımları model tabanlıdır ve gerçek kullanım geçmişlerinde ampirik olarak kalibre edilmemiştir.",
         "Kota çıkarımı dilden bağımsızdır; koç arayüzü İngilizce, Türkçe, Hintçe, İspanyolca ve Arapçayı destekler.",
         "Codex yanıtı veya arayüzündeki değişiklikler kartların tanınmasını geçici olarak engelleyebilir.",
         "Paketlenmemiş kurulum ile Chrome Web Mağazası kurulumu farklı uzantı depolama kimlikleri kullanır."

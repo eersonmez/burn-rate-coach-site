@@ -109,6 +109,47 @@ for (const locale of LOCALE_SPECS) {
   }
 }
 
+if (releaseMode) {
+  const currentCopy = JSON.stringify(catalogs);
+  for (const removedClaim of [
+    /optional local observations/i,
+    /choose an end-of-window reserve and tolerance/i,
+    /local pace history/i,
+    /recommended action/i,
+    /cross-window/i,
+    /weekly controller/i,
+    /observaciones locales opcionales/i,
+    /acción recomendada/i,
+    /isteğe bağlı yerel gözlemleri/i,
+    /önerilen eylemi/i,
+    /वैकल्पिक स्थानीय अवलोकनों/i,
+    /अनुशंसित कार्रवाई/i,
+    /الملاحظات المحلية الاختيارية/i,
+    /الإجراء الموصى به/i
+  ]) {
+    if (removedClaim.test(currentCopy)) errors.push(`current release copy contains removed 1.x claim: ${removedClaim}`);
+  }
+
+  for (const asset of [
+    "assets/dark-overview.png",
+    "assets/early-zero.png",
+    "assets/popup-controls.png",
+    "assets/light-overview.png"
+  ]) {
+    try {
+      await stat(resolve(root, asset));
+    } catch {
+      errors.push(`Missing final 2.0 screenshot asset: ${asset}`);
+    }
+  }
+  try {
+    await stat(resolve(root, "assets/narrow-cross-window.png"));
+    errors.push("Legacy cross-window screenshot asset must not ship.");
+  } catch {
+    // Expected: the 1.x asset is absent.
+  }
+}
+
 if (errors.length) {
   console.error(errors.map((error) => `- ${error}`).join("\n"));
   process.exitCode = 1;

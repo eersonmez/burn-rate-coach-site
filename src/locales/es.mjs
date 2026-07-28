@@ -22,13 +22,13 @@ export default {
     independentLong: "Burn Rate Coach es una extensión independiente; no está afiliada ni respaldada por OpenAI."
   },
   home: {
-    metaDescription: "Burn Rate Coach convierte los límites de cuota de Codex en orientación clara sobre el ritmo y previsiones de reinicio, de forma local y sin telemetría.",
-    title: "Burn Rate Coach — controla el ritmo de tu cuota de Codex",
+    metaDescription: "Vea hacia dónde va cada cuota de Codex al reiniciarse, con previsiones locales y sin que nada salga de su dispositivo.",
+    title: "Burn Rate Coach — vea hacia dónde va cada cuota de Codex",
     hero: {
       eyebrow: "Extensión gratuita para Chrome · Local por diseño",
-      headlinePrimary: "Sabe cuándo reducir el ritmo.",
-      headlineSecondary: "Y cuándo puedes usar más.",
-      lede: "Burn Rate Coach convierte los porcentajes de cuota de Codex en una decisión clara de ritmo, un indicador del nivel ideal actual y una previsión para el próximo reinicio.",
+      headlinePrimary: "Vea hacia dónde va cada cuota.",
+      headlineSecondary: "Antes del reinicio.",
+      lede: "Burn Rate Coach añade un resultado previsto y una trayectoria local compacta a cada tarjeta de uso de Codex compatible.",
       storeCta: "Obtener en Chrome Web Store",
       examplesCta: "Ver datos de ejemplo",
       privacyHighlightsLabel: "Aspectos de privacidad",
@@ -39,12 +39,12 @@ export default {
     },
     features: {
       eyebrow: "Útil de un vistazo",
-      heading: "Un porcentaje se convierte en una decisión.",
-      intro: "Comprueba cómo encajan la posición actual y el ritmo reciente con el tiempo restante, sin abrir otro panel.",
+      heading: "Un resultado por tarjeta.",
+      intro: "Vea el saldo previsto al reinicio o la hora estimada de agotamiento sin abrir otro panel.",
       items: [
-        { heading: "Orientación clara", body: "Reduce el ritmo, Ritmo correcto, Margen o Espera, según la posición y la trayectoria actuales. Los límites de mayor duración protegen los más cortos del mismo conjunto." },
-        { heading: "Previsiones honestas", body: "Las estimaciones usan actividad de cuota independiente del idioma observada mientras Analytics está abierto y observaciones locales opcionales, señalan la baja confianza como aproximada y terminan en cero en vez de insinuar una cuota negativa." },
-        { heading: "Tu objetivo", body: "Elige una reserva al final del periodo y una tolerancia, o pausa el historial local. Los ajustes de la ventana emergente se guardan de inmediato y funcionan en modo claro u oscuro." }
+        { heading: "El resultado primero", body: "Cada medidor muestra de forma independiente el saldo estimado al reinicio o cuándo podría llegar a cero. Ninguna tarjeta anula otra." },
+        { heading: "El objetivo queda aparte", body: "El uso observado determina la previsión. El objetivo es una referencia discreta que solo colorea la ruta frente a un corredor fijo." },
+        { heading: "Un ajuste", body: "Elija el objetivo al final del periodo. El historial limitado de 14 días es automático, queda en este dispositivo y puede borrarse desde la ventana emergente." }
       ]
     },
     screenshots: {
@@ -52,17 +52,17 @@ export default {
       heading: "Interfaz real. Datos de ejemplo sintéticos.",
       intro: "Estas imágenes ejecutan el código de producción de la extensión con un entorno privado y estructuralmente fiel. No contienen datos de ninguna cuenta.",
       items: [
-        { alt: "Vista general en tema oscuro con cuatro tarjetas sintéticas de cuota de Codex y orientación de ritmo", caption: "Vista oscura · protecciones entre periodos" },
-        { alt: "Vista general en tema claro con cuatro tarjetas sintéticas de cuota de Codex y orientación de ritmo", caption: "Vista clara · contraste de estado legible" },
+        { alt: "Tarjeta sintética de cuota de Codex en tema oscuro con saldo previsto al reinicio", caption: "Resultado de un vistazo" },
+        { alt: "Tarjeta sintética de cuota de Codex en tema claro con observaciones, objetivo y previsión", caption: "Legible en claro u oscuro" },
         { alt: "Estado sintético que muestra una previsión que llega a cero antes del reinicio", caption: "Estimación de agotamiento anticipado" },
-        { alt: "Diseño estrecho en el que la cuota semanal limita una recomendación de corto plazo", caption: "Diseño estrecho · control semanal" }
+        { alt: "Ventana emergente de Burn Rate Coach con un objetivo e historial local automático", caption: "Un ajuste · historial local automático" }
       ]
     },
     private: {
       eyebrow: "Privado por diseño",
       heading: "Tu cuota se queda en Chrome.",
       body: [
-        "Mientras Codex Analytics está abierto, Burn Rate Coach observa de forma pasiva el resultado de cuota que la propia página ha decodificado correctamente cuando lo lee. Solo accede a identificadores estables del medidor y del periodo, el porcentaje usado, la duración del periodo y el momento del reinicio necesarios para orientar el ritmo. Genera localmente la hora de observación y asocia los resultados con las tarjetas originales solo mediante metadatos numéricos coincidentes de progreso y reinicio, nunca mediante etiquetas traducidas ni el orden de las tarjetas. Los ajustes y las instantáneas opcionales permanecen en <code>chrome.storage.local</code>.",
+        "Mientras Codex Analytics está abierto, Burn Rate Coach observa de forma pasiva el resultado de cuota que la propia página ha decodificado correctamente cuando lo lee. Solo accede a identificadores estables del medidor y del periodo, el porcentaje usado, la duración del periodo y el momento del reinicio necesarios para la previsión. Genera localmente la hora de observación y asocia los resultados con las tarjetas originales solo mediante metadatos numéricos coincidentes de progreso y reinicio, nunca mediante etiquetas traducidas ni el orden de las tarjetas. Los ajustes y las instantáneas automáticas limitadas permanecen en <code>chrome.storage.local</code>.",
         "No inicia ninguna solicitud de red adicional, no clona ni decodifica la respuesta por separado, no inspecciona cookies ni encabezados de autorización, no transmite datos de cuota ni accede a campos de cuenta, correo, plan, crédito o control de gasto. No existe backend, telemetría, publicidad, código remoto ni sistema de cuentas de Burn Rate Coach."
       ],
       policyLink: "Leer la política de privacidad"
@@ -71,9 +71,9 @@ export default {
       eyebrow: "Conoce los límites",
       heading: "Es una guía, no una garantía.",
       items: [
-        "El historial solo se observa mientras la página Analytics está abierta.",
+        "El historial automático solo se observa mientras Analytics está abierto y visible; las pestañas ocultas no registran muestras programadas.",
         "Los puntos porcentuales no son tareas, tokens, mensajes ni minutos.",
-        "Las previsiones pueden cambiar tras periodos de trabajo más intenso o más ligero.",
+        "Las previsiones son estimaciones basadas en un modelo, no garantías, y no se han calibrado empíricamente con historiales de uso reales.",
         "La recopilación de cuota funciona con cualquier idioma de la interfaz de Codex; la interfaz del coach admite inglés, turco, hindi, español y árabe."
       ]
     },
@@ -124,11 +124,11 @@ export default {
     cta: "Obtener Burn Rate Coach"
   },
   pacingGuide: {
-    metaDescription: "Por qué una cuota de Codex puede agotarse antes del reinicio y una forma sencilla de dosificar trabajo variable sin una hoja de cálculo.",
-    title: "Por qué la cuota de Codex se agota antes — Burn Rate Coach",
+    metaDescription: "Cómo leer una previsión de cuota de Codex, separar el objetivo y entender la evidencia local del modelo.",
+    title: "Cómo leer una previsión de cuota de Codex — Burn Rate Coach",
     eyebrow: "Guía práctica de ritmo",
-    heading: "Por qué la cuota de Codex se agota antes",
-    lede: "Agotarla antes suele ser un problema de tiempo, no de entender el porcentaje actual. La carga cambia y un saldo aislado no dice cuánto tiempo queda.",
+    heading: "Cómo leer una previsión de cuota",
+    lede: "El saldo actual indica dónde está la cuota ahora. Una previsión descriptiva estima dónde podría estar al reinicio o cuándo podría llegar a cero.",
     sections: [
       {
         heading: "Las ráfagas iniciales ocultan el ritmo real",
@@ -145,28 +145,28 @@ export default {
         ]
       },
       {
-        heading: "Las ventanas largas también importan",
+        heading: "Lea cada periodo de forma independiente",
         paragraphs: [
-          "Cuando la página muestra más de un límite, un saldo cercano cómodo puede coexistir con presión en una ventana más larga o en un fondo compartido.",
-          "La decisión más estable protege el saldo restringido. El margen de una tarjeta no sirve si otro límite aplicable llega antes a cero."
+          "Cuando la página muestra más de un límite, cada tarjeta tiene su propio saldo, reinicio, evidencia y resultado previsto.",
+          "Compare los resultados aplicables a su trabajo, pero no trate una tarjeta como control de otra. Distintos periodos pueden expresar hechos distintos y compatibles."
         ]
       },
       {
-        heading: "Un hábito pequeño de dosificación",
+        heading: "Separe el objetivo de la previsión",
         paragraphs: [
-          "Usa el reinicio visible, reserva margen para trabajo imprevisto y compara el saldo con una trayectoria local reciente. Reduce el ritmo solo cuando la evidencia lo indique.",
-          "La evidencia incierta debe producir una guía más suave, no falsa precisión. Una previsión puede indicar cuándo revisar de nuevo sin fingir que el futuro está fijado."
+          "Elija como referencia el saldo que desea conservar al reinicio. Cambiar ese objetivo no debe atraer la previsión: solo el uso observado determina la estimación.",
+          "La evidencia incierta debe producir un color más suave o neutro, no falsa precisión. La distribución se basa en un modelo y no se ha calibrado empíricamente con historiales reales."
         ]
       }
     ],
     sourceLabel: "Lee la guía vigente de OpenAI sobre el uso de Codex",
-    productBody: "Burn Rate Coach hace esta comparación de forma local en Chrome, sobre la página de uso de Codex. Muestra una estimación al reinicio y marca como aproximadas las proyecciones con poca confianza.",
+    productBody: "Burn Rate Coach hace esta comparación de forma local en Chrome, sobre la página de uso de Codex. Muestra un resultado descriptivo por tarjeta y mantiene el objetivo separado de la previsión.",
     cta: "Añadir el guía local"
   },
   privacy: {
     metaDescription: "Resumen de la política de privacidad de Burn Rate Coach.",
     title: "Privacidad — Burn Rate Coach",
-    effectiveDate: "Vigente desde el 16 de julio de 2026",
+    effectiveDate: "Vigente desde el 28 de julio de 2026",
     heading: "Resumen de la política de privacidad",
     lede: "Burn Rate Coach es una extensión independiente de Chrome que añade orientación de ritmo a la página de uso de Codex Analytics. No está afiliada ni respaldada por OpenAI.",
     canonicalNotice: {
@@ -180,13 +180,13 @@ export default {
         paragraphs: [
           "Mientras Codex Analytics está abierto, un puente empaquetado en la página observa de forma pasiva el resultado de cuota correcto de la propia página cuando esta lo decodifica. Solo accede directamente a identificadores estables del medidor y del periodo del límite, el porcentaje usado, la duración del periodo de cuota y el momento del reinicio necesarios para orientar el ritmo. La extensión aislada asocia los resultados con las tarjetas originales solo mediante metadatos numéricos coincidentes de progreso y reinicio; nunca usa etiquetas traducidas ni el orden de las tarjetas. La extensión genera localmente la marca de tiempo de observación en vez de leerla de la respuesta. No inicia la solicitud, no clona ni decodifica la respuesta por separado y no inspecciona encabezados, cookies, tokens de autorización u otras credenciales.",
           "El resultado de la página también puede contener correo, identificadores de cuenta y usuario, información del plan, créditos y campos de control de gasto. Burn Rate Coach no accede ni enumera esos campos ajenos y nunca los transmite mediante el puente, registra, almacena o envía. Tampoco lee ni guarda instrucciones, conversaciones, código fuente, contraseñas, credenciales de pago ni claves de API.",
-          "Burn Rate Coach almacena los ajustes que eliges. Si activas el historial local, los porcentajes de cuota con marca de tiempo y los momentos de reinicio permanecen en el almacenamiento local de la extensión de Chrome. Los registros de más de 14 días se eliminan la siguiente vez que Analytics procesa el historial y cada medidor se limita a 10.082 muestras."
+          "Burn Rate Coach almacena si se muestra el coach, el porcentaje objetivo, el estado de compatibilidad y porcentajes de cuota y reinicios automáticos con marca de tiempo en el almacenamiento local de Chrome. No registra muestras programadas mientras la pestaña está oculta. Los registros de más de 14 días se eliminan la siguiente vez que Analytics procesa el historial y cada medidor se limita a 10.082 muestras."
         ]
       },
       {
         heading: "Uso de la información",
         paragraphs: [
-          "La información de cuota permitida se utiliza únicamente para calcular y mostrar la posición de ritmo actual, la acción recomendada, las trayectorias locales, la cuota prevista al reinicio y el último estado de compatibilidad activo o no reconocido."
+          "La información de cuota permitida se usa solo para mostrar la posición actual, la referencia objetivo, trayectorias locales, el saldo previsto al reinicio o la hora estimada de agotamiento, la clasificación por color y el estado de compatibilidad. Cada medidor se evalúa de forma independiente."
         ]
       },
       {
@@ -205,7 +205,7 @@ export default {
       {
         heading: "Tus controles",
         paragraphs: [
-          "La ficha de Chrome Web Store explica este uso local de los datos de cuota antes de la instalación y el popup lo repite con lenguaje sencillo. Desactivar <strong>Mostrar coach</strong> quita la orientación, pero no detiene la observación de la página ni las comprobaciones de compatibilidad. Desactivar <strong>Historial local de ritmo</strong> detiene la recopilación y el uso de muestras guardadas. <strong>Borrar historial</strong> elimina las instantáneas de cuota actuales y antiguas. Al desinstalar Burn Rate Coach, Chrome elimina sus datos locales."
+          "La ficha de Chrome Web Store explica este uso local antes de la instalación y la ventana emergente lo repite con lenguaje sencillo. Desactivar <strong>Mostrar coach</strong> quita la interfaz, pero no detiene la observación, las comprobaciones ni el historial local automático mientras Analytics está visible. <strong>Borrar historial</strong> elimina las instantáneas actuales y antiguas; observaciones nuevas pueden crear historial después. Al desinstalar Burn Rate Coach, Chrome elimina sus datos locales."
         ]
       },
       {
@@ -263,9 +263,10 @@ export default {
     limitations: {
       heading: "Limitaciones conocidas",
       items: [
-        "El historial solo se recopila mientras Analytics está abierto.",
-        "La actividad con la página cerrada aparece como un intervalo entre observaciones.",
+        "El historial automático solo se recopila mientras Analytics está abierto y visible; una pestaña oculta no registra muestras programadas.",
+        "La actividad con la página cerrada aparece solo como un intervalo entre observaciones.",
         "Los registros de más de 14 días se eliminan cuando Analytics vuelve a procesar el historial; cada medidor se limita a 10.082 muestras y las instalaciones inactivas pueden conservar datos locales antiguos hasta que se borren o desinstalen.",
+        "Las distribuciones previstas se basan en un modelo y no se han calibrado empíricamente con historiales de uso reales.",
         "La extracción de cuota es independiente del idioma; la interfaz del coach admite inglés, turco, hindi, español y árabe.",
         "Los cambios en la respuesta o interfaz de Codex pueden impedir temporalmente el reconocimiento de tarjetas.",
         "Una instalación sin empaquetar y otra desde Chrome Web Store usan identidades de almacenamiento de extensión diferentes."
