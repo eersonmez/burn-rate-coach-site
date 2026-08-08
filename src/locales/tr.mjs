@@ -63,7 +63,7 @@ export default {
       heading: "Kota verilerin Chrome’da kalır.",
       body: [
         "Codex Analytics açıkken Burn Rate Coach, sayfa okuduğunda sayfanın başarıyla çözümlediği kota sonucunu pasif olarak gözlemler. Yalnızca tahmin için gereken kararlı ölçer ve dönem kimliklerine, kullanılan yüzdeye, dönem süresine ve sıfırlanma zamanına erişir. Gözlem zamanını yerel olarak üretir ve sonuçları yerel kartlarla yalnızca eşleşen sayısal ilerleme ve sıfırlanma meta verileri üzerinden ilişkilendirir; çevrilmiş etiketleri veya kart sırasını asla kullanmaz. Ayarlar ve otomatik sınırlı anlık görüntüler <code>chrome.storage.local</code> içinde kalır.",
-        "Ek bir ağ isteği başlatmaz; yanıtı klonlamaz veya kendi başına çözümlemez, çerezleri ya da yetkilendirme üstbilgilerini incelemez, kota verisi göndermez ve hesap, e-posta, plan, kredi ya da harcama denetimi alanlarına erişmez. Arka uç, telemetri, reklam, uzaktan kod veya Burn Rate Coach hesap sistemi yoktur."
+        "Ek bir ağ isteği başlatmaz; yanıtı klonlamaz veya kendi başına çözümlemez, çerezleri ya da yetkilendirme üstbilgilerini incelemez, kota verisi göndermez ve hesap, e-posta, plan, kredi ya da harcama denetimi alanlarına erişmez. Uzantının tek izni <code>storage</code> iznidir. Paketlenmiş iki içerik betiği bildirimi, doğrudan ve SPA girişi için tek bir sınırlı <code>https://chatgpt.com/codex/*</code> eşleşme desenini paylaşır; çalışma zamanı veri işleme ve görüntüleme Analytics ile sınırlıdır. Arka plan bağlamı, arka uç, telemetri, reklam, uzaktan kod veya Burn Rate Coach hesap sistemi yoktur."
       ],
       policyLink: "Gizlilik politikasını oku"
     },
@@ -192,7 +192,7 @@ export default {
       {
         heading: "Depolama ve aktarım",
         paragraphs: [
-          "Ayarlar, uyumluluk durumu ve kota geçmişi cihazınızdaki <code>chrome.storage.local</code> içinde kalır. Burn Rate Coach’un arka ucu yoktur; uzantı verilerini geliştiriciye veya üçüncü taraflara göndermez, analiz ya da reklam SDK’ları kullanmaz ve kullanıcı verisi satmaz.",
+          "Ayarlar, uyumluluk durumu ve kota geçmişi cihazınızdaki <code>chrome.storage.local</code> içinde kalır. Uzantının tek izni <code>storage</code> iznidir. Paketlenmiş iki içerik betiği bildirimi, doğrudan ve SPA girişi için tek bir sınırlı <code>https://chatgpt.com/codex/*</code> eşleşme desenini paylaşır; çalışma zamanı veri işleme ve görüntüleme Analytics ile sınırlıdır ve arka plan bağlamı yoktur. Burn Rate Coach’un arka ucu yoktur; uzantı verilerini geliştiriciye veya üçüncü taraflara göndermez, analiz ya da reklam SDK’ları kullanmaz ve kullanıcı verisi satmaz.",
           "Harici bir destek veya gizlilik bağlantısını seçerseniz Chrome ilgili herkese açık siteyi açar. Burn Rate Coach bağlantıya izleme parametresi eklemez."
         ]
       },

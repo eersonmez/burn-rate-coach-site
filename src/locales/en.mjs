@@ -3,7 +3,7 @@ export default {
     state: "canonical",
     fluentReviewRequired: false,
     reviewedBy: "canonical-source",
-    reviewedAt: "2026-07-28"
+    reviewedAt: "2026-08-08"
   },
   common: {
     skipToContent: "Skip to content",
@@ -63,7 +63,7 @@ export default {
       heading: "Your quota stays in Chrome.",
       body: [
         "While Codex Analytics is open, Burn Rate Coach passively observes the page’s own successfully decoded quota result when the page reads it. It accesses only stable meter and window identifiers, used percentage, window duration, and reset timing needed for the forecast. It generates observation time locally and associates results with native cards only through matching numeric progress and reset metadata—never translated labels or card order. Settings and automatic bounded snapshots remain in <code>chrome.storage.local</code>.",
-        "It does not initiate an additional network request, clone or independently decode the response, inspect cookies or authorization headers, transmit quota data, or access account, email, plan, credit, or spend-control fields. There is no backend, telemetry, advertising, remote code, or Burn Rate Coach account system."
+        "It does not initiate an additional network request, clone or independently decode the response, inspect cookies or authorization headers, transmit quota data, or access account, email, plan, credit, or spend-control fields. The sole extension permission is <code>storage</code>. Two packaged content-script declarations share one bounded <code>https://chatgpt.com/codex/*</code> match pattern for direct and SPA entry; runtime data handling and rendering stay on Analytics. There is no background context, backend, telemetry, advertising, remote code, or Burn Rate Coach account system."
       ],
       policyLink: "Read the privacy policy"
     },
@@ -188,7 +188,7 @@ export default {
       {
         heading: "Storage and transmission",
         paragraphs: [
-          "Settings, compatibility state, and quota history remain in <code>chrome.storage.local</code> on your device. Burn Rate Coach has no backend and does not transmit extension data to the developer or third parties, use analytics or advertising SDKs, or sell user data.",
+          "Settings, compatibility state, and quota history remain in <code>chrome.storage.local</code> on your device. The sole extension permission is <code>storage</code>. Two packaged content-script declarations share one bounded <code>https://chatgpt.com/codex/*</code> match pattern for direct and SPA entry; runtime data handling and rendering stay on Analytics, with no background context. Burn Rate Coach has no backend and does not transmit extension data to the developer or third parties, use analytics or advertising SDKs, or sell user data.",
           "If you choose an external support or privacy link, Chrome opens that public website. The website processes the visit under its own privacy policy. Burn Rate Coach does not append tracking parameters."
         ]
       },

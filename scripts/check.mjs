@@ -70,6 +70,25 @@ for (const locale of LOCALE_SPECS) {
     errors.push(`${locale.code}: translation state must be draft or reviewed`);
   }
 
+  const permissionSurfaces = {
+    home: catalog.home.private.body.join(" "),
+    privacy: catalog.privacy.sections
+      .flatMap((section) => section.paragraphs)
+      .join(" ")
+  };
+  for (const [surface, copy] of Object.entries(permissionSurfaces)) {
+    for (const required of [
+      "<code>storage</code>",
+      "<code>https://chatgpt.com/codex/*</code>",
+      "SPA",
+      "Analytics"
+    ]) {
+      if (!copy.includes(required)) {
+        errors.push(`${locale.code}: ${surface} permission contract is missing ${required}`);
+      }
+    }
+  }
+
   if (releaseMode
     && RELEASE_POLICY.humanReviewRequired
     && locale.code !== "en"

@@ -54,7 +54,7 @@
     <p>La información de cuota permitida se usa solo para mostrar la posición actual, la referencia objetivo, trayectorias locales, el saldo previsto al reinicio o la hora estimada de agotamiento, la clasificación por color y el estado de compatibilidad. Cada medidor se evalúa de forma independiente.</p>
 
     <h2>Almacenamiento y transmisión</h2>
-    <p>Los ajustes, el estado de compatibilidad y el historial de cuota permanecen en <code>chrome.storage.local</code> en tu dispositivo. Burn Rate Coach no tiene backend, no transmite datos de la extensión al desarrollador ni a terceros, no usa SDK de análisis o publicidad y no vende datos de usuario.</p>
+    <p>Los ajustes, el estado de compatibilidad y el historial de cuota permanecen en <code>chrome.storage.local</code> en tu dispositivo. El único permiso de la extensión es <code>storage</code>. Las dos declaraciones de scripts de contenido incluidas comparten un único patrón de coincidencia acotado, <code>https://chatgpt.com/codex/*</code>, para la entrada directa y mediante SPA; el tratamiento de datos y la renderización en tiempo de ejecución se limitan a Analytics y no existe contexto en segundo plano. Burn Rate Coach no tiene backend, no transmite datos de la extensión al desarrollador ni a terceros, no usa SDK de análisis o publicidad y no vende datos de usuario.</p>
     <p>Si eliges un enlace externo de ayuda o privacidad, Chrome abre ese sitio público. Burn Rate Coach no añade parámetros de seguimiento.</p>
 
     <h2>Uso compartido</h2>

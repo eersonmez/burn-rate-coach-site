@@ -53,7 +53,7 @@
     <p>The allowlisted quota information is used only to calculate and display current position, the target reference, local trajectories, projected quota remaining at reset or estimated early-zero time, color classification, and the latest active or unrecognized compatibility state. Each meter is evaluated independently.</p>
 
     <h2>Storage and transmission</h2>
-    <p>Settings, compatibility state, and quota history remain in <code>chrome.storage.local</code> on your device. Burn Rate Coach has no backend and does not transmit extension data to the developer or third parties, use analytics or advertising SDKs, or sell user data.</p>
+    <p>Settings, compatibility state, and quota history remain in <code>chrome.storage.local</code> on your device. The sole extension permission is <code>storage</code>. Two packaged content-script declarations share one bounded <code>https://chatgpt.com/codex/*</code> match pattern for direct and SPA entry; runtime data handling and rendering stay on Analytics, with no background context. Burn Rate Coach has no backend and does not transmit extension data to the developer or third parties, use analytics or advertising SDKs, or sell user data.</p>
     <p>If you choose an external support or privacy link, Chrome opens that public website. The website processes the visit under its own privacy policy. Burn Rate Coach does not append tracking parameters.</p>
 
     <h2>Sharing</h2>
