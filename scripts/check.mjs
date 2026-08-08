@@ -1,9 +1,14 @@
 import { readFile, stat } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { LOCALE_SPECS, PAGES, RELEASE_POLICY } from "../src/config.mjs";
+import { LOCALE_SPECS, PAGES, RELEASE_POLICY, SITE_ORIGIN } from "../src/config.mjs";
 import { catalogs } from "../src/locales/index.mjs";
-import { renderPage } from "../src/templates.mjs";
+import {
+  absolutePageUrl,
+  renderPage,
+  renderRobots,
+  renderSitemap
+} from "../src/templates.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const errors = [];
@@ -84,6 +89,16 @@ for (const locale of LOCALE_SPECS) {
     }
     if (actual !== expected) errors.push(`Stale generated page: ${outputPath}`);
     if (!actual.includes(`<html lang="${locale.htmlLang}" dir="${locale.dir}"`)) errors.push(`${outputPath}: incorrect lang/dir`);
+    const canonicalUrl = absolutePageUrl(locale, page.id);
+    if ((actual.match(/<link rel="canonical"/g) || []).length !== 1
+      || !actual.includes(`<link rel="canonical" href="${canonicalUrl}">`)) {
+      errors.push(`${outputPath}: incorrect canonical URL`);
+    }
+    if (!actual.includes(`<meta property="og:url" content="${canonicalUrl}">`)
+      || !actual.includes(`<meta property="og:image" content="${SITE_ORIGIN}/assets/promo.png">`)
+      || !actual.includes('<meta name="twitter:card" content="summary_large_image">')) {
+      errors.push(`${outputPath}: incomplete social preview metadata`);
+    }
     if (!actual.includes('hreflang="x-default"')) errors.push(`${outputPath}: missing x-default alternate`);
     for (const alternate of LOCALE_SPECS) {
       if (!actual.includes(`hreflang="${alternate.htmlLang}"`)) errors.push(`${outputPath}: missing ${alternate.htmlLang} alternate`);
@@ -107,6 +122,35 @@ for (const locale of LOCALE_SPECS) {
       }
     }
   }
+}
+
+for (const [fileName, expected] of [
+  ["robots.txt", renderRobots()],
+  ["sitemap.xml", renderSitemap()]
+]) {
+  try {
+    const actual = await readFile(resolve(root, fileName), "utf8");
+    if (actual !== expected) errors.push(`Stale generated discovery file: ${fileName}`);
+  } catch {
+    errors.push(`Missing generated discovery file: ${fileName}`);
+  }
+}
+
+try {
+  const sitemap = await readFile(resolve(root, "sitemap.xml"), "utf8");
+  const locCount = (sitemap.match(/<loc>/g) || []).length;
+  if (locCount !== LOCALE_SPECS.length * PAGES.length) {
+    errors.push(`sitemap.xml: expected ${LOCALE_SPECS.length * PAGES.length} URLs, found ${locCount}`);
+  }
+  for (const locale of LOCALE_SPECS) {
+    for (const page of PAGES) {
+      if (!sitemap.includes(`<loc>${absolutePageUrl(locale, page.id)}</loc>`)) {
+        errors.push(`sitemap.xml: missing ${locale.code}/${page.id}`);
+      }
+    }
+  }
+} catch {
+  // The missing-file error above is sufficient.
 }
 
 if (releaseMode) {

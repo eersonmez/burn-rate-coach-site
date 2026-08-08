@@ -12,6 +12,9 @@ It does not contain the Chrome extension source code and does not represent the 
 - Issues: https://github.com/eersonmez/burn-rate-coach-site/issues
 
 The site is framework-free and contains no analytics, forms, cookies, remote scripts, or user tracking.
+Canonical URLs, localized alternates, social preview metadata, `robots.txt`, and
+`sitemap.xml` are generated from the same locale/page configuration as the
+public pages.
 
 ## Localized pages
 

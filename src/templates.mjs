@@ -33,12 +33,25 @@ function alternateHref(fromLocale, targetLocale, pageId) {
   return targetLocale.outputDir ? `${prefix}${targetLocale.outputDir}/${fileName}` : `${prefix}${fileName}`;
 }
 
-function absolutePageUrl(locale, pageId) {
-  const path = locale.outputDir ? `/${locale.outputDir}/${pageById[pageId].fileName}` : `/${pageById[pageId].fileName}`;
-  return `${SITE_ORIGIN}${path}`;
+function canonicalPagePath(locale, pageId) {
+  const localePath = locale.outputDir ? `/${locale.outputDir}` : "";
+  return pageId === "home"
+    ? `${localePath}/`
+    : `${localePath}/${pageById[pageId].fileName}`;
 }
 
-function head(locale, pageId, copy) {
+export function absolutePageUrl(locale, pageId) {
+  return `${SITE_ORIGIN}${canonicalPagePath(locale, pageId)}`;
+}
+
+function head(locale, pageId, catalog) {
+  const copy = catalog[pageId];
+  const canonicalUrl = absolutePageUrl(locale, pageId);
+  const socialImageUrl = `${SITE_ORIGIN}/assets/promo.png`;
+  const socialImageAlt = catalog.home.hero.promoAlt;
+  const socialType = pageId === "usageGuide" || pageId === "pacingGuide"
+    ? "article"
+    : "website";
   const alternates = LOCALE_SPECS.map((target) =>
     `  <link rel="alternate" hreflang="${target.htmlLang}" href="${absolutePageUrl(target, pageId)}">`).join("\n");
   return `<head>
@@ -46,8 +59,23 @@ function head(locale, pageId, copy) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="${escapeHtml(copy.metaDescription)}">
   <meta name="theme-color" content="#0b1020">
+  <meta property="og:site_name" content="Burn Rate Coach">
+  <meta property="og:type" content="${socialType}">
+  <meta property="og:title" content="${escapeHtml(copy.title)}">
+  <meta property="og:description" content="${escapeHtml(copy.metaDescription)}">
+  <meta property="og:url" content="${canonicalUrl}">
+  <meta property="og:image" content="${socialImageUrl}">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="440">
+  <meta property="og:image:height" content="280">
+  <meta property="og:image:alt" content="${escapeHtml(socialImageAlt)}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${escapeHtml(copy.title)}">
+  <meta name="twitter:description" content="${escapeHtml(copy.metaDescription)}">
+  <meta name="twitter:image" content="${socialImageUrl}">
+  <meta name="twitter:image:alt" content="${escapeHtml(socialImageAlt)}">
   <title>${escapeHtml(copy.title)}</title>
-  <link rel="canonical" href="${absolutePageUrl(locale, pageId)}">
+  <link rel="canonical" href="${canonicalUrl}">
 ${alternates}
   <link rel="alternate" hreflang="x-default" href="${absolutePageUrl(LOCALE_SPECS[0], pageId)}">
   <link rel="icon" href="${prefixFor(locale)}assets/logo.svg" type="image/svg+xml">
@@ -100,11 +128,11 @@ function draftComment(catalog) {
     : "<!-- English is the canonical source content. -->";
 }
 
-function documentStart(locale, pageId, catalog, pageCopy) {
+function documentStart(locale, pageId, catalog) {
   return `<!doctype html>
 ${draftComment(catalog)}
 <html lang="${locale.htmlLang}" dir="${locale.dir}" data-translation-status="${catalog.review.state}">
-${head(locale, pageId, pageCopy)}
+${head(locale, pageId, catalog)}
 <body>
   <a class="skip-link" href="#main">${catalog.common.skipToContent}</a>
   ${siteHeader(locale, pageId, catalog.common)}`;
@@ -113,7 +141,7 @@ ${head(locale, pageId, pageCopy)}
 function renderHome(locale, catalog) {
   const copy = catalog.home;
   const asset = (name) => `${prefixFor(locale)}assets/${name}`;
-  return `${documentStart(locale, "home", catalog, copy)}
+  return `${documentStart(locale, "home", catalog)}
 
   <main id="main">
     <section class="hero wrap">
@@ -176,7 +204,7 @@ function renderPrivacy(locale, catalog) {
   const sections = copy.sections.map((section) => `
     <h2>${section.heading}</h2>
 ${paragraphs(section.paragraphs)}`).join("\n");
-  return `${documentStart(locale, "privacy", catalog, copy)}
+  return `${documentStart(locale, "privacy", catalog)}
   <main id="main" class="document wrap">
     <span class="eyebrow">${copy.effectiveDate}</span>
     <h1>${copy.heading}</h1>
@@ -194,7 +222,7 @@ ${sections}
 
 function renderSupport(locale, catalog) {
   const copy = catalog.support;
-  return `${documentStart(locale, "support", catalog, copy)}
+  return `${documentStart(locale, "support", catalog)}
   <main id="main" class="document wrap">
     <span class="eyebrow">${copy.eyebrow}</span>
     <h1>${copy.heading}</h1>
@@ -226,7 +254,7 @@ function renderGuide(locale, pageId, catalog) {
   const sections = copy.sections.map((section) => `
     <h2>${section.heading}</h2>
 ${paragraphs(section.paragraphs)}`).join("\n");
-  return `${documentStart(locale, pageId, catalog, copy)}
+  return `${documentStart(locale, pageId, catalog)}
   <main id="main" class="document wrap">
     <span class="eyebrow">${copy.eyebrow}</span>
     <h1>${copy.heading}</h1>
@@ -249,4 +277,21 @@ export function renderPage(locale, pageId, catalogs) {
   if (pageId === "privacy") return renderPrivacy(locale, catalog);
   if (pageId === "support") return renderSupport(locale, catalog);
   throw new Error(`Unknown page: ${pageId}`);
+}
+
+export function renderSitemap() {
+  const urls = LOCALE_SPECS.flatMap((locale) =>
+    PAGES.map((page) => `  <url><loc>${absolutePageUrl(locale, page.id)}</loc></url>`));
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.join("\n")}
+</urlset>
+`;
+}
+
+export function renderRobots() {
+  return `User-agent: *
+Allow: /
+Sitemap: ${SITE_ORIGIN}/sitemap.xml
+`;
 }

@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://eersonmez.github.io/burn-rate-coach-site/sitemap.xml
