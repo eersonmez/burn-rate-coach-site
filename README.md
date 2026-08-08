@@ -18,7 +18,7 @@ public pages.
 
 ## Localized pages
 
-The root pages are the canonical English content. `tr/`, `hi/`, `es/`, and `ar/` are generated from the reviewable catalogs in `src/locales/`; Arabic is rendered right-to-left. Run `npm run build` after editing a catalog and `npm run check` before committing.
+The root pages are the canonical English content. Turkish (`tr/`), Hindi (`hi/`), Spanish (`es/`), Arabic (`ar/`), French (`fr/`), German (`de/`), Japanese (`ja/`), Brazilian Portuguese (`pt-br/`), and European Portuguese (`pt-pt/`) are generated from the reviewable catalogs in `src/locales/`; Arabic is rendered right-to-left. Each non-English homepage uses its locale-matched rendered extension screenshots from `assets/<locale>/`, while the canonical English homepage keeps the base images in `assets/`. Run `npm run build` after editing a catalog or screenshot mapping and `npm run check` before committing.
 
 Non-English catalogs retain explicit draft or reviewed provenance. The project owner's recorded release policy uses automated structural, safety, link, layout-direction, and generated-output validation; fluent review is optional and draft status does not block publication. `npm run check:release` verifies that waiver and every release contract. See `docs/TRANSLATION-WORKFLOW.md`.
 

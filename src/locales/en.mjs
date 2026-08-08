@@ -74,7 +74,7 @@ export default {
         "Automatic history is observed only while the Analytics page is open and visible; hidden tabs record no scheduled cadence samples.",
         "Percentage points are not tasks, tokens, messages, or minutes.",
         "Projections are model-based estimates, not guarantees, and are not empirically calibrated on real usage histories.",
-        "Quota collection works across Codex interface languages; the coach interface supports English, Turkish, Hindi, Spanish, and Arabic."
+        "Quota collection works across Codex interface languages; the coach interface supports English, Turkish, Hindi, Spanish, Arabic, French, German, Japanese, and Portuguese (Brazil and Portugal)."
       ]
     },
     closing: {
@@ -263,7 +263,7 @@ export default {
         "Closed-page activity appears only as a gap between observations.",
         "Records older than 14 days are pruned the next time Analytics history processing runs; each meter is capped at 10,082 samples, and inactive installs may retain older local bytes until clear or uninstall.",
         "Forecast distributions are model-based and have not been empirically calibrated on real usage histories.",
-        "Quota extraction is locale-independent; the coach interface supports English, Turkish, Hindi, Spanish, and Arabic.",
+        "Quota extraction is locale-independent; the coach interface supports English, Turkish, Hindi, Spanish, Arabic, French, German, Japanese, and Portuguese (Brazil and Portugal).",
         "Codex response or interface changes can temporarily prevent card recognition.",
         "An unpacked install and Chrome Web Store install use different extension storage identities."
       ]

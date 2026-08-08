@@ -1,7 +1,13 @@
 import { readFile, stat } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { LOCALE_SPECS, PAGES, RELEASE_POLICY, SITE_ORIGIN } from "../src/config.mjs";
+import {
+  HOME_SCREENSHOT_SPECS,
+  LOCALE_SPECS,
+  PAGES,
+  RELEASE_POLICY,
+  SITE_ORIGIN
+} from "../src/config.mjs";
 import { catalogs } from "../src/locales/index.mjs";
 import {
   absolutePageUrl,
@@ -31,6 +37,20 @@ function localizedContent(catalog) {
 }
 
 const canonicalKeys = leafPaths(localizedContent(catalogs.en)).sort();
+const screenshotFileNames = HOME_SCREENSHOT_SPECS.map(({ siteFileName }) => siteFileName);
+
+if (HOME_SCREENSHOT_SPECS.length !== catalogs.en.home.screenshots.items.length) {
+  errors.push("home screenshot config must match the canonical screenshot copy slots");
+}
+if (new Set(screenshotFileNames).size !== screenshotFileNames.length) {
+  errors.push("home screenshot site filenames must be unique");
+}
+for (const { sourceFileName, siteFileName } of HOME_SCREENSHOT_SPECS) {
+  if (!/^\d{2}-[a-z0-9-]+\.png$/.test(sourceFileName)
+    || !/^[a-z0-9-]+\.png$/.test(siteFileName)) {
+    errors.push(`invalid home screenshot mapping: ${sourceFileName} -> ${siteFileName}`);
+  }
+}
 
 if (RELEASE_POLICY.mode !== "automated-validation"
   || RELEASE_POLICY.humanReviewRequired !== false
@@ -45,6 +65,18 @@ for (const locale of LOCALE_SPECS) {
   if (!catalog) {
     errors.push(`Missing catalog: ${locale.code}`);
     continue;
+  }
+
+  for (const { siteFileName } of HOME_SCREENSHOT_SPECS) {
+    const assetPath = resolve(root, "assets", locale.outputDir, siteFileName);
+    try {
+      const asset = await stat(assetPath);
+      if (!asset.isFile() || asset.size === 0) {
+        errors.push(`${locale.code}: empty or invalid localized screenshot asset ${assetPath}`);
+      }
+    } catch {
+      errors.push(`${locale.code}: missing localized screenshot asset ${assetPath}`);
+    }
   }
 
   const localeKeys = leafPaths(localizedContent(catalog)).sort();
@@ -122,6 +154,17 @@ for (const locale of LOCALE_SPECS) {
     for (const alternate of LOCALE_SPECS) {
       if (!actual.includes(`hreflang="${alternate.htmlLang}"`)) errors.push(`${outputPath}: missing ${alternate.htmlLang} alternate`);
     }
+    if (page.id === "home") {
+      const screenshotPrefix = locale.outputDir
+        ? `../assets/${locale.outputDir}/`
+        : "assets/";
+      for (const { siteFileName } of HOME_SCREENSHOT_SPECS) {
+        const reference = `${screenshotPrefix}${siteFileName}`;
+        if (!actual.includes(`<img src="${reference}"`)) {
+          errors.push(`${outputPath}: missing locale-matched screenshot reference ${reference}`);
+        }
+      }
+    }
     if (/<(?:script|form|iframe|object|embed|style|base|svg|math|video|audio|source)\b/i.test(actual)) {
       errors.push(`${outputPath}: executable, embedded, or active-content elements are not allowed`);
     }
@@ -193,12 +236,8 @@ if (releaseMode) {
     if (removedClaim.test(currentCopy)) errors.push(`current release copy contains removed 1.x claim: ${removedClaim}`);
   }
 
-  for (const asset of [
-    "assets/dark-overview.png",
-    "assets/early-zero.png",
-    "assets/popup-controls.png",
-    "assets/light-overview.png"
-  ]) {
+  for (const { siteFileName } of HOME_SCREENSHOT_SPECS) {
+    const asset = `assets/${siteFileName}`;
     try {
       await stat(resolve(root, asset));
     } catch {

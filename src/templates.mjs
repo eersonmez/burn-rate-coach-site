@@ -1,5 +1,6 @@
 import {
   CODEX_HELP_URL,
+  HOME_SCREENSHOT_SPECS,
   ISSUES_URL,
   LOCALE_SPECS,
   NEW_ISSUE_URL,
@@ -141,6 +142,10 @@ ${head(locale, pageId, catalog)}
 function renderHome(locale, catalog) {
   const copy = catalog.home;
   const asset = (name) => `${prefixFor(locale)}assets/${name}`;
+  const screenshotAsset = (name) => {
+    const localePath = locale.outputDir ? `${locale.outputDir}/` : "";
+    return `${prefixFor(locale)}assets/${localePath}${name}`;
+  };
   return `${documentStart(locale, "home", catalog)}
 
   <main id="main">
@@ -166,10 +171,11 @@ function renderHome(locale, catalog) {
       <div class="wrap">
         <div class="section-heading"><span class="eyebrow">${copy.screenshots.eyebrow}</span><h2>${copy.screenshots.heading}</h2><p>${copy.screenshots.intro}</p></div>
         <div class="gallery">
-          <figure class="gallery-wide"><img src="${asset("dark-overview.png")}" width="1280" height="800" loading="lazy" alt="${escapeHtml(copy.screenshots.items[0].alt)}"><figcaption>${copy.screenshots.items[0].caption}</figcaption></figure>
-          <figure class="gallery-wide"><img src="${asset("light-overview.png")}" width="1280" height="800" loading="lazy" alt="${escapeHtml(copy.screenshots.items[1].alt)}"><figcaption>${copy.screenshots.items[1].caption}</figcaption></figure>
-          <figure><img src="${asset("early-zero.png")}" width="1280" height="800" loading="lazy" alt="${escapeHtml(copy.screenshots.items[2].alt)}"><figcaption>${copy.screenshots.items[2].caption}</figcaption></figure>
-          <figure><img src="${asset("popup-controls.png")}" width="1280" height="800" loading="lazy" alt="${escapeHtml(copy.screenshots.items[3].alt)}"><figcaption>${copy.screenshots.items[3].caption}</figcaption></figure>
+          ${HOME_SCREENSHOT_SPECS.map((screenshot, index) => {
+            const item = copy.screenshots.items[index];
+            const className = screenshot.wide ? ' class="gallery-wide"' : "";
+            return `<figure${className}><img src="${screenshotAsset(screenshot.siteFileName)}" width="1280" height="800" loading="lazy" alt="${escapeHtml(item.alt)}"><figcaption>${item.caption}</figcaption></figure>`;
+          }).join("\n          ")}
         </div>
       </div>
     </section>

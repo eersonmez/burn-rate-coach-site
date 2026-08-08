@@ -19,8 +19,20 @@ export const LOCALE_SPECS = Object.freeze([
   { code: "tr", htmlLang: "tr", dir: "ltr", label: "Türkçe", outputDir: "tr" },
   { code: "hi", htmlLang: "hi", dir: "ltr", label: "हिन्दी", outputDir: "hi" },
   { code: "es", htmlLang: "es", dir: "ltr", label: "Español", outputDir: "es" },
-  { code: "ar", htmlLang: "ar", dir: "rtl", label: "العربية", outputDir: "ar" }
+  { code: "ar", htmlLang: "ar", dir: "rtl", label: "العربية", outputDir: "ar" },
+  { code: "fr", htmlLang: "fr", dir: "ltr", label: "Français", outputDir: "fr" },
+  { code: "de", htmlLang: "de", dir: "ltr", label: "Deutsch", outputDir: "de" },
+  { code: "ja", htmlLang: "ja", dir: "ltr", label: "日本語", outputDir: "ja" },
+  { code: "pt_BR", htmlLang: "pt-BR", dir: "ltr", label: "Português (Brasil)", outputDir: "pt-br" },
+  { code: "pt_PT", htmlLang: "pt-PT", dir: "ltr", label: "Português (Portugal)", outputDir: "pt-pt" }
 ]);
+
+export const HOME_SCREENSHOT_SPECS = Object.freeze([
+  { sourceFileName: "01-outcome-at-a-glance.png", siteFileName: "dark-overview.png", wide: true },
+  { sourceFileName: "05-light-theme.png", siteFileName: "light-overview.png", wide: true },
+  { sourceFileName: "02-early-zero.png", siteFileName: "early-zero.png", wide: false },
+  { sourceFileName: "04-one-setting-local-history.png", siteFileName: "popup-controls.png", wide: false }
+].map((spec) => Object.freeze(spec)));
 
 export const PAGES = Object.freeze([
   { id: "home", fileName: "index.html" },

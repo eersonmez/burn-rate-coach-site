@@ -74,7 +74,7 @@ export default {
         "Otomatik geçmiş yalnızca Analytics sayfası açık ve görünürken gözlenir; gizli sekmelerde zamanlanmış örnek kaydedilmez.",
         "Yüzde puanları görev, token, mesaj veya dakika değildir.",
         "Tahminler model tabanlıdır, garanti değildir ve gerçek kullanım geçmişleri üzerinde ampirik olarak kalibre edilmemiştir.",
-        "Kota toplama Codex arayüz dilinden bağımsızdır; koç arayüzü İngilizce, Türkçe, Hintçe, İspanyolca ve Arapçayı destekler."
+        "Kota toplama Codex arayüz dilinden bağımsızdır; koç arayüzü İngilizce, Türkçe, Hintçe, İspanyolca, Arapça, Fransızca, Almanca, Japonca ve Portekizceyi (Brezilya ve Portekiz) destekler."
       ]
     },
     closing: {
@@ -267,7 +267,7 @@ export default {
         "Sayfa kapalıyken gerçekleşen etkinlik yalnızca gözlemler arasında boşluk olarak görünür.",
         "14 günden eski kayıtlar Analytics geçmişi bir sonraki işlediğinde budanır; her ölçer 10.082 örnekle sınırlandırılır ve etkin olmayan kurulumlarda eski yerel veriler temizlemeye veya kaldırmaya kadar kalabilir.",
         "Tahmin dağılımları model tabanlıdır ve gerçek kullanım geçmişlerinde ampirik olarak kalibre edilmemiştir.",
-        "Kota çıkarımı dilden bağımsızdır; koç arayüzü İngilizce, Türkçe, Hintçe, İspanyolca ve Arapçayı destekler.",
+        "Kota çıkarımı dilden bağımsızdır; koç arayüzü İngilizce, Türkçe, Hintçe, İspanyolca, Arapça, Fransızca, Almanca, Japonca ve Portekizceyi (Brezilya ve Portekiz) destekler.",
         "Codex yanıtı veya arayüzündeki değişiklikler kartların tanınmasını geçici olarak engelleyebilir.",
         "Paketlenmemiş kurulum ile Chrome Web Mağazası kurulumu farklı uzantı depolama kimlikleri kullanır."
       ]

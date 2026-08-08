@@ -74,7 +74,7 @@ export default {
         "El historial automático solo se observa mientras Analytics está abierto y visible; las pestañas ocultas no registran muestras programadas.",
         "Los puntos porcentuales no son tareas, tokens, mensajes ni minutos.",
         "Las previsiones son estimaciones basadas en un modelo, no garantías, y no se han calibrado empíricamente con historiales de uso reales.",
-        "La recopilación de cuota funciona con cualquier idioma de la interfaz de Codex; la interfaz del coach admite inglés, turco, hindi, español y árabe."
+        "La recopilación de cuota funciona con cualquier idioma de la interfaz de Codex; la interfaz del coach admite inglés, turco, hindi, español, árabe, francés, alemán, japonés y portugués (Brasil y Portugal)."
       ]
     },
     closing: {
@@ -267,7 +267,7 @@ export default {
         "La actividad con la página cerrada aparece solo como un intervalo entre observaciones.",
         "Los registros de más de 14 días se eliminan cuando Analytics vuelve a procesar el historial; cada medidor se limita a 10.082 muestras y las instalaciones inactivas pueden conservar datos locales antiguos hasta que se borren o desinstalen.",
         "Las distribuciones previstas se basan en un modelo y no se han calibrado empíricamente con historiales de uso reales.",
-        "La extracción de cuota es independiente del idioma; la interfaz del coach admite inglés, turco, hindi, español y árabe.",
+        "La extracción de cuota es independiente del idioma; la interfaz del coach admite inglés, turco, hindi, español, árabe, francés, alemán, japonés y portugués (Brasil y Portugal).",
         "Los cambios en la respuesta o interfaz de Codex pueden impedir temporalmente el reconocimiento de tarjetas.",
         "Una instalación sin empaquetar y otra desde Chrome Web Store usan identidades de almacenamiento de extensión diferentes."
       ]
