@@ -17,30 +17,30 @@ export default {
     mainNavigation: "Navegación principal",
     footerNavigation: "Navegación del pie",
     languageNavigation: "Idioma",
-    brandHome: "Inicio de Burn Rate Coach",
-    independentShort: "Burn Rate Coach es independiente y no está respaldado por OpenAI.",
-    independentLong: "Burn Rate Coach es una extensión independiente; no está afiliada ni respaldada por OpenAI."
+    brandHome: "Inicio de Codex Limit Coach",
+    independentShort: "Codex Limit Coach es independiente y no está respaldado por OpenAI.",
+    independentLong: "Codex Limit Coach es una extensión independiente; no está afiliada ni respaldada por OpenAI."
   },
   home: {
     metaDescription: "Vea hacia dónde va cada cuota de Codex al reiniciarse, con previsiones locales y sin que nada salga de su dispositivo.",
-    title: "Burn Rate Coach — vea hacia dónde va cada cuota de Codex",
+    title: "Codex Limit Coach — vea hacia dónde va cada cuota de Codex",
     hero: {
       eyebrow: "Extensión gratuita para Chrome · Local por diseño",
       headlinePrimary: "Vea hacia dónde va cada cuota.",
       headlineSecondary: "Antes del reinicio.",
-      lede: "Burn Rate Coach añade un resultado previsto y una trayectoria local compacta a cada tarjeta de uso de Codex compatible.",
+      lede: "¿Tu cuota de Codex durará hasta el reinicio? Codex Limit Coach muestra el saldo estimado al reinicio o cuándo podría llegar a cero, junto a cada tarjeta de cuota compatible en Codex Analytics.",
       storeCta: "Obtener en Chrome Web Store",
       examplesCta: "Ver datos de ejemplo",
       privacyHighlightsLabel: "Aspectos de privacidad",
-      noAccount: "Sin cuenta de Burn Rate Coach",
+      noAccount: "Sin cuenta de Codex Limit Coach",
       noTelemetry: "Sin telemetría",
       storagePermission: "Solo permiso de almacenamiento",
-      promoAlt: "Ilustración del medidor y la trayectoria de ritmo de Burn Rate Coach"
+      promoAlt: "Ilustración del medidor y la trayectoria de ritmo de Codex Limit Coach"
     },
     features: {
       eyebrow: "Útil de un vistazo",
       heading: "Un resultado por tarjeta.",
-      intro: "Vea el saldo previsto al reinicio o la hora estimada de agotamiento sin abrir otro panel.",
+      intro: "1. Instala la extensión y abre su ventana emergente. 2. Selecciona “Abrir uso de Codex” e inicia sesión si es necesario. 3. Consulta el pronóstico junto a las tarjetas compatibles. Si Analytics ya estaba abierto al instalar, recarga la página una vez.",
       items: [
         { heading: "El resultado primero", body: "Cada medidor muestra de forma independiente el saldo estimado al reinicio o cuándo podría llegar a cero. Ninguna tarjeta anula otra." },
         { heading: "El objetivo queda aparte", body: "El uso observado determina la previsión. El objetivo es una referencia discreta que solo colorea la ruta frente a un corredor fijo." },
@@ -50,20 +50,20 @@ export default {
     screenshots: {
       eyebrow: "Generado por la extensión",
       heading: "Interfaz real. Datos de ejemplo sintéticos.",
-      intro: "Estas imágenes ejecutan el código de producción de la extensión con un entorno privado y estructuralmente fiel. No contienen datos de ninguna cuenta.",
+      intro: "1. Instala la extensión y abre su ventana emergente. 2. Selecciona “Abrir uso de Codex” e inicia sesión si es necesario. 3. Consulta el pronóstico junto a las tarjetas compatibles. Si Analytics ya estaba abierto al instalar, recarga la página una vez.",
       items: [
         { alt: "Tarjeta sintética de cuota de Codex en tema oscuro con saldo previsto al reinicio", caption: "Resultado de un vistazo" },
         { alt: "Tarjeta sintética de cuota de Codex en tema claro con observaciones, objetivo y previsión", caption: "Legible en claro u oscuro" },
         { alt: "Estado sintético que muestra una previsión que llega a cero antes del reinicio", caption: "Estimación de agotamiento anticipado" },
-        { alt: "Ventana emergente de Burn Rate Coach con un objetivo e historial local automático", caption: "Un ajuste · historial local automático" }
+        { alt: "Ventana emergente de Codex Limit Coach con un objetivo e historial local automático", caption: "Un ajuste · historial local automático" }
       ]
     },
     private: {
       eyebrow: "Privado por diseño",
       heading: "Tu cuota se queda en Chrome.",
       body: [
-        "Mientras Codex Analytics está abierto, Burn Rate Coach observa de forma pasiva el resultado de cuota que la propia página ha decodificado correctamente cuando lo lee. Solo accede a identificadores estables del medidor y del periodo, el porcentaje usado, la duración del periodo y el momento del reinicio necesarios para la previsión. Genera localmente la hora de observación y asocia los resultados con las tarjetas originales solo mediante metadatos numéricos coincidentes de progreso y reinicio, nunca mediante etiquetas traducidas ni el orden de las tarjetas. Los ajustes y las instantáneas automáticas limitadas permanecen en <code>chrome.storage.local</code>.",
-        "No inicia ninguna solicitud de red adicional, no clona ni decodifica la respuesta por separado, no inspecciona cookies ni encabezados de autorización, no transmite datos de cuota ni accede a campos de cuenta, correo, plan, crédito o control de gasto. El único permiso de la extensión es <code>storage</code>. Las dos declaraciones de scripts de contenido incluidas comparten un único patrón de coincidencia acotado, <code>https://chatgpt.com/codex/*</code>, para la entrada directa y mediante SPA; el tratamiento de datos y la renderización en tiempo de ejecución se limitan a Analytics. No existe contexto en segundo plano, backend, telemetría, publicidad, código remoto ni sistema de cuentas de Burn Rate Coach."
+        "Mientras Codex Analytics está abierto, Codex Limit Coach observa de forma pasiva el resultado de cuota que la propia página ha decodificado correctamente cuando lo lee. Solo accede a identificadores estables del medidor y del periodo, el porcentaje usado, la duración del periodo y el momento del reinicio necesarios para la previsión. Genera localmente la hora de observación y asocia los resultados con las tarjetas originales solo mediante metadatos numéricos coincidentes de progreso y reinicio, nunca mediante etiquetas traducidas ni el orden de las tarjetas. Los ajustes y las instantáneas automáticas limitadas permanecen en <code>chrome.storage.local</code>.",
+        "No inicia ninguna solicitud de red adicional, no clona ni decodifica la respuesta por separado, no inspecciona cookies ni encabezados de autorización, no transmite datos de cuota ni accede a campos de cuenta, correo, plan, crédito o control de gasto. El único permiso de la extensión es <code>storage</code>. Las dos declaraciones de scripts de contenido incluidas comparten un único patrón de coincidencia acotado, <code>https://chatgpt.com/codex/*</code>, para la entrada directa y mediante SPA; el tratamiento de datos y la renderización en tiempo de ejecución se limitan a Analytics. No existe contexto en segundo plano, backend, telemetría, publicidad, código remoto ni sistema de cuentas de Codex Limit Coach."
       ],
       policyLink: "Leer la política de privacidad"
     },
@@ -79,13 +79,13 @@ export default {
     },
     closing: {
       heading: "Aprovecha cada reinicio.",
-      body: "Burn Rate Coach es gratuito en Chrome Web Store.",
+      body: "Codex Limit Coach es gratuito en Chrome Web Store.",
       cta: "Añadir a Chrome"
     }
   },
   usageGuide: {
     metaDescription: "Guía sencilla sobre saldos de uso de Codex, reinicios, límites compartidos y por qué los porcentajes no equivalen directamente a tareas.",
-    title: "Cómo funcionan los límites de uso de Codex — Burn Rate Coach",
+    title: "Cómo funcionan los límites de uso de Codex — Codex Limit Coach",
     eyebrow: "Guía de uso de Codex",
     heading: "Cómo funcionan los límites de uso de Codex",
     lede: "Tu página de uso de Codex es la fuente de referencia. Los saldos y reinicios dependen de tu plan, las ofertas vigentes y las superficies que utilices.",
@@ -120,12 +120,12 @@ export default {
       }
     ],
     sourceLabel: "Lee la guía vigente de OpenAI sobre el uso de Codex",
-    productBody: "Burn Rate Coach añade ritmo local y estimaciones al reinicio a los saldos que muestra realmente tu página de Codex. Son estimaciones descriptivas, no garantías del proveedor.",
-    cta: "Obtener Burn Rate Coach"
+    productBody: "Codex Limit Coach añade ritmo local y estimaciones al reinicio a los saldos que muestra realmente tu página de Codex. Son estimaciones descriptivas, no garantías del proveedor.",
+    cta: "Obtener Codex Limit Coach"
   },
   pacingGuide: {
     metaDescription: "Cómo leer una previsión de cuota de Codex, separar el objetivo y entender la evidencia local del modelo.",
-    title: "Cómo leer una previsión de cuota de Codex — Burn Rate Coach",
+    title: "Cómo leer una previsión de cuota de Codex — Codex Limit Coach",
     eyebrow: "Guía práctica de ritmo",
     heading: "Cómo leer una previsión de cuota",
     lede: "El saldo actual indica dónde está la cuota ahora. Una previsión descriptiva estima dónde podría estar al reinicio o cuándo podría llegar a cero.",
@@ -160,15 +160,15 @@ export default {
       }
     ],
     sourceLabel: "Lee la guía vigente de OpenAI sobre el uso de Codex",
-    productBody: "Burn Rate Coach hace esta comparación de forma local en Chrome, sobre la página de uso de Codex. Muestra un resultado descriptivo por tarjeta y mantiene el objetivo separado de la previsión.",
+    productBody: "Codex Limit Coach hace esta comparación de forma local en Chrome, sobre la página de uso de Codex. Muestra un resultado descriptivo por tarjeta y mantiene el objetivo separado de la previsión.",
     cta: "Añadir el guía local"
   },
   privacy: {
-    metaDescription: "Resumen de la política de privacidad de Burn Rate Coach.",
-    title: "Privacidad — Burn Rate Coach",
+    metaDescription: "Resumen de la política de privacidad de Codex Limit Coach.",
+    title: "Privacidad — Codex Limit Coach",
     effectiveDate: "Vigente desde el 28 de julio de 2026",
     heading: "Resumen de la política de privacidad",
-    lede: "Burn Rate Coach es una extensión independiente de Chrome que añade orientación de ritmo a la página de uso de Codex Analytics. No está afiliada ni respaldada por OpenAI.",
+    lede: "Codex Limit Coach es una extensión independiente de Chrome que añade orientación de ritmo a la página de uso de Codex Analytics. No está afiliada ni respaldada por OpenAI.",
     canonicalNotice: {
       heading: "Traducción en borrador",
       body: "Este resumen aún necesita la revisión de una persona con dominio del idioma. El texto oficial es la política en inglés:",
@@ -179,8 +179,8 @@ export default {
         heading: "Información tratada",
         paragraphs: [
           "Mientras Codex Analytics está abierto, un puente empaquetado en la página observa de forma pasiva el resultado de cuota correcto de la propia página cuando esta lo decodifica. Solo accede directamente a identificadores estables del medidor y del periodo del límite, el porcentaje usado, la duración del periodo de cuota y el momento del reinicio necesarios para orientar el ritmo. La extensión aislada asocia los resultados con las tarjetas originales solo mediante metadatos numéricos coincidentes de progreso y reinicio; nunca usa etiquetas traducidas ni el orden de las tarjetas. La extensión genera localmente la marca de tiempo de observación en vez de leerla de la respuesta. No inicia la solicitud, no clona ni decodifica la respuesta por separado y no inspecciona encabezados, cookies, tokens de autorización u otras credenciales.",
-          "El resultado de la página también puede contener correo, identificadores de cuenta y usuario, información del plan, créditos y campos de control de gasto. Burn Rate Coach no accede ni enumera esos campos ajenos y nunca los transmite mediante el puente, registra, almacena o envía. Tampoco lee ni guarda instrucciones, conversaciones, código fuente, contraseñas, credenciales de pago ni claves de API.",
-          "Burn Rate Coach almacena si se muestra el coach, el porcentaje objetivo, el estado de compatibilidad y porcentajes de cuota y reinicios automáticos con marca de tiempo en el almacenamiento local de Chrome. No registra muestras programadas mientras la pestaña está oculta. Los registros de más de 14 días se eliminan la siguiente vez que Analytics procesa el historial y cada medidor se limita a 10.082 muestras."
+          "El resultado de la página también puede contener correo, identificadores de cuenta y usuario, información del plan, créditos y campos de control de gasto. Codex Limit Coach no accede ni enumera esos campos ajenos y nunca los transmite mediante el puente, registra, almacena o envía. Tampoco lee ni guarda instrucciones, conversaciones, código fuente, contraseñas, credenciales de pago ni claves de API.",
+          "Codex Limit Coach almacena si se muestra el coach, el porcentaje objetivo, el estado de compatibilidad y porcentajes de cuota y reinicios automáticos con marca de tiempo en el almacenamiento local de Chrome. No registra muestras programadas mientras la pestaña está oculta. Los registros de más de 14 días se eliminan la siguiente vez que Analytics procesa el historial y cada medidor se limita a 10.082 muestras."
         ]
       },
       {
@@ -192,26 +192,26 @@ export default {
       {
         heading: "Almacenamiento y transmisión",
         paragraphs: [
-          "Los ajustes, el estado de compatibilidad y el historial de cuota permanecen en <code>chrome.storage.local</code> en tu dispositivo. El único permiso de la extensión es <code>storage</code>. Las dos declaraciones de scripts de contenido incluidas comparten un único patrón de coincidencia acotado, <code>https://chatgpt.com/codex/*</code>, para la entrada directa y mediante SPA; el tratamiento de datos y la renderización en tiempo de ejecución se limitan a Analytics y no existe contexto en segundo plano. Burn Rate Coach no tiene backend, no transmite datos de la extensión al desarrollador ni a terceros, no usa SDK de análisis o publicidad y no vende datos de usuario.",
-          "Si eliges un enlace externo de ayuda o privacidad, Chrome abre ese sitio público. Burn Rate Coach no añade parámetros de seguimiento."
+          "Los ajustes, el estado de compatibilidad y el historial de cuota permanecen en <code>chrome.storage.local</code> en tu dispositivo. El único permiso de la extensión es <code>storage</code>. Las dos declaraciones de scripts de contenido incluidas comparten un único patrón de coincidencia acotado, <code>https://chatgpt.com/codex/*</code>, para la entrada directa y mediante SPA; el tratamiento de datos y la renderización en tiempo de ejecución se limitan a Analytics y no existe contexto en segundo plano. Codex Limit Coach no tiene backend, no transmite datos de la extensión al desarrollador ni a terceros, no usa SDK de análisis o publicidad y no vende datos de usuario.",
+          "Si eliges un enlace externo de ayuda o privacidad, Chrome abre ese sitio público. Codex Limit Coach no añade parámetros de seguimiento."
         ]
       },
       {
         heading: "Uso compartido",
         paragraphs: [
-          "Burn Rate Coach no comparte ni transfiere datos de la extensión a terceros. No usa los datos para publicidad, elaboración de perfiles, solvencia crediticia ni fines ajenos al ritmo de cuota."
+          "Codex Limit Coach no comparte ni transfiere datos de la extensión a terceros. No usa los datos para publicidad, elaboración de perfiles, solvencia crediticia ni fines ajenos al ritmo de cuota."
         ]
       },
       {
         heading: "Tus controles",
         paragraphs: [
-          "La ficha de Chrome Web Store explica este uso local antes de la instalación y la ventana emergente lo repite con lenguaje sencillo. Desactivar <strong>Mostrar coach</strong> quita la interfaz, pero no detiene la observación, las comprobaciones ni el historial local automático mientras Analytics está visible. <strong>Borrar historial</strong> elimina las instantáneas actuales y antiguas; observaciones nuevas pueden crear historial después. Al desinstalar Burn Rate Coach, Chrome elimina sus datos locales."
+          "La ficha de Chrome Web Store explica este uso local antes de la instalación y la ventana emergente lo repite con lenguaje sencillo. Desactivar <strong>Mostrar coach</strong> quita la interfaz, pero no detiene la observación, las comprobaciones ni el historial local automático mientras Analytics está visible. <strong>Borrar historial</strong> elimina las instantáneas actuales y antiguas; observaciones nuevas pueden crear historial después. Al desinstalar Codex Limit Coach, Chrome elimina sus datos locales."
         ]
       },
       {
         heading: "Seguridad y cumplimiento",
         paragraphs: [
-          "Todo el código ejecutable está empaquetado con la extensión. El puente de la página solo envía una proyección de cuota permitida al contexto aislado de la extensión; no reenvía la respuesta sin procesar. Burn Rate Coach usa la información únicamente para el fin declarado y cumple los requisitos de Uso Limitado de la Política de Datos de Usuario de Chrome Web Store."
+          "Todo el código ejecutable está empaquetado con la extensión. El puente de la página solo envía una proyección de cuota permitida al contexto aislado de la extensión; no reenvía la respuesta sin procesar. Codex Limit Coach usa la información únicamente para el fin declarado y cumple los requisitos de Uso Limitado de la Política de Datos de Usuario de Chrome Web Store."
         ]
       },
       {
@@ -229,8 +229,8 @@ export default {
     }
   },
   support: {
-    metaDescription: "Ayuda y soporte para Burn Rate Coach.",
-    title: "Ayuda — Burn Rate Coach",
+    metaDescription: "Ayuda y soporte para Codex Limit Coach.",
+    title: "Ayuda — Codex Limit Coach",
     eyebrow: "Ayuda y compatibilidad",
     heading: "Ayuda",
     lede: "La mayoría de los problemas se resuelven abriendo la ruta exacta de uso de Codex Analytics y recargando una vez. Si la página o su respuesta de cuota han cambiado, la ventana emergente mostrará el último estado de compatibilidad.",
@@ -239,10 +239,10 @@ export default {
       heading: "Comprobaciones rápidas",
       items: [
         "Abre <code>https://chatgpt.com/codex/cloud/settings/analytics</code> y selecciona la vista Uso.",
-        "Confirma que usas Chrome 111 o posterior y que Burn Rate Coach está activado en <code>chrome://extensions</code>.",
+        "Confirma que usas Chrome 111 o posterior y que Codex Limit Coach está activado en <code>chrome://extensions</code>.",
         "Recarga Analytics. La extensión solo funciona en esa ruta exacta y solo observa el resultado de cuota correcto de la propia página cuando esta lo decodifica.",
         "Abre la ventana emergente de la extensión y comprueba la compatibilidad con Codex.",
-        "Si una tarjeta conserva su aspecto original, espera a que termine de cargarse la página y recarga una vez. Burn Rate Coach restaura deliberadamente las tarjetas originales tras un intento de mejora fallido de 900 ms."
+        "Si una tarjeta conserva su aspecto original, espera a que termine de cargarse la página y recarga una vez. Codex Limit Coach restaura deliberadamente las tarjetas originales tras un intento de mejora fallido de 900 ms."
       ]
     },
     include: {

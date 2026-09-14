@@ -1,5 +1,5 @@
 name: Compatibility or bug report
-description: Report a reproducible Burn Rate Coach problem without sharing account data.
+description: Report a reproducible Codex Limit Coach problem without sharing account data.
 title: "[Bug] "
 labels: [bug]
 body:
@@ -9,7 +9,7 @@ body:
   - type: input
     id: version
     attributes:
-      label: Burn Rate Coach version
+      label: Codex Limit Coach version
       placeholder: 1.0.0
     validations:
       required: true
