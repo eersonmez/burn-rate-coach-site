@@ -28,7 +28,7 @@ export default {
       eyebrow: "Extensión gratuita para Chrome · Local por diseño",
       headlinePrimary: "Vea hacia dónde va cada cuota.",
       headlineSecondary: "Antes del reinicio.",
-      lede: "¿Tu cuota de Codex durará hasta el reinicio? Codex Limit Coach muestra el saldo estimado al reinicio o cuándo podría llegar a cero, junto a cada tarjeta de cuota compatible en Codex Analytics.",
+      lede: "¿Tu cuota de Codex durará hasta el reinicio? Codex Limit Coach muestra el saldo estimado al reinicio o cuándo podría llegar a cero, junto a cada tarjeta de cuota compatible en la página de uso de Codex.",
       storeCta: "Obtener en Chrome Web Store",
       examplesCta: "Ver datos de ejemplo",
       privacyHighlightsLabel: "Aspectos de privacidad",
@@ -40,7 +40,7 @@ export default {
     features: {
       eyebrow: "Útil de un vistazo",
       heading: "Un resultado por tarjeta.",
-      intro: "1. Instala la extensión y abre su ventana emergente. 2. Selecciona “Abrir uso de Codex” e inicia sesión si es necesario. 3. Consulta el pronóstico junto a las tarjetas compatibles. Si Analytics ya estaba abierto al instalar, recarga la página una vez.",
+      intro: "1. Instala la extensión y abre su ventana emergente. 2. Selecciona “Abrir uso de Codex” e inicia sesión si es necesario. 3. Consulta el pronóstico junto a las tarjetas compatibles. Si la página de uso ya estaba abierta al instalar, recarga la página una vez.",
       items: [
         { heading: "El resultado primero", body: "Cada medidor muestra de forma independiente el saldo estimado al reinicio o cuándo podría llegar a cero. Ninguna tarjeta anula otra." },
         { heading: "El objetivo queda aparte", body: "El uso observado determina la previsión. El objetivo es una referencia discreta que solo colorea la ruta frente a un corredor fijo." },
@@ -50,7 +50,7 @@ export default {
     screenshots: {
       eyebrow: "Generado por la extensión",
       heading: "Interfaz real. Datos de ejemplo sintéticos.",
-      intro: "1. Instala la extensión y abre su ventana emergente. 2. Selecciona “Abrir uso de Codex” e inicia sesión si es necesario. 3. Consulta el pronóstico junto a las tarjetas compatibles. Si Analytics ya estaba abierto al instalar, recarga la página una vez.",
+      intro: "1. Instala la extensión y abre su ventana emergente. 2. Selecciona “Abrir uso de Codex” e inicia sesión si es necesario. 3. Consulta el pronóstico junto a las tarjetas compatibles. Si la página de uso ya estaba abierta al instalar, recarga la página una vez.",
       items: [
         { alt: "Tarjeta sintética de cuota de Codex en tema oscuro con saldo previsto al reinicio", caption: "Resultado de un vistazo" },
         { alt: "Tarjeta sintética de cuota de Codex en tema claro con observaciones, objetivo y previsión", caption: "Legible en claro u oscuro" },
@@ -62,8 +62,8 @@ export default {
       eyebrow: "Privado por diseño",
       heading: "Tu cuota se queda en Chrome.",
       body: [
-        "Mientras Codex Analytics está abierto, Codex Limit Coach observa de forma pasiva el resultado de cuota que la propia página ha decodificado correctamente cuando lo lee. Solo accede a identificadores estables del medidor y del periodo, el porcentaje usado, la duración del periodo y el momento del reinicio necesarios para la previsión. Genera localmente la hora de observación y asocia los resultados con las tarjetas originales solo mediante metadatos numéricos coincidentes de progreso y reinicio, nunca mediante etiquetas traducidas ni el orden de las tarjetas. Los ajustes y las instantáneas automáticas limitadas permanecen en <code>chrome.storage.local</code>.",
-        "No inicia ninguna solicitud de red adicional, no clona ni decodifica la respuesta por separado, no inspecciona cookies ni encabezados de autorización, no transmite datos de cuota ni accede a campos de cuenta, correo, plan, crédito o control de gasto. El único permiso de la extensión es <code>storage</code>. Las dos declaraciones de scripts de contenido incluidas comparten un único patrón de coincidencia acotado, <code>https://chatgpt.com/codex/*</code>, para la entrada directa y mediante SPA; el tratamiento de datos y la renderización en tiempo de ejecución se limitan a Analytics. No existe contexto en segundo plano, backend, telemetría, publicidad, código remoto ni sistema de cuentas de Codex Limit Coach."
+        "Mientras la página de uso de Codex está abierta, Codex Limit Coach observa de forma pasiva el resultado de cuota que la propia página ha decodificado correctamente cuando lo lee. Solo accede a identificadores estables del medidor y del periodo, el porcentaje usado, la duración del periodo y el momento del reinicio necesarios para la previsión. Genera localmente la hora de observación y asocia los resultados con las tarjetas originales solo mediante metadatos numéricos coincidentes de progreso y reinicio, nunca mediante etiquetas traducidas ni el orden de las tarjetas. Los ajustes y las instantáneas automáticas limitadas permanecen en <code>chrome.storage.local</code>.",
+        "No inicia ninguna solicitud de red adicional, no clona ni decodifica la respuesta por separado, no inspecciona cookies ni encabezados de autorización, no transmite datos de cuota ni accede a campos de cuenta, correo, plan, crédito o control de gasto. El único permiso de la extensión es <code>storage</code>. Las dos declaraciones de scripts de contenido incluidas comparten dos patrones de coincidencia acotados, <code>https://chatgpt.com/codex/*</code> y <code>https://chatgpt.com/settings/usage*</code>, para la entrada directa y mediante SPA; el tratamiento de datos y la renderización en tiempo de ejecución se limitan a las vistas de uso compatibles. No existe contexto en segundo plano, backend, telemetría, publicidad, código remoto ni sistema de cuentas de Codex Limit Coach."
       ],
       policyLink: "Leer la política de privacidad"
     },
@@ -71,7 +71,7 @@ export default {
       eyebrow: "Conoce los límites",
       heading: "Es una guía, no una garantía.",
       items: [
-        "El historial automático solo se observa mientras Analytics está abierto y visible; las pestañas ocultas no registran muestras programadas.",
+        "El historial automático solo se observa mientras vista general de uso está abierto y visible; las pestañas ocultas no registran muestras programadas.",
         "Los puntos porcentuales no son tareas, tokens, mensajes ni minutos.",
         "Las previsiones son estimaciones basadas en un modelo, no garantías, y no se han calibrado empíricamente con historiales de uso reales.",
         "La recopilación de cuota funciona con cualquier idioma de la interfaz de Codex; la interfaz del coach admite inglés, turco, hindi, español, árabe, francés, alemán, japonés y portugués (Brasil y Portugal)."
@@ -115,7 +115,7 @@ export default {
         heading: "Usa la hora de reinicio mostrada",
         paragraphs: [
           "Planifica con la hora exacta de reinicio que muestra la página, no con un horario memorizado. Algunas ofertas temporales también pueden usar reinicios acumulados o ajustados.",
-          "Para la vista actual, abre <code>https://chatgpt.com/codex/cloud/settings/analytics</code>. Si cambian la ruta o las tarjetas, sigue la navegación vigente de Codex y las indicaciones visibles de la cuenta."
+          "Para la vista actual, abre <code>https://chatgpt.com/settings/usage?tab=overview</code>. Si cambian la ruta o las tarjetas, sigue la navegación vigente de Codex y las indicaciones visibles de la cuenta."
         ]
       }
     ],
@@ -166,9 +166,9 @@ export default {
   privacy: {
     metaDescription: "Resumen de la política de privacidad de Codex Limit Coach.",
     title: "Privacidad — Codex Limit Coach",
-    effectiveDate: "Vigente desde el 28 de julio de 2026",
+    effectiveDate: "Vigente desde el 12 de octubre de 2026",
     heading: "Resumen de la política de privacidad",
-    lede: "Codex Limit Coach es una extensión independiente de Chrome que añade orientación de ritmo a la página de uso de Codex Analytics. No está afiliada ni respaldada por OpenAI.",
+    lede: "Codex Limit Coach es una extensión independiente de Chrome que añade orientación de ritmo a la página de uso de Codex. No está afiliada ni respaldada por OpenAI.",
     canonicalNotice: {
       heading: "Traducción en borrador",
       body: "Este resumen aún necesita la revisión de una persona con dominio del idioma. El texto oficial es la política en inglés:",
@@ -178,9 +178,9 @@ export default {
       {
         heading: "Información tratada",
         paragraphs: [
-          "Mientras Codex Analytics está abierto, un puente empaquetado en la página observa de forma pasiva el resultado de cuota correcto de la propia página cuando esta lo decodifica. Solo accede directamente a identificadores estables del medidor y del periodo del límite, el porcentaje usado, la duración del periodo de cuota y el momento del reinicio necesarios para orientar el ritmo. La extensión aislada asocia los resultados con las tarjetas originales solo mediante metadatos numéricos coincidentes de progreso y reinicio; nunca usa etiquetas traducidas ni el orden de las tarjetas. La extensión genera localmente la marca de tiempo de observación en vez de leerla de la respuesta. No inicia la solicitud, no clona ni decodifica la respuesta por separado y no inspecciona encabezados, cookies, tokens de autorización u otras credenciales.",
+          "Mientras la página de uso de Codex está abierta, un puente empaquetado en la página observa de forma pasiva el resultado de cuota correcto de la propia página cuando esta lo decodifica. Solo accede directamente a identificadores estables del medidor y del periodo del límite, el porcentaje usado, la duración del periodo de cuota y el momento del reinicio necesarios para orientar el ritmo. La extensión aislada asocia los resultados con las tarjetas originales solo mediante metadatos numéricos coincidentes de progreso y reinicio; nunca usa etiquetas traducidas ni el orden de las tarjetas. La extensión genera localmente la marca de tiempo de observación en vez de leerla de la respuesta. No inicia la solicitud, no clona ni decodifica la respuesta por separado y no inspecciona encabezados, cookies, tokens de autorización u otras credenciales.",
           "El resultado de la página también puede contener correo, identificadores de cuenta y usuario, información del plan, créditos y campos de control de gasto. Codex Limit Coach no accede ni enumera esos campos ajenos y nunca los transmite mediante el puente, registra, almacena o envía. Tampoco lee ni guarda instrucciones, conversaciones, código fuente, contraseñas, credenciales de pago ni claves de API.",
-          "Codex Limit Coach almacena si se muestra el coach, el porcentaje objetivo, el estado de compatibilidad y porcentajes de cuota y reinicios automáticos con marca de tiempo en el almacenamiento local de Chrome. No registra muestras programadas mientras la pestaña está oculta. Los registros de más de 14 días se eliminan la siguiente vez que Analytics procesa el historial y cada medidor se limita a 10.082 muestras."
+          "Codex Limit Coach almacena si se muestra el coach, el porcentaje objetivo, el estado de compatibilidad y porcentajes de cuota y reinicios automáticos con marca de tiempo en el almacenamiento local de Chrome. No registra muestras programadas mientras la pestaña está oculta. Los registros de más de 14 días se eliminan la siguiente vez que vista general de uso procesa el historial y cada medidor se limita a 10.082 muestras."
         ]
       },
       {
@@ -192,7 +192,7 @@ export default {
       {
         heading: "Almacenamiento y transmisión",
         paragraphs: [
-          "Los ajustes, el estado de compatibilidad y el historial de cuota permanecen en <code>chrome.storage.local</code> en tu dispositivo. El único permiso de la extensión es <code>storage</code>. Las dos declaraciones de scripts de contenido incluidas comparten un único patrón de coincidencia acotado, <code>https://chatgpt.com/codex/*</code>, para la entrada directa y mediante SPA; el tratamiento de datos y la renderización en tiempo de ejecución se limitan a Analytics y no existe contexto en segundo plano. Codex Limit Coach no tiene backend, no transmite datos de la extensión al desarrollador ni a terceros, no usa SDK de análisis o publicidad y no vende datos de usuario.",
+          "Los ajustes, el estado de compatibilidad y el historial de cuota permanecen en <code>chrome.storage.local</code> en tu dispositivo. El único permiso de la extensión es <code>storage</code>. Las dos declaraciones de scripts de contenido incluidas comparten dos patrones de coincidencia acotados, <code>https://chatgpt.com/codex/*</code> y <code>https://chatgpt.com/settings/usage*</code>, para la entrada directa y mediante SPA; el tratamiento de datos y la renderización en tiempo de ejecución se limitan a las vistas de uso compatibles y no existe contexto en segundo plano. Codex Limit Coach no tiene backend, no transmite datos de la extensión al desarrollador ni a terceros, no usa SDK de análisis o publicidad y no vende datos de usuario.",
           "Si eliges un enlace externo de ayuda o privacidad, Chrome abre ese sitio público. Codex Limit Coach no añade parámetros de seguimiento."
         ]
       },
@@ -205,7 +205,7 @@ export default {
       {
         heading: "Tus controles",
         paragraphs: [
-          "La ficha de Chrome Web Store explica este uso local antes de la instalación y la ventana emergente lo repite con lenguaje sencillo. Desactivar <strong>Mostrar coach</strong> quita la interfaz, pero no detiene la observación, las comprobaciones ni el historial local automático mientras Analytics está visible. <strong>Borrar historial</strong> elimina las instantáneas actuales y antiguas; observaciones nuevas pueden crear historial después. Al desinstalar Codex Limit Coach, Chrome elimina sus datos locales."
+          "La ficha de Chrome Web Store explica este uso local antes de la instalación y la ventana emergente lo repite con lenguaje sencillo. Desactivar <strong>Mostrar coach</strong> quita la interfaz, pero no detiene la observación, las comprobaciones ni el historial local automático mientras vista general de uso está visible. <strong>Borrar historial</strong> elimina las instantáneas actuales y antiguas; observaciones nuevas pueden crear historial después. Al desinstalar Codex Limit Coach, Chrome elimina sus datos locales."
         ]
       },
       {
@@ -233,14 +233,14 @@ export default {
     title: "Ayuda — Codex Limit Coach",
     eyebrow: "Ayuda y compatibilidad",
     heading: "Ayuda",
-    lede: "La mayoría de los problemas se resuelven abriendo la ruta exacta de uso de Codex Analytics y recargando una vez. Si la página o su respuesta de cuota han cambiado, la ventana emergente mostrará el último estado de compatibilidad.",
+    lede: "La mayoría de los problemas se resuelven abriendo la página de uso de Codex y recargando una vez. Si la página o su respuesta de cuota han cambiado, la ventana emergente mostrará el último estado de compatibilidad.",
     openIssue: "Abrir una incidencia de ayuda",
     quickChecks: {
       heading: "Comprobaciones rápidas",
       items: [
-        "Abre <code>https://chatgpt.com/codex/cloud/settings/analytics</code> y selecciona la vista Uso.",
+        "Abre <code>https://chatgpt.com/settings/usage?tab=overview</code>.",
         "Confirma que usas Chrome 111 o posterior y que Codex Limit Coach está activado en <code>chrome://extensions</code>.",
-        "Recarga Analytics. La extensión solo funciona en esa ruta exacta y solo observa el resultado de cuota correcto de la propia página cuando esta lo decodifica.",
+        "Recarga la vista general de uso.",
         "Abre la ventana emergente de la extensión y comprueba la compatibilidad con Codex.",
         "Si una tarjeta conserva su aspecto original, espera a que termine de cargarse la página y recarga una vez. Codex Limit Coach restaura deliberadamente las tarjetas originales tras un intento de mejora fallido de 900 ms."
       ]
@@ -250,7 +250,7 @@ export default {
       items: [
         "las versiones de Chrome y de la extensión;",
         "el idioma de tu interfaz de Codex;",
-        "si entraste directamente a Analytics o mediante la navegación de Codex;",
+        "si entraste directamente a vista general de uso o mediante la navegación de Codex;",
         "tema claro u oscuro, ancho de la ventana y zoom del navegador;",
         "el mensaje de compatibilidad de la ventana emergente;",
         "si recargar cambia el resultado."
@@ -263,9 +263,9 @@ export default {
     limitations: {
       heading: "Limitaciones conocidas",
       items: [
-        "El historial automático solo se recopila mientras Analytics está abierto y visible; una pestaña oculta no registra muestras programadas.",
+        "El historial automático solo se recopila mientras vista general de uso está abierto y visible; una pestaña oculta no registra muestras programadas.",
         "La actividad con la página cerrada aparece solo como un intervalo entre observaciones.",
-        "Los registros de más de 14 días se eliminan cuando Analytics vuelve a procesar el historial; cada medidor se limita a 10.082 muestras y las instalaciones inactivas pueden conservar datos locales antiguos hasta que se borren o desinstalen.",
+        "Los registros de más de 14 días se eliminan cuando vista general de uso vuelve a procesar el historial; cada medidor se limita a 10.082 muestras y las instalaciones inactivas pueden conservar datos locales antiguos hasta que se borren o desinstalen.",
         "Las distribuciones previstas se basan en un modelo y no se han calibrado empíricamente con historiales de uso reales.",
         "La extracción de cuota es independiente del idioma; la interfaz del coach admite inglés, turco, hindi, español, árabe, francés, alemán, japonés y portugués (Brasil y Portugal).",
         "Los cambios en la respuesta o interfaz de Codex pueden impedir temporalmente el reconocimiento de tarjetas.",

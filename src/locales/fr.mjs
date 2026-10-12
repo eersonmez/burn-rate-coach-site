@@ -28,7 +28,7 @@ export default {
       eyebrow: "Extension Chrome gratuite · Traitement local par conception",
       headlinePrimary: "Voyez où se dirige chaque quota.",
       headlineSecondary: "Avant sa réinitialisation.",
-      lede: "Votre quota Codex tiendra-t-il jusqu’à la réinitialisation ? Codex Limit Coach affiche le solde estimé à la réinitialisation ou le moment où il pourrait atteindre zéro, à côté de chaque carte de quota compatible dans Codex Analytics.",
+      lede: "Votre quota Codex tiendra-t-il jusqu’à la réinitialisation ? Codex Limit Coach affiche le solde estimé à la réinitialisation ou le moment où il pourrait atteindre zéro, à côté de chaque carte de quota compatible sur la page d’utilisation de Codex.",
       storeCta: "Obtenir dans le Chrome Web Store",
       examplesCta: "Voir les données d’exemple",
       privacyHighlightsLabel: "Points clés sur la confidentialité",
@@ -40,7 +40,7 @@ export default {
     features: {
       eyebrow: "Utile en un coup d’œil",
       heading: "Un résultat par carte.",
-      intro: "1. Installez l’extension et ouvrez sa fenêtre contextuelle. 2. Sélectionnez « Ouvrir l’utilisation de Codex » et connectez-vous si nécessaire. 3. Consultez la prévision à côté des cartes compatibles. Si Analytics était déjà ouvert lors de l’installation, rechargez la page une fois.",
+      intro: "1. Installez l’extension et ouvrez sa fenêtre contextuelle. 2. Sélectionnez « Ouvrir l’utilisation de Codex » et connectez-vous si nécessaire. 3. Consultez la prévision à côté des cartes compatibles. Si la page d’utilisation était déjà ouverte lors de l’installation, rechargez la page une fois.",
       items: [
         { heading: "Le résultat d’abord", body: "Chaque compteur affiche indépendamment son solde estimé à la réinitialisation ou le moment où il pourrait atteindre zéro. Aucune carte n’en supplante une autre." },
         { heading: "L’objectif reste distinct", body: "L’utilisation observée détermine la prévision. Votre objectif est une référence discrète utilisée seulement pour colorer la trajectoire par rapport à un corridor fixe." },
@@ -50,7 +50,7 @@ export default {
     screenshots: {
       eyebrow: "Rendu par l’extension",
       heading: "Interface réelle. Données d’exemple synthétiques.",
-      intro: "1. Installez l’extension et ouvrez sa fenêtre contextuelle. 2. Sélectionnez « Ouvrir l’utilisation de Codex » et connectez-vous si nécessaire. 3. Consultez la prévision à côté des cartes compatibles. Si Analytics était déjà ouvert lors de l’installation, rechargez la page une fois.",
+      intro: "1. Installez l’extension et ouvrez sa fenêtre contextuelle. 2. Sélectionnez « Ouvrir l’utilisation de Codex » et connectez-vous si nécessaire. 3. Consultez la prévision à côté des cartes compatibles. Si la page d’utilisation était déjà ouverte lors de l’installation, rechargez la page une fois.",
       items: [
         { alt: "Carte synthétique de quota Codex en thème sombre avec un solde projeté à la réinitialisation", caption: "Le résultat en un coup d’œil" },
         { alt: "Carte synthétique de quota Codex en thème clair avec observations, objectif et prévision", caption: "Lisible en thème clair comme sombre" },
@@ -62,8 +62,8 @@ export default {
       eyebrow: "Confidentiel par conception",
       heading: "Votre quota reste dans Chrome.",
       body: [
-        "Tant que Codex Analytics est ouvert, Codex Limit Coach observe passivement le résultat de quota correctement décodé par la page au moment où celle-ci le lit. Il accède uniquement aux identifiants stables du compteur et de la période, au pourcentage utilisé, à la durée de la période et à l’heure de réinitialisation nécessaires à la prévision. Il génère l’heure d’observation localement et associe les résultats aux cartes natives uniquement à partir de la progression numérique et des métadonnées de réinitialisation, jamais à partir des libellés traduits ou de l’ordre des cartes. Les paramètres et les instantanés automatiques limités restent dans <code>chrome.storage.local</code>.",
-        "Il n’effectue aucune requête réseau supplémentaire, ne clone ni ne décode indépendamment la réponse, n’examine ni cookies ni en-têtes d’autorisation, ne transmet aucune donnée de quota et n’accède pas aux champs concernant le compte, l’adresse e-mail, l’offre, les crédits ou le contrôle des dépenses. La seule autorisation de l’extension est <code>storage</code>. Deux déclarations de script de contenu intégrées utilisent le même motif limité <code>https://chatgpt.com/codex/*</code> pour les accès directs et via une SPA ; le traitement des données et le rendu restent sur Analytics. Il n’existe ni contexte d’arrière-plan, ni backend, ni télémétrie, ni publicité, ni code distant, ni système de compte Codex Limit Coach."
+        "Tant que la page d’utilisation de Codex est ouvertee, Codex Limit Coach observe passivement le résultat de quota correctement décodé par la page au moment où celle-ci le lit. Il accède uniquement aux identifiants stables du compteur et de la période, au pourcentage utilisé, à la durée de la période et à l’heure de réinitialisation nécessaires à la prévision. Il génère l’heure d’observation localement et associe les résultats aux cartes natives uniquement à partir de la progression numérique et des métadonnées de réinitialisation, jamais à partir des libellés traduits ou de l’ordre des cartes. Les paramètres et les instantanés automatiques limités restent dans <code>chrome.storage.local</code>.",
+        "Il n’effectue aucune requête réseau supplémentaire, ne clone ni ne décode indépendamment la réponse, n’examine ni cookies ni en-têtes d’autorisation, ne transmet aucune donnée de quota et n’accède pas aux champs concernant le compte, l’adresse e-mail, l’offre, les crédits ou le contrôle des dépenses. La seule autorisation de l’extension est <code>storage</code>. Deux déclarations de script de contenu intégrées utilisent deux motifs limités <code>https://chatgpt.com/codex/*</code> et <code>https://chatgpt.com/settings/usage*</code> pour les accès directs et via une SPA ; le traitement des données et le rendu restent sur les vues d’utilisation prises en charge. Il n’existe ni contexte d’arrière-plan, ni backend, ni télémétrie, ni publicité, ni code distant, ni système de compte Codex Limit Coach."
       ],
       policyLink: "Lire la politique de confidentialité"
     },
@@ -71,7 +71,7 @@ export default {
       eyebrow: "Connaître les limites",
       heading: "Un coach, pas une garantie.",
       items: [
-        "L’historique automatique n’est observé que lorsque la page Analytics est ouverte et visible ; les onglets masqués n’enregistrent aucun échantillon périodique.",
+        "L’historique automatique n’est observé que lorsque la page vue d’ensemble de l’utilisation est ouverte et visible ; les onglets masqués n’enregistrent aucun échantillon périodique.",
         "Les points de pourcentage ne correspondent ni à des tâches, ni à des jetons, ni à des messages, ni à des minutes.",
         "Les projections sont des estimations fondées sur un modèle, et non des garanties ; elles ne sont pas étalonnées empiriquement sur des historiques d’utilisation réels.",
         "La collecte des quotas fonctionne quelle que soit la langue d’interface de Codex ; l’interface du coach prend en charge l’anglais, le turc, le hindi, l’espagnol, l’arabe, le français, l’allemand, le japonais et le portugais (Brésil et Portugal)."
@@ -115,7 +115,7 @@ export default {
         heading: "Utilisez l’heure de réinitialisation affichée",
         paragraphs: [
           "Organisez-vous en fonction de l’horodatage exact de réinitialisation affiché sur la page plutôt que d’un calendrier mémorisé. Certaines promotions temporaires peuvent aussi appliquer des réinitialisations différées ou ajustées.",
-          "Pour consulter l’état actuel, ouvrez <code>https://chatgpt.com/codex/cloud/settings/analytics</code>. Si l’itinéraire ou les cartes disponibles changent, suivez la navigation Codex et les indications visibles de votre compte."
+          "Pour consulter l’état actuel, ouvrez <code>https://chatgpt.com/settings/usage?tab=overview</code>. Si l’itinéraire ou les cartes disponibles changent, suivez la navigation Codex et les indications visibles de votre compte."
         ]
       }
     ],
@@ -166,9 +166,9 @@ export default {
   privacy: {
     metaDescription: "Politique de confidentialité de Codex Limit Coach.",
     title: "Confidentialité — Codex Limit Coach",
-    effectiveDate: "En vigueur le 28 juillet 2026",
+    effectiveDate: "En vigueur le 12 octobre 2026",
     heading: "Politique de confidentialité",
-    lede: "Codex Limit Coach est une extension Chrome indépendante qui ajoute des indications de rythme à la page d’utilisation de Codex Analytics. Elle n’est ni affiliée à OpenAI ni approuvée par OpenAI.",
+    lede: "Codex Limit Coach est une extension Chrome indépendante qui ajoute des indications de rythme à la page d’utilisation de Codex. Elle n’est ni affiliée à OpenAI ni approuvée par OpenAI.",
     canonicalNotice: {
       heading: "Projet de traduction",
       body: "Ce résumé doit encore être relu par une personne maîtrisant la langue. Le texte faisant autorité est la politique en anglais :",
@@ -178,9 +178,9 @@ export default {
       {
         heading: "Informations traitées",
         paragraphs: [
-          "Tant que Codex Analytics est ouvert, un pont de page intégré observe passivement le résultat de quota correctement décodé par la page au moment où celle-ci le lit. Il accède directement uniquement aux identifiants stables du compteur et de la période de limite de débit, au pourcentage utilisé, à la durée de la période de quota et à l’heure de réinitialisation nécessaires au coaching. L’extension isolée associe les résultats aux cartes natives uniquement à partir de la progression numérique et des métadonnées de réinitialisation ; elle n’utilise jamais les libellés traduits ni l’ordre des cartes. L’extension génère l’horodatage d’observation localement au lieu de le lire dans la réponse. Elle n’effectue pas la requête, ne clone ni ne décode indépendamment la réponse et n’examine ni en-têtes, ni cookies, ni jetons d’autorisation, ni autres identifiants.",
+          "Tant que la page d’utilisation de Codex est ouvertee, un pont de page intégré observe passivement le résultat de quota correctement décodé par la page au moment où celle-ci le lit. Il accède directement uniquement aux identifiants stables du compteur et de la période de limite de débit, au pourcentage utilisé, à la durée de la période de quota et à l’heure de réinitialisation nécessaires au coaching. L’extension isolée associe les résultats aux cartes natives uniquement à partir de la progression numérique et des métadonnées de réinitialisation ; elle n’utilise jamais les libellés traduits ni l’ordre des cartes. L’extension génère l’horodatage d’observation localement au lieu de le lire dans la réponse. Elle n’effectue pas la requête, ne clone ni ne décode indépendamment la réponse et n’examine ni en-têtes, ni cookies, ni jetons d’autorisation, ni autres identifiants.",
           "Le résultat de la page peut également contenir l’adresse e-mail, des identifiants de compte et d’utilisateur, des informations sur l’offre, des crédits et des champs de contrôle des dépenses. Codex Limit Coach n’accède pas à ces champs sans rapport, ne les énumère pas et ne les transmet, journalise, stocke ou envoie jamais. Il ne lit ni ne stocke non plus les prompts, conversations, codes sources, mots de passe, identifiants de paiement ou clés API.",
-          "Codex Limit Coach enregistre dans le stockage local de l’extension Chrome si le coach est affiché, votre pourcentage restant cible, l’état de compatibilité, ainsi que les pourcentages de quota horodatés automatiquement et les horodatages de réinitialisation. Il n’enregistre aucun échantillon périodique lorsque l’onglet du navigateur est masqué. Les enregistrements de plus de 14 jours sont ignorés et supprimés lorsque la page Analytics traite de nouveau l’historique, et chaque compteur est limité à 10 082 échantillons. Sur un appareil inactif, des enregistrements plus anciens peuvent subsister jusqu’au prochain nettoyage, à l’effacement ou à la désinstallation."
+          "Codex Limit Coach enregistre dans le stockage local de l’extension Chrome si le coach est affiché, votre pourcentage restant cible, l’état de compatibilité, ainsi que les pourcentages de quota horodatés automatiquement et les horodatages de réinitialisation. Il n’enregistre aucun échantillon périodique lorsque l’onglet du navigateur est masqué. Les enregistrements de plus de 14 jours sont ignorés et supprimés lorsque la page vue d’ensemble de l’utilisation traite de nouveau l’historique, et chaque compteur est limité à 10 082 échantillons. Sur un appareil inactif, des enregistrements plus anciens peuvent subsister jusqu’au prochain nettoyage, à l’effacement ou à la désinstallation."
         ]
       },
       {
@@ -192,7 +192,7 @@ export default {
       {
         heading: "Stockage et transmission",
         paragraphs: [
-          "Les paramètres, l’état de compatibilité et l’historique des quotas restent dans <code>chrome.storage.local</code> sur votre appareil. La seule autorisation de l’extension est <code>storage</code>. Deux déclarations de script de contenu intégrées utilisent le même motif limité <code>https://chatgpt.com/codex/*</code> pour les accès directs et via une SPA ; le traitement des données et le rendu restent sur Analytics, sans contexte d’arrière-plan. Codex Limit Coach ne possède aucun backend et ne transmet pas les données de l’extension au développeur ou à des tiers, n’utilise pas de SDK d’analyse ou de publicité et ne vend pas les données utilisateur.",
+          "Les paramètres, l’état de compatibilité et l’historique des quotas restent dans <code>chrome.storage.local</code> sur votre appareil. La seule autorisation de l’extension est <code>storage</code>. Deux déclarations de script de contenu intégrées utilisent deux motifs limités <code>https://chatgpt.com/codex/*</code> et <code>https://chatgpt.com/settings/usage*</code> pour les accès directs et via une SPA ; le traitement des données et le rendu restent sur les vues d’utilisation prises en charge, sans contexte d’arrière-plan. Codex Limit Coach ne possède aucun backend et ne transmet pas les données de l’extension au développeur ou à des tiers, n’utilise pas de SDK d’analyse ou de publicité et ne vend pas les données utilisateur.",
           "Si vous choisissez un lien externe d’assistance ou de confidentialité, Chrome ouvre le site web public correspondant. Le site traite votre visite conformément à sa propre politique de confidentialité. Codex Limit Coach n’ajoute aucun paramètre de suivi."
         ]
       },
@@ -205,7 +205,7 @@ export default {
       {
         heading: "Vos commandes",
         paragraphs: [
-          "La fiche du Chrome Web Store explique cette utilisation locale des données de quota avant l’installation, et la fenêtre de l’extension la rappelle en termes simples. Désactiver <strong>Afficher le coach</strong> retire Codex Limit Coach de la page, mais n’interrompt ni l’observation de la page, ni les vérifications de compatibilité, ni l’historique local automatique tant qu’Analytics est visible. La commande à deux clics <strong>Effacer l’historique</strong> reste disponible lorsque le coach est masqué et supprime les instantanés de quota actuels et anciens. De nouvelles observations peuvent ensuite créer un nouvel historique. La désinstallation de Codex Limit Coach supprime ses données locales d’extension par l’intermédiaire de Chrome."
+          "La fiche du Chrome Web Store explique cette utilisation locale des données de quota avant l’installation, et la fenêtre de l’extension la rappelle en termes simples. Désactiver <strong>Afficher le coach</strong> retire Codex Limit Coach de la page, mais n’interrompt ni l’observation de la page, ni les vérifications de compatibilité, ni l’historique local automatique tant qu’vue d’ensemble de l’utilisation est visible. La commande à deux clics <strong>Effacer l’historique</strong> reste disponible lorsque le coach est masqué et supprime les instantanés de quota actuels et anciens. De nouvelles observations peuvent ensuite créer un nouvel historique. La désinstallation de Codex Limit Coach supprime ses données locales d’extension par l’intermédiaire de Chrome."
         ]
       },
       {
@@ -233,14 +233,14 @@ export default {
     title: "Assistance — Codex Limit Coach",
     eyebrow: "Aide et compatibilité",
     heading: "Assistance",
-    lede: "La plupart des problèmes se résolvent en ouvrant l’itinéraire exact d’utilisation de Codex Analytics puis en rechargeant la page une fois. Si la page ou sa réponse de quota a changé, la fenêtre de l’extension indique le dernier état de compatibilité.",
+    lede: "La plupart des problèmes se résolvent en ouvrant la page d’utilisation de Codex puis en rechargeant la page une fois. Si la page ou sa réponse de quota a changé, la fenêtre de l’extension indique le dernier état de compatibilité.",
     openIssue: "Signaler un problème",
     quickChecks: {
       heading: "Vérifications rapides",
       items: [
-        "Ouvrez <code>https://chatgpt.com/codex/cloud/settings/analytics</code> et sélectionnez la vue Usage.",
+        "Ouvrez <code>https://chatgpt.com/settings/usage?tab=overview</code>.",
         "Vérifiez que Chrome est en version 111 ou ultérieure et que Codex Limit Coach est activé dans <code>chrome://extensions</code>.",
-        "Rechargez Analytics. L’extension s’exécute uniquement sur cet itinéraire d’utilisation précis et observe seulement le résultat de quota correctement décodé par la page au moment où celle-ci le lit.",
+        "Rechargez la vue d’ensemble de l’utilisation.",
         "Ouvrez la fenêtre de l’extension et vérifiez la compatibilité Codex.",
         "Si une carte reste dans son état natif, attendez la fin du chargement de la page puis rechargez-la une fois. Codex Limit Coach restaure volontairement les cartes natives après l’échec d’une tentative d’amélioration de 900 ms."
       ]
@@ -250,7 +250,7 @@ export default {
       items: [
         "les versions de Chrome et de l’extension ;",
         "la langue de votre interface Codex ;",
-        "si vous avez accédé directement à Analytics ou par la navigation Codex ;",
+        "si vous avez accédé directement à vue d’ensemble de l’utilisation ou par la navigation Codex ;",
         "le thème clair ou sombre, la largeur de la fenêtre et le niveau de zoom du navigateur ;",
         "le message de compatibilité affiché dans la fenêtre de l’extension ;",
         "si le rechargement modifie le résultat."
@@ -263,9 +263,9 @@ export default {
     limitations: {
       heading: "Limites connues",
       items: [
-        "L’historique automatique n’est collecté que lorsque la page Analytics est ouverte et visible ; un onglet masqué n’enregistre aucun échantillon périodique.",
+        "L’historique automatique n’est collecté que lorsque la page vue d’ensemble de l’utilisation est ouverte et visible ; un onglet masqué n’enregistre aucun échantillon périodique.",
         "L’activité effectuée lorsque la page est fermée n’apparaît que sous forme d’intervalle entre les observations.",
-        "Les enregistrements de plus de 14 jours sont supprimés lors du prochain traitement de l’historique Analytics ; chaque compteur est limité à 10 082 échantillons, et les installations inactives peuvent conserver des octets locaux plus anciens jusqu’à l’effacement ou la désinstallation.",
+        "Les enregistrements de plus de 14 jours sont supprimés lors du prochain traitement de l’historique vue d’ensemble de l’utilisation ; chaque compteur est limité à 10 082 échantillons, et les installations inactives peuvent conserver des octets locaux plus anciens jusqu’à l’effacement ou la désinstallation.",
         "Les distributions de prévision reposent sur un modèle et n’ont pas été étalonnées empiriquement sur des historiques d’utilisation réels.",
         "L’extraction des quotas ne dépend pas de la langue ; l’interface du coach prend en charge l’anglais, le turc, le hindi, l’espagnol, l’arabe, le français, l’allemand, le japonais et le portugais (Brésil et Portugal).",
         "Les modifications de la réponse ou de l’interface Codex peuvent temporairement empêcher la reconnaissance des cartes.",
