@@ -6,22 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Codexの使用可能残量、リセット時刻、共有上限、そしてパーセントをタスク数へ単純換算できない理由を分かりやすく説明します。">
   <meta name="theme-color" content="#0b1020">
-  <meta property="og:site_name" content="Burn Rate Coach">
+  <meta property="og:site_name" content="Codex Limit Coach">
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Codexの使用量上限の仕組み — Burn Rate Coach">
+  <meta property="og:title" content="Codexの使用量上限の仕組み — Codex Limit Coach">
   <meta property="og:description" content="Codexの使用可能残量、リセット時刻、共有上限、そしてパーセントをタスク数へ単純換算できない理由を分かりやすく説明します。">
   <meta property="og:url" content="https://eersonmez.github.io/burn-rate-coach-site/ja/how-codex-usage-limits-work.html">
   <meta property="og:image" content="https://eersonmez.github.io/burn-rate-coach-site/assets/promo.png">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="440">
   <meta property="og:image:height" content="280">
-  <meta property="og:image:alt" content="Burn Rate Coachのゲージと消費ペース軌跡のイラスト">
+  <meta property="og:image:alt" content="Codex Limit Coachのゲージと消費ペース軌跡のイラスト">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Codexの使用量上限の仕組み — Burn Rate Coach">
+  <meta name="twitter:title" content="Codexの使用量上限の仕組み — Codex Limit Coach">
   <meta name="twitter:description" content="Codexの使用可能残量、リセット時刻、共有上限、そしてパーセントをタスク数へ単純換算できない理由を分かりやすく説明します。">
   <meta name="twitter:image" content="https://eersonmez.github.io/burn-rate-coach-site/assets/promo.png">
-  <meta name="twitter:image:alt" content="Burn Rate Coachのゲージと消費ペース軌跡のイラスト">
-  <title>Codexの使用量上限の仕組み — Burn Rate Coach</title>
+  <meta name="twitter:image:alt" content="Codex Limit Coachのゲージと消費ペース軌跡のイラスト">
+  <title>Codexの使用量上限の仕組み — Codex Limit Coach</title>
   <link rel="canonical" href="https://eersonmez.github.io/burn-rate-coach-site/ja/how-codex-usage-limits-work.html">
   <link rel="alternate" hreflang="en" href="https://eersonmez.github.io/burn-rate-coach-site/how-codex-usage-limits-work.html">
   <link rel="alternate" hreflang="tr" href="https://eersonmez.github.io/burn-rate-coach-site/tr/how-codex-usage-limits-work.html">
@@ -40,7 +40,7 @@
 <body>
   <a class="skip-link" href="#main">本文へ移動</a>
   <header class="site-header">
-    <a class="brand" href="index.html" aria-label="Burn Rate Coachホーム"><img src="../assets/logo.svg" width="40" height="40" alt=""><span>Burn Rate Coach</span></a>
+    <a class="brand" href="index.html" aria-label="Codex Limit Coachホーム"><img src="../assets/logo.svg" width="40" height="40" alt=""><span>Codex Limit Coach</span></a>
     <nav aria-label="メインナビゲーション"><a href="index.html">ホーム</a><a href="privacy.html">プライバシー</a><a href="support.html">サポート</a></nav>
   </header>
   <nav class="language-nav wrap" aria-label="言語"><a lang="en" hreflang="en" href="../how-codex-usage-limits-work.html">English</a><a lang="tr" hreflang="tr" href="../tr/how-codex-usage-limits-work.html">Türkçe</a><a lang="hi" hreflang="hi" href="../hi/how-codex-usage-limits-work.html">हिन्दी</a><a lang="es" hreflang="es" href="../es/how-codex-usage-limits-work.html">Español</a><a lang="ar" hreflang="ar" href="../ar/how-codex-usage-limits-work.html">العربية</a><a lang="fr" hreflang="fr" href="../fr/how-codex-usage-limits-work.html">Français</a><a lang="de" hreflang="de" href="../de/how-codex-usage-limits-work.html">Deutsch</a><a lang="ja" hreflang="ja" aria-current="page" href="../ja/how-codex-usage-limits-work.html">日本語</a><a lang="pt-BR" hreflang="pt-BR" href="../pt-br/how-codex-usage-limits-work.html">Português (Brasil)</a><a lang="pt-PT" hreflang="pt-PT" href="../pt-pt/how-codex-usage-limits-work.html">Português (Portugal)</a></nav>
@@ -63,11 +63,11 @@
 
     <h2>表示されたリセット時刻を使う</h2>
     <p>覚えているスケジュールではなく、ページに表示される正確なリセット時刻に合わせて計画してください。一時的な特典では、繰り越し式または調整済みのリセットが使われる場合もあります。</p>
-    <p>現在の状態を確認するには、<code>https://chatgpt.com/codex/cloud/settings/analytics</code>を開きます。ルートや表示されるカードが変わった場合は、現在のCodexナビゲーションと画面上のアカウント案内に従ってください。</p>
+    <p>現在の状態を確認するには、<code>https://chatgpt.com/settings/usage?tab=overview</code>を開きます。ルートや表示されるカードが変わった場合は、現在のCodexナビゲーションと画面上のアカウント案内に従ってください。</p>
 
     <p><a href="https://help.openai.com/en/articles/11369540/">OpenAIによる最新のCodex使用量ガイドを読む</a></p>
-    <aside class="notice"><p>Burn Rate Coachは、Codex使用量ページに実際に表示される残量へ、ローカルのペース情報とリセット時の推定を追加します。予測は記述的な推定であり、提供元による保証ではありません。</p><a class="button button-primary active" href="https://chromewebstore.google.com/detail/burn-rate-coach/kofionobchfmemihdnjhljplhlppdjmh">Burn Rate Coachを入手</a></aside>
+    <aside class="notice"><p>Codex Limit Coachは、Codex使用量ページに実際に表示される残量へ、ローカルのペース情報とリセット時の推定を追加します。予測は記述的な推定であり、提供元による保証ではありません。</p><a class="button button-primary active" href="https://chromewebstore.google.com/detail/burn-rate-coach/kofionobchfmemihdnjhljplhlppdjmh">Codex Limit Coachを入手</a></aside>
   </main>
-  <footer class="site-footer wrap"><p>Burn Rate Coachは独立した製品であり、OpenAIによる承認を受けていません。</p><nav aria-label="フッターナビゲーション"><a href="index.html">ホーム</a><a href="why-codex-quota-runs-out-early.html">クォータのペース配分</a><a href="privacy.html">プライバシー</a><a href="support.html">サポート</a><a href="https://github.com/eersonmez/burn-rate-coach-site/issues">問題</a></nav></footer>
+  <footer class="site-footer wrap"><p>Codex Limit Coachは独立した製品であり、OpenAIによる承認を受けていません。</p><nav aria-label="フッターナビゲーション"><a href="index.html">ホーム</a><a href="why-codex-quota-runs-out-early.html">クォータのペース配分</a><a href="privacy.html">プライバシー</a><a href="support.html">サポート</a><a href="https://github.com/eersonmez/burn-rate-coach-site/issues">問題</a></nav></footer>
 </body>
 </html>

@@ -112,8 +112,8 @@ for (const locale of LOCALE_SPECS) {
     for (const required of [
       "<code>storage</code>",
       "<code>https://chatgpt.com/codex/*</code>",
-      "SPA",
-      "Analytics"
+      "<code>https://chatgpt.com/settings/usage*</code>",
+      "SPA"
     ]) {
       if (!copy.includes(required)) {
         errors.push(`${locale.code}: ${surface} permission contract is missing ${required}`);
@@ -139,6 +139,13 @@ for (const locale of LOCALE_SPECS) {
       continue;
     }
     if (actual !== expected) errors.push(`Stale generated page: ${outputPath}`);
+    if (actual.includes("https://chatgpt.com/codex/cloud/settings/analytics")) {
+      errors.push(`${outputPath}: stale Codex usage URL`);
+    }
+    if (["usageGuide", "support"].includes(page.id)
+      && !actual.includes("https://chatgpt.com/settings/usage?tab=overview")) {
+      errors.push(`${outputPath}: missing Usage Overview URL`);
+    }
     if (!actual.includes(`<html lang="${locale.htmlLang}" dir="${locale.dir}"`)) errors.push(`${outputPath}: incorrect lang/dir`);
     const canonicalUrl = absolutePageUrl(locale, page.id);
     if ((actual.match(/<link rel="canonical"/g) || []).length !== 1
