@@ -17,30 +17,30 @@ export default {
     mainNavigation: "Main navigation",
     footerNavigation: "Footer navigation",
     languageNavigation: "Language",
-    brandHome: "Burn Rate Coach home",
-    independentShort: "Burn Rate Coach is independent and not endorsed by OpenAI.",
-    independentLong: "Burn Rate Coach is an independent extension and is not affiliated with or endorsed by OpenAI."
+    brandHome: "Codex Limit Coach home",
+    independentShort: "Codex Limit Coach is independent and not endorsed by OpenAI.",
+    independentLong: "Codex Limit Coach is an independent extension and is not affiliated with or endorsed by OpenAI."
   },
   home: {
     metaDescription: "See where each Codex quota is heading by reset, with local forecasts and nothing leaving your device.",
-    title: "Burn Rate Coach — see where each Codex quota is heading",
+    title: "Codex Limit Coach — see where each Codex quota is heading",
     hero: {
       eyebrow: "Free Chrome extension · Local by design",
       headlinePrimary: "See where each quota is heading.",
       headlineSecondary: "Before it resets.",
-      lede: "Burn Rate Coach adds one projected outcome and a compact local trajectory to every supported Codex usage card.",
+      lede: "Will your Codex quota last until reset? Codex Limit Coach shows the estimated balance at reset, or when your quota may reach zero, beside each supported quota card on Codex Usage Overview.",
       storeCta: "Get it from the Chrome Web Store",
       examplesCta: "See example data",
       privacyHighlightsLabel: "Privacy highlights",
-      noAccount: "No Burn Rate Coach account",
+      noAccount: "No Codex Limit Coach account",
       noTelemetry: "No telemetry",
       storagePermission: "Only storage permission",
-      promoAlt: "Burn Rate Coach gauge and pacing trajectory illustration"
+      promoAlt: "Codex Limit Coach gauge and pacing trajectory illustration"
     },
     features: {
       eyebrow: "Useful at a glance",
       heading: "One outcome per card.",
-      intro: "See the projected balance at reset—or an estimated early-zero time—without opening another dashboard.",
+      intro: "1. Install the extension and open its popup. 2. Select “Open Codex usage” and sign in if needed. 3. View the forecast beside your supported quota cards. If Usage Overview was already open when you installed, reload it once.",
       items: [
         { heading: "Outcome first", body: "Each meter independently shows its estimated balance at reset or when it may reach zero. No card overrides another." },
         { heading: "Target stays separate", body: "Observed usage drives the forecast. Your target is a quiet reference used only to color the path against a fixed corridor." },
@@ -50,20 +50,20 @@ export default {
     screenshots: {
       eyebrow: "Rendered by the extension",
       heading: "Real UI. Synthetic example data.",
-      intro: "These images run the production extension code against a private, structurally faithful fixture. No account data appears here.",
+      intro: "1. Install the extension and open its popup. 2. Select “Open Codex usage” and sign in if needed. 3. View the forecast beside your supported quota cards. If Usage Overview was already open when you installed, reload it once.",
       items: [
         { alt: "Dark theme synthetic Codex quota card with a projected balance at reset", caption: "Outcome at a glance" },
         { alt: "Light theme synthetic Codex quota card with observations, target, and forecast", caption: "Readable in light or dark" },
         { alt: "Synthetic early-zero state showing a projection ending before reset", caption: "Early-zero estimate" },
-        { alt: "Burn Rate Coach popup with one target setting and automatic local history", caption: "One setting · automatic local history" }
+        { alt: "Codex Limit Coach popup with one target setting and automatic local history", caption: "One setting · automatic local history" }
       ]
     },
     private: {
       eyebrow: "Private by design",
       heading: "Your quota stays in Chrome.",
       body: [
-        "While Codex Analytics is open, Burn Rate Coach passively observes the page’s own successfully decoded quota result when the page reads it. It accesses only stable meter and window identifiers, used percentage, window duration, and reset timing needed for the forecast. It generates observation time locally and associates results with native cards only through matching numeric progress and reset metadata—never translated labels or card order. Settings and automatic bounded snapshots remain in <code>chrome.storage.local</code>.",
-        "It does not initiate an additional network request, clone or independently decode the response, inspect cookies or authorization headers, transmit quota data, or access account, email, plan, credit, or spend-control fields. The sole extension permission is <code>storage</code>. Two packaged content-script declarations share one bounded <code>https://chatgpt.com/codex/*</code> match pattern for direct and SPA entry; runtime data handling and rendering stay on Analytics. There is no background context, backend, telemetry, advertising, remote code, or Burn Rate Coach account system."
+        "While the Codex usage page is open on Overview or Analytics, Codex Limit Coach passively observes the page's own successful quota parse. The packaged bridge accesses only base and additional quota-group identity, used percentage, window duration, and reset timing; each additional name becomes an opaque stable identifier. The isolated script associates meters with native rows through numeric progress and compatible reset metadata, never translated labels or card order. Settings and bounded history remain in <code>chrome.storage.local</code>.",
+        "The bridge initiates no request, independently parses no response, inspects no credentials or unrelated account fields, and transmits no quota data. The sole extension API permission is <code>storage</code>. Content scripts match direct and SPA navigation on <code>https://chatgpt.com/codex/*</code> and <code>https://chatgpt.com/settings/usage*</code>; runtime capture is limited to the two Usage tabs or the legacy usage view, and coaching renders on Overview or that legacy view. There is no background context, backend, telemetry, advertising, remote code, or Codex Limit Coach account system."
       ],
       policyLink: "Read the privacy policy"
     },
@@ -71,7 +71,7 @@ export default {
       eyebrow: "Know the limits",
       heading: "A coach, not a guarantee.",
       items: [
-        "Automatic history is observed only while the Analytics page is open and visible; hidden tabs record no scheduled cadence samples.",
+        "Automatic history is processed only while Usage Overview or the legacy usage view is visible; hidden tabs record no scheduled cadence samples.",
         "Percentage points are not tasks, tokens, messages, or minutes.",
         "Projections are model-based estimates, not guarantees, and are not empirically calibrated on real usage histories.",
         "Quota collection works across Codex interface languages; the coach interface supports English, Turkish, Hindi, Spanish, Arabic, French, German, Japanese, and Portuguese (Brazil and Portugal)."
@@ -79,13 +79,13 @@ export default {
     },
     closing: {
       heading: "Make every reset count.",
-      body: "Burn Rate Coach is free on the Chrome Web Store.",
+      body: "Codex Limit Coach is free on the Chrome Web Store.",
       cta: "Add to Chrome"
     }
   },
   usageGuide: {
     metaDescription: "A plain-language guide to Codex usage balances, reset times, shared limits, and why percentages do not map cleanly to tasks.",
-    title: "How Codex usage limits work — Burn Rate Coach",
+    title: "How Codex usage limits work — Codex Limit Coach",
     eyebrow: "Codex usage guide",
     heading: "How Codex usage limits work",
     lede: "Your Codex usage page is the source of truth. The balances and reset times it shows depend on your plan, current offers, and the surfaces you use.",
@@ -115,17 +115,17 @@ export default {
         heading: "Use the displayed reset time",
         paragraphs: [
           "Plan around the exact reset timestamp shown on the page instead of a memorized schedule. Some temporary offers may also use banked or adjusted resets.",
-          "For the current view, open <code>https://chatgpt.com/codex/cloud/settings/analytics</code>. If the route or available cards change, follow the current Codex navigation and visible account guidance."
+          "For the current view, open <code>https://chatgpt.com/settings/usage?tab=overview</code>. If the route or available cards change, follow the current Codex navigation and visible account guidance."
         ]
       }
     ],
     sourceLabel: "Read OpenAI’s current Codex usage guidance",
-    productBody: "Burn Rate Coach adds local pacing and at-reset estimates to the balances your Codex usage page actually displays. Forecasts are descriptive estimates, not provider guarantees.",
-    cta: "Get Burn Rate Coach"
+    productBody: "Codex Limit Coach adds local pacing and at-reset estimates to the balances your Codex usage page actually displays. Forecasts are descriptive estimates, not provider guarantees.",
+    cta: "Get Codex Limit Coach"
   },
   pacingGuide: {
     metaDescription: "How to read a Codex quota forecast, keep the target separate, and understand local model evidence.",
-    title: "How to read a Codex quota forecast — Burn Rate Coach",
+    title: "How to read a Codex quota forecast — Codex Limit Coach",
     eyebrow: "Practical pacing guide",
     heading: "How to read a quota forecast",
     lede: "A current balance says where the quota is now. A descriptive forecast estimates where it may be at reset—or when it may reach zero.",
@@ -160,23 +160,23 @@ export default {
       }
     ],
     sourceLabel: "Read OpenAI’s current Codex usage guidance",
-    productBody: "Burn Rate Coach performs this comparison on the Codex usage page, locally in Chrome. It shows one descriptive outcome per card and keeps the target separate from the forecast.",
+    productBody: "Codex Limit Coach performs this comparison on the Codex usage page, locally in Chrome. It shows one descriptive outcome per card and keeps the target separate from the forecast.",
     cta: "Add the local coach"
   },
   privacy: {
-    metaDescription: "Burn Rate Coach privacy policy.",
-    title: "Privacy — Burn Rate Coach",
-    effectiveDate: "Effective July 28, 2026",
+    metaDescription: "Codex Limit Coach privacy policy.",
+    title: "Privacy — Codex Limit Coach",
+    effectiveDate: "Effective October 12, 2026",
     heading: "Privacy policy",
-    lede: "Burn Rate Coach is an independent Chrome extension that adds pacing guidance to the Codex Analytics usage page. It is not affiliated with or endorsed by OpenAI.",
+    lede: "Codex Limit Coach is an independent Chrome extension that adds pacing guidance to Codex Usage Overview. It is not affiliated with or endorsed by OpenAI.",
     canonicalNotice: { heading: "", body: "", link: "" },
     sections: [
       {
         heading: "Information handled",
         paragraphs: [
-          "While Codex Analytics is open, a packaged page bridge passively observes the page’s own successful quota result when the page decodes it. It directly accesses only stable rate-limit meter and window identifiers, used percentage, quota-window duration, and reset timing needed for coaching. The isolated extension associates results with native cards only through matching numeric progress and reset metadata; it never uses translated labels or card order. The extension generates the observation timestamp locally rather than reading it from the response. It does not initiate the request, clone or independently decode the response, or inspect headers, cookies, authorization tokens, or other credentials.",
-          "The page’s result can also contain email, account and user identifiers, plan information, credits, and spend-control fields. Burn Rate Coach does not access or enumerate those unrelated fields and never bridges, logs, stores, or transmits them. It also does not read or store prompts, conversations, source code, passwords, payment credentials, or API keys.",
-          "Burn Rate Coach stores whether the coach is shown, your target remaining percentage, compatibility state, and automatic timestamped quota percentages and reset timestamps in Chrome’s local extension storage. It records no scheduled cadence samples while the browser tab is hidden. Records older than 14 days are ignored and pruned when Analytics next processes history, and each meter is capped at 10,082 samples. Older records can remain on an inactive device until cleanup, clear, or uninstall."
+          "While the Codex usage page is open on Overview or Analytics, a packaged page bridge passively observes the page's own successful quota parse. It accesses only base and provider-declared additional quota-group identity, used percentage, window duration, and reset timing. Each additional name is immediately reduced to an opaque stable identifier before crossing to the isolated script. That script associates meters with native rows through numeric progress and compatible reset metadata, never translated labels or card order. Observation time is derived locally. The bridge initiates no request, independently parses no response body, and inspects no headers, cookies, authorization tokens, or other credentials.",
+          "The page’s result can also contain email, account and user identifiers, plan information, credits, and spend-control fields. Codex Limit Coach does not access or enumerate those unrelated fields and never bridges, logs, stores, or transmits them. It also does not read or store prompts, conversations, source code, passwords, payment credentials, or API keys.",
+          "Codex Limit Coach stores whether the coach is shown, your target remaining percentage, compatibility state, and automatic timestamped quota percentages and reset timestamps in Chrome local extension storage. History is processed while Usage Overview or the legacy usage view is visible; a hidden tab records no scheduled cadence samples. Records older than 14 days are ignored and pruned on the next processing pass, and each meter is capped at 10,082 samples. Older records can remain on an inactive device until cleanup, clear, or uninstall."
         ]
       },
       {
@@ -188,26 +188,26 @@ export default {
       {
         heading: "Storage and transmission",
         paragraphs: [
-          "Settings, compatibility state, and quota history remain in <code>chrome.storage.local</code> on your device. The sole extension permission is <code>storage</code>. Two packaged content-script declarations share one bounded <code>https://chatgpt.com/codex/*</code> match pattern for direct and SPA entry; runtime data handling and rendering stay on Analytics, with no background context. Burn Rate Coach has no backend and does not transmit extension data to the developer or third parties, use analytics or advertising SDKs, or sell user data.",
-          "If you choose an external support or privacy link, Chrome opens that public website. The website processes the visit under its own privacy policy. Burn Rate Coach does not append tracking parameters."
+          "Settings, compatibility state, and quota history remain in <code>chrome.storage.local</code> on your device. The sole extension API permission is <code>storage</code>. Packaged content scripts match direct and SPA navigation on <code>https://chatgpt.com/codex/*</code> and <code>https://chatgpt.com/settings/usage*</code>; runtime capture is restricted to the new Usage tabs or the legacy usage view, and coaching renders only on Overview or that legacy view. Codex Limit Coach has no background context or backend, does not transmit extension data to the developer or third parties, and does not use analytics or advertising SDKs or sell user data.",
+          "If you choose an external support or privacy link, Chrome opens that public website. The website processes the visit under its own privacy policy. Codex Limit Coach does not append tracking parameters."
         ]
       },
       {
         heading: "Sharing",
         paragraphs: [
-          "Burn Rate Coach does not share or transfer extension data to third parties. It does not use data for advertising, profiling, creditworthiness, or purposes unrelated to quota pacing."
+          "Codex Limit Coach does not share or transfer extension data to third parties. It does not use data for advertising, profiling, creditworthiness, or purposes unrelated to quota pacing."
         ]
       },
       {
         heading: "Your controls",
         paragraphs: [
-          "The Chrome Web Store listing explains this local quota-data use before installation, and the popup repeats it in plain language. Turning off <strong>Show coach</strong> removes Burn Rate Coach from the page but does not stop page observation, compatibility checks, or automatic local history while Analytics is visible. The two-click <strong>Clear history</strong> control remains available while the coach is hidden and deletes current and legacy quota snapshots. Fresh observations may create new history afterward. Uninstalling Burn Rate Coach removes its local extension data through Chrome."
+          "The Chrome Web Store listing explains local quota-data use before installation, and the popup repeats it in plain language. Turning off <strong>Show coach</strong> removes guidance but does not stop page observation or compatibility checks. Automatic local history continues while Usage Overview or the legacy usage view is visible. The two-click <strong>Clear history</strong> control remains available while the coach is hidden and deletes current and legacy quota snapshots. Fresh observations can create new history afterward. Uninstalling Codex Limit Coach removes its local extension data through Chrome."
         ]
       },
       {
         heading: "Security and policy compliance",
         paragraphs: [
-          "All executable code is packaged with the extension. The page bridge sends only an allowlisted quota projection to the isolated extension context; it does not forward the raw response. Burn Rate Coach uses information only for its disclosed single purpose and follows the Chrome Web Store User Data Policy, including Limited Use requirements."
+          "All executable code is packaged with the extension. The page bridge sends only an allowlisted quota projection to the isolated extension context; it does not forward the raw response. Codex Limit Coach uses information only for its disclosed single purpose and follows the Chrome Web Store User Data Policy, including Limited Use requirements."
         ]
       },
       {
@@ -225,20 +225,20 @@ export default {
     }
   },
   support: {
-    metaDescription: "Help and support for Burn Rate Coach.",
-    title: "Support — Burn Rate Coach",
+    metaDescription: "Help and support for Codex Limit Coach.",
+    title: "Support — Codex Limit Coach",
     eyebrow: "Help and compatibility",
     heading: "Support",
-    lede: "Most issues can be resolved by opening the exact Codex Analytics usage route and reloading once. If the page or its quota response has changed, the popup will report the latest compatibility state.",
+    lede: "Open Codex Usage Overview and reload once to check compatibility. If the page or quota response has changed, the popup reports the latest compatibility state.",
     openIssue: "Open a support issue",
     quickChecks: {
       heading: "Quick checks",
       items: [
-        "Open <code>https://chatgpt.com/codex/cloud/settings/analytics</code> and select the Usage view.",
-        "Confirm Chrome is version 111 or newer and Burn Rate Coach is enabled on <code>chrome://extensions</code>.",
-        "Reload Analytics. The extension runs only on that exact usage route and observes only the page’s own successful quota result when the page decodes it.",
+        "Open <code>https://chatgpt.com/settings/usage?tab=overview</code>.",
+        "Confirm Chrome is version 111 or newer and Codex Limit Coach is enabled on <code>chrome://extensions</code>.",
+        "Reload Usage Overview.",
         "Open the extension popup and check Codex compatibility.",
-        "If a card remains native, wait for the page to finish loading and reload once. Burn Rate Coach deliberately restores native cards after a failed 900 ms enhancement attempt."
+        "If a card remains native, wait for the page to finish loading and reload once. Codex Limit Coach deliberately restores native cards after a failed 900 ms enhancement attempt."
       ]
     },
     include: {
@@ -246,7 +246,7 @@ export default {
       items: [
         "Chrome and extension versions;",
         "your Codex interface language;",
-        "whether you entered Analytics directly or through Codex navigation;",
+        "whether you entered Usage Overview directly or through Codex navigation;",
         "light or dark theme, viewport width, and browser zoom;",
         "the popup’s compatibility message;",
         "whether reloading changes the result."
@@ -259,9 +259,9 @@ export default {
     limitations: {
       heading: "Known limitations",
       items: [
-        "Automatic history is collected only while Analytics is open and visible; a hidden tab records no scheduled cadence samples.",
+        "Automatic history is collected only while Usage Overview or the legacy usage view is visible; a hidden tab records no scheduled cadence samples.",
         "Closed-page activity appears only as a gap between observations.",
-        "Records older than 14 days are pruned the next time Analytics history processing runs; each meter is capped at 10,082 samples, and inactive installs may retain older local bytes until clear or uninstall.",
+        "Records older than 14 days are pruned on the next Usage Overview or legacy-view history pass; each meter is capped at 10,082 samples, and inactive installs may retain older local bytes until clear or uninstall.",
         "Forecast distributions are model-based and have not been empirically calibrated on real usage histories.",
         "Quota extraction is locale-independent; the coach interface supports English, Turkish, Hindi, Spanish, Arabic, French, German, Japanese, and Portuguese (Brazil and Portugal).",
         "Codex response or interface changes can temporarily prevent card recognition.",

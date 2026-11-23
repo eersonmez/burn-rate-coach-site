@@ -60,7 +60,7 @@ function head(locale, pageId, catalog) {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="${escapeHtml(copy.metaDescription)}">
   <meta name="theme-color" content="#0b1020">
-  <meta property="og:site_name" content="Burn Rate Coach">
+  <meta property="og:site_name" content="Codex Limit Coach">
   <meta property="og:type" content="${socialType}">
   <meta property="og:title" content="${escapeHtml(copy.title)}">
   <meta property="og:description" content="${escapeHtml(copy.metaDescription)}">
@@ -108,7 +108,7 @@ function languageNavigation(locale, pageId, common) {
 
 function siteHeader(locale, pageId, common) {
   return `<header class="site-header">
-    <a class="brand" href="${localPageHref("home")}" aria-label="${escapeHtml(common.brandHome)}"><img src="${prefixFor(locale)}assets/logo.svg" width="40" height="40" alt=""><span>Burn Rate Coach</span></a>
+    <a class="brand" href="${localPageHref("home")}" aria-label="${escapeHtml(common.brandHome)}"><img src="${prefixFor(locale)}assets/logo.svg" width="40" height="40" alt=""><span>Codex Limit Coach</span></a>
     <nav aria-label="${escapeHtml(common.mainNavigation)}">${mainNavigation(pageId, common)}</nav>
   </header>
   ${languageNavigation(locale, pageId, common)}`;

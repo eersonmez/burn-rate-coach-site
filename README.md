@@ -1,6 +1,6 @@
-# Burn Rate Coach public site
+# Codex Limit Coach public site
 
-This repository hosts the public homepage, practical usage guides, privacy policy, support guide, example screenshots, and issue tracker for Burn Rate Coach.
+This repository hosts the public homepage, practical usage guides, privacy policy, support guide, example screenshots, and issue tracker for Codex Limit Coach.
 
 It does not contain the Chrome extension source code and does not represent the extension as open source.
 

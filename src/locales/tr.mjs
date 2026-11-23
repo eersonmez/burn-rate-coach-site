@@ -17,30 +17,30 @@ export default {
     mainNavigation: "Ana gezinme",
     footerNavigation: "Alt bilgi gezinmesi",
     languageNavigation: "Dil",
-    brandHome: "Burn Rate Coach ana sayfası",
-    independentShort: "Burn Rate Coach bağımsızdır ve OpenAI tarafından desteklenmez.",
-    independentLong: "Burn Rate Coach bağımsız bir uzantıdır; OpenAI ile bağlantılı değildir ve OpenAI tarafından desteklenmez."
+    brandHome: "Codex Limit Coach ana sayfası",
+    independentShort: "Codex Limit Coach bağımsızdır ve OpenAI tarafından desteklenmez.",
+    independentLong: "Codex Limit Coach bağımsız bir uzantıdır; OpenAI ile bağlantılı değildir ve OpenAI tarafından desteklenmez."
   },
   home: {
     metaDescription: "Her Codex kotasının sıfırlamaya kadar nereye gittiğini yerel tahminlerle görün; hiçbir şey cihazınızdan çıkmaz.",
-    title: "Burn Rate Coach — her Codex kotasının nereye gittiğini görün",
+    title: "Codex Limit Coach — her Codex kotasının nereye gittiğini görün",
     hero: {
       eyebrow: "Ücretsiz Chrome uzantısı · Yerel kullanım için tasarlandı",
       headlinePrimary: "Her kotanın nereye gittiğini görün.",
       headlineSecondary: "Sıfırlanmadan önce.",
-      lede: "Burn Rate Coach, desteklenen her Codex kullanım kartına tek bir tahmini sonuç ve küçük bir yerel gidişat ekler.",
+      lede: "Codex kotanız sıfırlamaya yeter mi? Codex Limit Coach, Codex kullanım sayfasında desteklenen her kota kartının yanında sıfırlamada kalması beklenen bakiyeyi veya kotanın ne zaman sıfıra ulaşabileceğini gösterir.",
       storeCta: "Chrome Web Mağazası’ndan edinin",
       examplesCta: "Örnek verileri gör",
       privacyHighlightsLabel: "Gizlilik özellikleri",
-      noAccount: "Burn Rate Coach hesabı yok",
+      noAccount: "Codex Limit Coach hesabı yok",
       noTelemetry: "Telemetri yok",
       storagePermission: "Yalnızca depolama izni",
-      promoAlt: "Burn Rate Coach göstergesi ve kullanım temposu eğrisi çizimi"
+      promoAlt: "Codex Limit Coach göstergesi ve kullanım temposu eğrisi çizimi"
     },
     features: {
       eyebrow: "Bir bakışta yararlı",
       heading: "Her kartta tek sonuç.",
-      intro: "Başka bir panel açmadan sıfırlamadaki tahmini bakiyeyi veya erken tükenme zamanını görün.",
+      intro: "1. Uzantıyı yükleyin ve açılır penceresini açın. 2. “Codex kullanımını aç” seçeneğine tıklayın; gerekirse giriş yapın. 3. Desteklenen kota kartlarının yanındaki tahmini görün. Yükleme sırasında Codex kullanım sayfası zaten açıksa sayfayı bir kez yenileyin.",
       items: [
         { heading: "Önce sonuç", body: "Her ölçer, sıfırlamadaki tahmini bakiyesini veya ne zaman sıfıra ulaşabileceğini bağımsız gösterir. Kartlar birbirini geçersiz kılmaz." },
         { heading: "Hedef ayrı kalır", body: "Tahmini gözlenen kullanım belirler. Hedefiniz yalnızca yolu sabit koridora göre renklendiren sessiz bir referanstır." },
@@ -50,20 +50,20 @@ export default {
     screenshots: {
       eyebrow: "Uzantı tarafından oluşturuldu",
       heading: "Gerçek arayüz. Sentetik örnek veri.",
-      intro: "Bu görseller, üretim uzantısı kodunu özel ve yapısal olarak gerçeğe uygun bir test düzeneğinde çalıştırır. Burada hiçbir hesap verisi bulunmaz.",
+      intro: "1. Uzantıyı yükleyin ve açılır penceresini açın. 2. “Codex kullanımını aç” seçeneğine tıklayın; gerekirse giriş yapın. 3. Desteklenen kota kartlarının yanındaki tahmini görün. Yükleme sırasında Codex kullanım sayfası zaten açıksa sayfayı bir kez yenileyin.",
       items: [
         { alt: "Sıfırlamadaki tahmini bakiyeyi gösteren koyu temalı sentetik Codex kota kartı", caption: "Bir bakışta sonuç" },
         { alt: "Gözlemleri, hedefi ve tahmini gösteren açık temalı sentetik Codex kota kartı", caption: "Açıkta da koyuda da okunaklı" },
         { alt: "Sıfırlanmadan önce sıfıra inen tahmini gösteren sentetik durum", caption: "Erken sıfır tahmini" },
-        { alt: "Tek hedef ayarı ve otomatik yerel geçmiş içeren Burn Rate Coach açılır penceresi", caption: "Tek ayar · otomatik yerel geçmiş" }
+        { alt: "Tek hedef ayarı ve otomatik yerel geçmiş içeren Codex Limit Coach açılır penceresi", caption: "Tek ayar · otomatik yerel geçmiş" }
       ]
     },
     private: {
       eyebrow: "Gizlilik odaklı tasarım",
       heading: "Kota verilerin Chrome’da kalır.",
       body: [
-        "Codex Analytics açıkken Burn Rate Coach, sayfa okuduğunda sayfanın başarıyla çözümlediği kota sonucunu pasif olarak gözlemler. Yalnızca tahmin için gereken kararlı ölçer ve dönem kimliklerine, kullanılan yüzdeye, dönem süresine ve sıfırlanma zamanına erişir. Gözlem zamanını yerel olarak üretir ve sonuçları yerel kartlarla yalnızca eşleşen sayısal ilerleme ve sıfırlanma meta verileri üzerinden ilişkilendirir; çevrilmiş etiketleri veya kart sırasını asla kullanmaz. Ayarlar ve otomatik sınırlı anlık görüntüler <code>chrome.storage.local</code> içinde kalır.",
-        "Ek bir ağ isteği başlatmaz; yanıtı klonlamaz veya kendi başına çözümlemez, çerezleri ya da yetkilendirme üstbilgilerini incelemez, kota verisi göndermez ve hesap, e-posta, plan, kredi ya da harcama denetimi alanlarına erişmez. Uzantının tek izni <code>storage</code> iznidir. Paketlenmiş iki içerik betiği bildirimi, doğrudan ve SPA girişi için tek bir sınırlı <code>https://chatgpt.com/codex/*</code> eşleşme desenini paylaşır; çalışma zamanı veri işleme ve görüntüleme Analytics ile sınırlıdır. Arka plan bağlamı, arka uç, telemetri, reklam, uzaktan kod veya Burn Rate Coach hesap sistemi yoktur."
+        "Codex kullanım sayfası açıkken Codex Limit Coach, sayfa okuduğunda sayfanın başarıyla çözümlediği kota sonucunu pasif olarak gözlemler. Yalnızca tahmin için gereken kararlı ölçer ve dönem kimliklerine, kullanılan yüzdeye, dönem süresine ve sıfırlanma zamanına erişir. Gözlem zamanını yerel olarak üretir ve sonuçları yerel kartlarla yalnızca eşleşen sayısal ilerleme ve sıfırlanma meta verileri üzerinden ilişkilendirir; çevrilmiş etiketleri veya kart sırasını asla kullanmaz. Ayarlar ve otomatik sınırlı anlık görüntüler <code>chrome.storage.local</code> içinde kalır.",
+        "Ek bir ağ isteği başlatmaz; yanıtı klonlamaz veya kendi başına çözümlemez, çerezleri ya da yetkilendirme üstbilgilerini incelemez, kota verisi göndermez ve hesap, e-posta, plan, kredi ya da harcama denetimi alanlarına erişmez. Uzantının tek izni <code>storage</code> iznidir. Paketlenmiş iki içerik betiği bildirimi, doğrudan ve SPA girişi için iki sınırlı eşleşme deseni kullanır: <code>https://chatgpt.com/codex/*</code> ve <code>https://chatgpt.com/settings/usage*</code>; çalışma zamanı veri işleme ve görüntüleme desteklenen kullanım görünümleri ile sınırlıdır. Arka plan bağlamı, arka uç, telemetri, reklam, uzaktan kod veya Codex Limit Coach hesap sistemi yoktur."
       ],
       policyLink: "Gizlilik politikasını oku"
     },
@@ -71,7 +71,7 @@ export default {
       eyebrow: "Sınırları bil",
       heading: "Bir koçtur, garanti değil.",
       items: [
-        "Otomatik geçmiş yalnızca Analytics sayfası açık ve görünürken gözlenir; gizli sekmelerde zamanlanmış örnek kaydedilmez.",
+        "Otomatik geçmiş yalnızca Kullanım genel bakışı sayfası açık ve görünürken gözlenir; gizli sekmelerde zamanlanmış örnek kaydedilmez.",
         "Yüzde puanları görev, token, mesaj veya dakika değildir.",
         "Tahminler model tabanlıdır, garanti değildir ve gerçek kullanım geçmişleri üzerinde ampirik olarak kalibre edilmemiştir.",
         "Kota toplama Codex arayüz dilinden bağımsızdır; koç arayüzü İngilizce, Türkçe, Hintçe, İspanyolca, Arapça, Fransızca, Almanca, Japonca ve Portekizceyi (Brezilya ve Portekiz) destekler."
@@ -79,13 +79,13 @@ export default {
     },
     closing: {
       heading: "Her sıfırlanmayı değerlendir.",
-      body: "Burn Rate Coach, Chrome Web Mağazası’nda ücretsizdir.",
+      body: "Codex Limit Coach, Chrome Web Mağazası’nda ücretsizdir.",
       cta: "Chrome’a ekle"
     }
   },
   usageGuide: {
     metaDescription: "Codex kullanım bakiyeleri, sıfırlanma zamanları, ortak sınırlar ve yüzdelerin neden görevlere doğrudan karşılık gelmediği hakkında sade bir rehber.",
-    title: "Codex kullanım sınırları nasıl çalışır — Burn Rate Coach",
+    title: "Codex kullanım sınırları nasıl çalışır — Codex Limit Coach",
     eyebrow: "Codex kullanım rehberi",
     heading: "Codex kullanım sınırları nasıl çalışır",
     lede: "Gerçeğin kaynağı Codex kullanım sayfanızdır. Gösterilen bakiyeler ve sıfırlanma zamanları planınıza, geçerli tekliflere ve kullandığınız yüzeylere bağlıdır.",
@@ -115,17 +115,17 @@ export default {
         heading: "Gösterilen sıfırlanma zamanını kullanın",
         paragraphs: [
           "Ezberlenmiş bir takvim yerine sayfada gösterilen tam sıfırlanma zamanına göre plan yapın. Bazı geçici teklifler biriktirilmiş veya ayarlanmış sıfırlanmalar da kullanabilir.",
-          "Geçerli görünüm için <code>https://chatgpt.com/codex/cloud/settings/analytics</code> adresini açın. Yol veya kartlar değişirse güncel Codex gezinmesini ve görünür hesap yönlendirmesini izleyin."
+          "Geçerli görünüm için <code>https://chatgpt.com/settings/usage?tab=overview</code> adresini açın. Yol veya kartlar değişirse güncel Codex gezinmesini ve görünür hesap yönlendirmesini izleyin."
         ]
       }
     ],
     sourceLabel: "OpenAI’ın güncel Codex kullanım rehberini okuyun",
-    productBody: "Burn Rate Coach, Codex kullanım sayfanızın gerçekten gösterdiği bakiyelere yerel tempo ve sıfırlanma anı tahminleri ekler. Tahminler açıklayıcı kestirimlerdir; sağlayıcı garantisi değildir.",
-    cta: "Burn Rate Coach’u edinin"
+    productBody: "Codex Limit Coach, Codex kullanım sayfanızın gerçekten gösterdiği bakiyelere yerel tempo ve sıfırlanma anı tahminleri ekler. Tahminler açıklayıcı kestirimlerdir; sağlayıcı garantisi değildir.",
+    cta: "Codex Limit Coach’u edinin"
   },
   pacingGuide: {
     metaDescription: "Codex kota tahminini okumak, hedefi ayrı tutmak ve yerel model kanıtını anlamak için rehber.",
-    title: "Codex kota tahmini nasıl okunur — Burn Rate Coach",
+    title: "Codex kota tahmini nasıl okunur — Codex Limit Coach",
     eyebrow: "Pratik tempo rehberi",
     heading: "Kota tahmini nasıl okunur",
     lede: "Mevcut bakiye kotanın şimdi nerede olduğunu söyler. Betimleyici tahmin, sıfırlamada nerede olabileceğini veya ne zaman sıfıra ulaşabileceğini kestirir.",
@@ -160,15 +160,15 @@ export default {
       }
     ],
     sourceLabel: "OpenAI’ın güncel Codex kullanım rehberini okuyun",
-    productBody: "Burn Rate Coach bu karşılaştırmayı Codex kullanım sayfasında, Chrome içinde yerel olarak yapar. Her kartta tek bir betimleyici sonuç gösterir ve hedefi tahminden ayrı tutar.",
+    productBody: "Codex Limit Coach bu karşılaştırmayı Codex kullanım sayfasında, Chrome içinde yerel olarak yapar. Her kartta tek bir betimleyici sonuç gösterir ve hedefi tahminden ayrı tutar.",
     cta: "Yerel koçu ekleyin"
   },
   privacy: {
-    metaDescription: "Burn Rate Coach gizlilik politikası özeti.",
-    title: "Gizlilik — Burn Rate Coach",
-    effectiveDate: "Yürürlük tarihi: 28 Temmuz 2026",
+    metaDescription: "Codex Limit Coach gizlilik politikası özeti.",
+    title: "Gizlilik — Codex Limit Coach",
+    effectiveDate: "Yürürlük tarihi: 12 Ekim 2026",
     heading: "Gizlilik politikası özeti",
-    lede: "Burn Rate Coach, Codex Analytics kullanım sayfasına tempo yönlendirmesi ekleyen bağımsız bir Chrome uzantısıdır. OpenAI ile bağlantılı değildir ve OpenAI tarafından desteklenmez.",
+    lede: "Codex Limit Coach, Codex kullanım sayfasına tempo yönlendirmesi ekleyen bağımsız bir Chrome uzantısıdır. OpenAI ile bağlantılı değildir ve OpenAI tarafından desteklenmez.",
     canonicalNotice: {
       heading: "Taslak çeviri",
       body: "Bu özetin akıcı bir insan incelemesine ihtiyacı vardır. Bağlayıcı metin İngilizce politikadır:",
@@ -178,9 +178,9 @@ export default {
       {
         heading: "İşlenen bilgiler",
         paragraphs: [
-          "Codex Analytics açıkken paketlenmiş bir sayfa köprüsü, sayfa çözümlediğinde sayfanın kendi başarılı kota sonucunu pasif olarak gözlemler. Yalnızca koçluk için gereken kararlı hız sınırı ölçer ve dönem kimliklerine, kullanılan yüzdeye, kota dönemi süresine ve sıfırlanma zamanına doğrudan erişir. İzole uzantı, sonuçları yerel kartlarla yalnızca eşleşen sayısal ilerleme ve sıfırlanma meta verileri üzerinden ilişkilendirir; çevrilmiş etiketleri veya kart sırasını asla kullanmaz. Uzantı gözlem zaman damgasını yanıttan okumak yerine yerel olarak üretir. İsteği başlatmaz, yanıtı klonlamaz veya kendi başına çözümlemez; üstbilgileri, çerezleri, yetkilendirme belirteçlerini ya da diğer kimlik bilgilerini incelemez.",
-          "Sayfanın sonucu e-posta, hesap ve kullanıcı kimlikleri ile plan, kredi ve harcama denetimi alanlarını da içerebilir. Burn Rate Coach bu ilgisiz alanlara erişmez veya bunları sıralamaz; alanları hiçbir zaman köprüden geçirmez, günlüğe kaydetmez, saklamaz ya da göndermez. İstemleri, konuşmaları, kaynak kodunu, parolaları, ödeme kimlik bilgilerini veya API anahtarlarını da okumaz ya da saklamaz.",
-          "Burn Rate Coach koçun gösterilip gösterilmediğini, hedef yüzdeyi, uyumluluk durumunu ve otomatik zaman damgalı kota yüzdeleri ile sıfırlanma zamanlarını Chrome’un yerel uzantı deposunda tutar. Tarayıcı sekmesi gizliyken zamanlanmış örnek kaydetmez. 14 günden eski kayıtlar Analytics geçmişi bir sonraki işlediğinde budanır ve her ölçer 10.082 örnekle sınırlandırılır."
+          "Codex kullanım sayfası açıkken paketlenmiş bir sayfa köprüsü, sayfa çözümlediğinde sayfanın kendi başarılı kota sonucunu pasif olarak gözlemler. Yalnızca koçluk için gereken kararlı hız sınırı ölçer ve dönem kimliklerine, kullanılan yüzdeye, kota dönemi süresine ve sıfırlanma zamanına doğrudan erişir. İzole uzantı, sonuçları yerel kartlarla yalnızca eşleşen sayısal ilerleme ve sıfırlanma meta verileri üzerinden ilişkilendirir; çevrilmiş etiketleri veya kart sırasını asla kullanmaz. Uzantı gözlem zaman damgasını yanıttan okumak yerine yerel olarak üretir. İsteği başlatmaz, yanıtı klonlamaz veya kendi başına çözümlemez; üstbilgileri, çerezleri, yetkilendirme belirteçlerini ya da diğer kimlik bilgilerini incelemez.",
+          "Sayfanın sonucu e-posta, hesap ve kullanıcı kimlikleri ile plan, kredi ve harcama denetimi alanlarını da içerebilir. Codex Limit Coach bu ilgisiz alanlara erişmez veya bunları sıralamaz; alanları hiçbir zaman köprüden geçirmez, günlüğe kaydetmez, saklamaz ya da göndermez. İstemleri, konuşmaları, kaynak kodunu, parolaları, ödeme kimlik bilgilerini veya API anahtarlarını da okumaz ya da saklamaz.",
+          "Codex Limit Coach koçun gösterilip gösterilmediğini, hedef yüzdeyi, uyumluluk durumunu ve otomatik zaman damgalı kota yüzdeleri ile sıfırlanma zamanlarını Chrome’un yerel uzantı deposunda tutar. Tarayıcı sekmesi gizliyken zamanlanmış örnek kaydetmez. 14 günden eski kayıtlar Kullanım genel bakışı geçmişi bir sonraki işlediğinde budanır ve her ölçer 10.082 örnekle sınırlandırılır."
         ]
       },
       {
@@ -192,26 +192,26 @@ export default {
       {
         heading: "Depolama ve aktarım",
         paragraphs: [
-          "Ayarlar, uyumluluk durumu ve kota geçmişi cihazınızdaki <code>chrome.storage.local</code> içinde kalır. Uzantının tek izni <code>storage</code> iznidir. Paketlenmiş iki içerik betiği bildirimi, doğrudan ve SPA girişi için tek bir sınırlı <code>https://chatgpt.com/codex/*</code> eşleşme desenini paylaşır; çalışma zamanı veri işleme ve görüntüleme Analytics ile sınırlıdır ve arka plan bağlamı yoktur. Burn Rate Coach’un arka ucu yoktur; uzantı verilerini geliştiriciye veya üçüncü taraflara göndermez, analiz ya da reklam SDK’ları kullanmaz ve kullanıcı verisi satmaz.",
-          "Harici bir destek veya gizlilik bağlantısını seçerseniz Chrome ilgili herkese açık siteyi açar. Burn Rate Coach bağlantıya izleme parametresi eklemez."
+          "Ayarlar, uyumluluk durumu ve kota geçmişi cihazınızdaki <code>chrome.storage.local</code> içinde kalır. Uzantının tek izni <code>storage</code> iznidir. Paketlenmiş iki içerik betiği bildirimi, doğrudan ve SPA girişi için iki sınırlı eşleşme deseni kullanır: <code>https://chatgpt.com/codex/*</code> ve <code>https://chatgpt.com/settings/usage*</code>; çalışma zamanı veri işleme ve görüntüleme desteklenen kullanım görünümleri ile sınırlıdır ve arka plan bağlamı yoktur. Codex Limit Coach’un arka ucu yoktur; uzantı verilerini geliştiriciye veya üçüncü taraflara göndermez, analiz ya da reklam SDK’ları kullanmaz ve kullanıcı verisi satmaz.",
+          "Harici bir destek veya gizlilik bağlantısını seçerseniz Chrome ilgili herkese açık siteyi açar. Codex Limit Coach bağlantıya izleme parametresi eklemez."
         ]
       },
       {
         heading: "Paylaşım",
         paragraphs: [
-          "Burn Rate Coach uzantı verilerini üçüncü taraflarla paylaşmaz veya aktarmaz. Verileri reklam, profil oluşturma, kredi değerliliği veya kota temposuyla ilgisiz amaçlar için kullanmaz."
+          "Codex Limit Coach uzantı verilerini üçüncü taraflarla paylaşmaz veya aktarmaz. Verileri reklam, profil oluşturma, kredi değerliliği veya kota temposuyla ilgisiz amaçlar için kullanmaz."
         ]
       },
       {
         heading: "Denetimleriniz",
         paragraphs: [
-          "Chrome Web Mağazası sayfası yerel kota verisi kullanımını kurulumdan önce açıklar; açılır pencere bunu sade bir dille tekrarlar. <strong>Koçu göster</strong> seçeneğini kapatmak arayüzü kaldırır ancak Analytics görünürken sayfa gözlemini, uyumluluk denetimlerini veya otomatik yerel geçmişi durdurmaz. İki tıklamalı <strong>Geçmişi temizle</strong> denetimi mevcut ve eski anlık görüntüleri siler; sonraki taze gözlemler yeni geçmiş oluşturabilir. Uzantıyı kaldırmak yerel uzantı verilerini Chrome üzerinden siler."
+          "Chrome Web Mağazası sayfası yerel kota verisi kullanımını kurulumdan önce açıklar; açılır pencere bunu sade bir dille tekrarlar. <strong>Koçu göster</strong> seçeneğini kapatmak arayüzü kaldırır ancak Kullanım genel bakışı görünürken sayfa gözlemini, uyumluluk denetimlerini veya otomatik yerel geçmişi durdurmaz. İki tıklamalı <strong>Geçmişi temizle</strong> denetimi mevcut ve eski anlık görüntüleri siler; sonraki taze gözlemler yeni geçmiş oluşturabilir. Uzantıyı kaldırmak yerel uzantı verilerini Chrome üzerinden siler."
         ]
       },
       {
         heading: "Güvenlik ve politika uyumu",
         paragraphs: [
-          "Çalıştırılabilir kodun tamamı uzantıyla paketlenir. Sayfa köprüsü izole uzantı bağlamına yalnızca izin verilen kota izdüşümünü gönderir; ham yanıtı iletmez. Burn Rate Coach bilgileri yalnızca açıklanan tek amacı için kullanır ve Chrome Web Mağazası Kullanıcı Verileri Politikası’nın Sınırlı Kullanım koşullarına uyar."
+          "Çalıştırılabilir kodun tamamı uzantıyla paketlenir. Sayfa köprüsü izole uzantı bağlamına yalnızca izin verilen kota izdüşümünü gönderir; ham yanıtı iletmez. Codex Limit Coach bilgileri yalnızca açıklanan tek amacı için kullanır ve Chrome Web Mağazası Kullanıcı Verileri Politikası’nın Sınırlı Kullanım koşullarına uyar."
         ]
       },
       {
@@ -229,20 +229,20 @@ export default {
     }
   },
   support: {
-    metaDescription: "Burn Rate Coach yardım ve destek sayfası.",
-    title: "Destek — Burn Rate Coach",
+    metaDescription: "Codex Limit Coach yardım ve destek sayfası.",
+    title: "Destek — Codex Limit Coach",
     eyebrow: "Yardım ve uyumluluk",
     heading: "Destek",
-    lede: "Çoğu sorun tam Codex Analytics kullanım yolu açılıp sayfa bir kez yenilenerek giderilebilir. Sayfa veya kota yanıtı değiştiyse açılır pencere en son uyumluluk durumunu bildirir.",
+    lede: "Çoğu sorun Codex kullanım sayfası açılıp sayfa bir kez yenilenerek giderilebilir. Sayfa veya kota yanıtı değiştiyse açılır pencere en son uyumluluk durumunu bildirir.",
     openIssue: "Destek bildirimi aç",
     quickChecks: {
       heading: "Hızlı denetimler",
       items: [
-        "<code>https://chatgpt.com/codex/cloud/settings/analytics</code> adresini açın ve Kullanım görünümünü seçin.",
-        "Chrome sürümünün 111 veya daha yeni olduğunu ve Burn Rate Coach’un <code>chrome://extensions</code> sayfasında etkin olduğunu doğrulayın.",
-        "Analytics’i yenileyin. Uzantı yalnızca bu tam kullanım yolunda çalışır ve yalnızca sayfa çözümlediğinde sayfanın kendi başarılı kota sonucunu gözlemler.",
+        "<code>https://chatgpt.com/settings/usage?tab=overview</code> adresini açın.",
+        "Chrome sürümünün 111 veya daha yeni olduğunu ve Codex Limit Coach’un <code>chrome://extensions</code> sayfasında etkin olduğunu doğrulayın.",
+        "Kullanım genel bakışını yeniden yükleyin.",
         "Uzantı açılır penceresini açıp Codex uyumluluğunu kontrol edin.",
-        "Bir kart yerel görünümde kalırsa sayfanın yüklenmesini bekleyip bir kez yenileyin. Burn Rate Coach, 900 ms içinde başarısız olan bir iyileştirme denemesinden sonra kartları bilinçli olarak yerel görünüme döndürür."
+        "Bir kart yerel görünümde kalırsa sayfanın yüklenmesini bekleyip bir kez yenileyin. Codex Limit Coach, 900 ms içinde başarısız olan bir iyileştirme denemesinden sonra kartları bilinçli olarak yerel görünüme döndürür."
       ]
     },
     include: {
@@ -250,7 +250,7 @@ export default {
       items: [
         "Chrome ve uzantı sürümleri;",
         "Codex arayüz diliniz;",
-        "Analytics’e doğrudan mı yoksa Codex gezinmesi üzerinden mi girdiğiniz;",
+        "Kullanım genel bakışı’e doğrudan mı yoksa Codex gezinmesi üzerinden mi girdiğiniz;",
         "açık veya koyu tema, görünüm alanı genişliği ve tarayıcı yakınlaştırması;",
         "açılır penceredeki uyumluluk iletisi;",
         "yenilemenin sonucu değiştirip değiştirmediği."
@@ -263,9 +263,9 @@ export default {
     limitations: {
       heading: "Bilinen sınırlamalar",
       items: [
-        "Otomatik geçmiş yalnızca Analytics açık ve görünürken toplanır; gizli sekme zamanlanmış örnek kaydetmez.",
+        "Otomatik geçmiş yalnızca Kullanım genel bakışı açık ve görünürken toplanır; gizli sekme zamanlanmış örnek kaydetmez.",
         "Sayfa kapalıyken gerçekleşen etkinlik yalnızca gözlemler arasında boşluk olarak görünür.",
-        "14 günden eski kayıtlar Analytics geçmişi bir sonraki işlediğinde budanır; her ölçer 10.082 örnekle sınırlandırılır ve etkin olmayan kurulumlarda eski yerel veriler temizlemeye veya kaldırmaya kadar kalabilir.",
+        "14 günden eski kayıtlar Kullanım genel bakışı geçmişi bir sonraki işlediğinde budanır; her ölçer 10.082 örnekle sınırlandırılır ve etkin olmayan kurulumlarda eski yerel veriler temizlemeye veya kaldırmaya kadar kalabilir.",
         "Tahmin dağılımları model tabanlıdır ve gerçek kullanım geçmişlerinde ampirik olarak kalibre edilmemiştir.",
         "Kota çıkarımı dilden bağımsızdır; koç arayüzü İngilizce, Türkçe, Hintçe, İspanyolca, Arapça, Fransızca, Almanca, Japonca ve Portekizceyi (Brezilya ve Portekiz) destekler.",
         "Codex yanıtı veya arayüzündeki değişiklikler kartların tanınmasını geçici olarak engelleyebilir.",
